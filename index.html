@@ -1,0 +1,1838 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aamantran | Digital Indian Wedding Invitations</title>
+<meta name="description" content="Beautiful digital Indian wedding invitations. Website invitations, video invitations and digital cards, ordered on WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Jost:wght@300;400;500;600&family=Great+Vibes&family=Marcellus&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FBF7F0; --surface:#FFFFFF; --sand:#F3E9D8; --line:#E6D8C0;
+  --maroon:#6B1426; --maroon-2:#4B0E1B; --gold:#B8893B; --gold-soft:#DCC28C;
+  --ink:#2A1A17; --muted:#6E5D55; --on-maroon:#FBEFD9;
+  --shadow:0 18px 40px -22px rgba(75,14,27,.35);
+  --r-lg:22px; --r-md:14px; --r-sm:9px;
+  --serif:'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --sans:'Jost', system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#1A1113; --surface:#241719; --sand:#2E1E21; --line:#3D2A2E;
+    --maroon:#A8374C; --maroon-2:#7E2335; --gold:#D2A95B; --gold-soft:#8C7240;
+    --ink:#F4E9DB; --muted:#BFAEA2; --on-maroon:#FFF3E2;
+    --shadow:0 18px 40px -22px rgba(0,0,0,.7);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#1A1113; --surface:#241719; --sand:#2E1E21; --line:#3D2A2E;
+  --maroon:#A8374C; --maroon-2:#7E2335; --gold:#D2A95B; --gold-soft:#8C7240;
+  --ink:#F4E9DB; --muted:#BFAEA2; --on-maroon:#FFF3E2;
+  --shadow:0 18px 40px -22px rgba(0,0,0,.7);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:6px}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:600;line-height:1.12;margin:0;letter-spacing:-.01em}
+p{margin:0}
+.wrap{width:min(1180px,100% - 40px);margin-inline:auto}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.muted{color:var(--muted)}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:13px 24px;border-radius:999px;border:1px solid transparent;font-weight:500;font-size:15px;text-decoration:none;cursor:pointer;transition:transform .2s, background .2s, box-shadow .2s, color .2s;white-space:nowrap}
+.btn svg{width:18px;height:18px}
+.btn-primary{background:var(--maroon);color:var(--on-maroon);box-shadow:0 10px 24px -12px var(--maroon)}
+.btn-primary:hover{background:var(--maroon-2);transform:translateY(-1px)}
+.btn-ghost{border-color:var(--line);background:var(--surface);color:var(--ink)}
+.btn-ghost:hover{border-color:var(--gold);color:var(--maroon)}
+.btn-gold{background:var(--gold);color:#2A1A10}
+.btn-gold:hover{filter:brightness(1.06);transform:translateY(-1px)}
+.btn-wa{background:#1F8F55;color:#fff}
+.btn-wa:hover{background:#177346}
+.btn-sm{padding:8px 15px;font-size:14px}
+.btn-block{width:100%}
+
+/* header */
+.hdr{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:border-color .3s}
+.hdr.scrolled{border-bottom-color:var(--line)}
+.hdr-in{display:flex;align-items:center;gap:22px;height:74px}
+.logo{display:flex;align-items:center;gap:0px;text-decoration:none;font-family:var(--serif);font-size:26px;font-weight:600;color:var(--maroon)}
+.logo svg,.logo img{width:70px;height:70px;object-fit:contain}
+.nav{display:flex;gap:4px;margin-left:auto}
+.nav a{padding:8px 11px;border-radius:999px;text-decoration:none;font-size:14.5px;color:var(--muted);transition:color .2s,background .2s}
+.nav a:hover,.nav a.on{color:var(--maroon);background:var(--sand)}
+.hdr-cta{display:flex;gap:8px;align-items:center}
+.icon-btn{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;border:1px solid var(--line);background:var(--surface);cursor:pointer;text-decoration:none;color:var(--ink)}
+.icon-btn svg{width:19px;height:19px}
+.burger{display:none}
+.mnav{position:fixed;inset:74px 0 0 0;background:var(--bg);z-index:49;padding:18px 20px 40px;display:flex;flex-direction:column;gap:4px;transform:translateY(-8px);opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;overflow:auto}
+.mnav.open{opacity:1;transform:none;pointer-events:auto}
+.mnav a.l{padding:15px 6px;border-bottom:1px solid var(--line);text-decoration:none;font-family:var(--serif);font-size:24px}
+.mnav .btn{margin-top:18px}
+@media (max-width:1080px){.nav{display:none}.burger{display:grid}.hdr-cta .btn-browse{display:none}.hdr-cta{margin-left:auto}}
+
+/* hero */
+.hero{position:relative;padding:56px 0 90px;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 70% at 85% 30%,color-mix(in srgb,var(--gold-soft) 38%,transparent),transparent 70%),radial-gradient(40% 50% at 10% 90%,color-mix(in srgb,var(--maroon) 10%,transparent),transparent 70%);pointer-events:none}
+.hero-grid{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;color:var(--gold);font-weight:500;font-size:15px}
+.eyebrow::before{content:"";width:28px;height:1px;background:currentColor}
+.hero h1{font-size:clamp(46px,6.4vw,86px);font-weight:500;margin:18px 0 22px;color:var(--ink)}
+.hero h1 .l2{display:block;font-style:italic;color:var(--maroon)}
+.hero p.lead{font-size:18px;color:var(--muted);max-width:30em}
+.hero .ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
+.hero-meta{display:flex;gap:26px;margin-top:40px;flex-wrap:wrap}
+.hero-meta div{font-size:14px;color:var(--muted)}
+.hero-meta strong{display:block;font-family:var(--serif);font-size:28px;color:var(--ink);font-weight:600}
+.hero-stage{position:relative;display:grid;place-items:center;min-height:620px}
+.hero-stage .deco{position:absolute;pointer-events:none;color:var(--gold)}
+.hero-stage .deco svg{width:100%;height:100%}
+@keyframes drift{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-10px) rotate(6deg)}}
+.deco.d1{width:120px;height:120px;top:20px;left:4%;animation:drift 9s ease-in-out infinite;opacity:.9}
+.deco.d2{width:64px;height:64px;bottom:70px;left:0;animation:drift 7s ease-in-out infinite reverse;color:var(--maroon)}
+.deco.d3{width:90px;height:90px;top:60px;right:2%;animation:drift 8s ease-in-out infinite}
+.deco.d4{width:34px;height:34px;bottom:120px;right:6%;color:var(--maroon);animation:drift 6s ease-in-out infinite}
+.deco.d5{width:26px;height:26px;top:48%;left:10%;animation:drift 5s ease-in-out infinite}
+.deco.d6{width:150px;height:150px;bottom:-10px;right:-10px;opacity:.5;animation:drift 12s ease-in-out infinite}
+@media (max-width:900px){.hero-grid{grid-template-columns:1fr}.hero{padding-top:30px}.hero-stage{min-height:560px}}
+
+/* phone */
+.phone{position:relative;width:300px;aspect-ratio:9/19;min-height:0;border-radius:46px;background:#16100F;padding:11px;box-shadow:0 50px 80px -40px rgba(60,10,20,.6),0 0 0 1.5px #3a2a26 inset,0 0 0 4px #0c0807;flex:none}
+.phone::before{content:"";position:absolute;top:18px;left:50%;transform:translateX(-50%);width:92px;height:25px;background:#0a0707;border-radius:20px;z-index:3}
+.phone::after{content:"";position:absolute;right:-4px;top:120px;width:4px;height:60px;background:#2a1f1c;border-radius:0 3px 3px 0}
+.phone .scr{position:relative;width:100%;height:100%;border-radius:36px;overflow:hidden;background:#fff}
+.phone .scr .scroll{height:100%;overflow-y:auto;scrollbar-width:none}
+.phone .scr .scroll::-webkit-scrollbar{display:none}
+.phone.float{animation:pfloat 6s ease-in-out infinite}
+@keyframes pfloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+.phone.auto .scroll{overflow:hidden}
+.phone.auto .scroll > .inv{animation:autoscroll 38s ease-in-out infinite alternate}
+@keyframes autoscroll{0%,8%{transform:translateY(0)}100%{transform:translateY(calc(-100% + var(--sh,600px)))}}
+.phone.lg{width:330px}
+@media (max-width:420px){.phone{width:270px}.phone.lg{width:290px}}
+
+/* sections */
+.sec{padding:96px 0}
+.sec.alt{background:var(--sand)}
+.sec-head{max-width:640px;margin:0 auto 52px;text-align:center}
+.sec-head h2{font-size:clamp(36px,4.6vw,56px);font-weight:500}
+.sec-head p{margin-top:14px;color:var(--muted);font-size:17px}
+.orn-rule{display:flex;align-items:center;justify-content:center;gap:12px;color:var(--gold);margin-bottom:16px}
+.orn-rule::before,.orn-rule::after{content:"";width:46px;height:1px;background:currentColor;opacity:.6}
+.orn-rule svg{width:18px;height:18px}
+
+/* collections */
+.coll-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.coll{position:relative;display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:28px 28px var(--r-lg) var(--r-lg);overflow:hidden;text-decoration:none;color:inherit;transition:transform .35s,box-shadow .35s}
+.coll:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.coll .vis{height:300px;display:grid;place-items:center;overflow:hidden;position:relative;border-radius:160px 160px 0 0;margin:14px 14px 0;background:linear-gradient(160deg,var(--sand),color-mix(in srgb,var(--gold-soft) 40%,var(--sand)))}
+.coll .vis > *{transition:transform .6s}
+.coll:hover .vis > *{transform:scale(1.04)}
+.coll .body{padding:24px 26px 28px;display:flex;flex-direction:column;gap:10px;flex:1}
+.coll h3{font-size:30px}
+.coll p{color:var(--muted)}
+.coll .btn{margin-top:auto;align-self:flex-start}
+.mini-phone{width:150px;aspect-ratio:9/18.5;min-height:0;border-radius:24px;background:#16100F;padding:6px;box-shadow:0 30px 50px -25px rgba(60,10,20,.6);transform:translateY(40px)}
+.mini-phone .scr{border-radius:19px;overflow:hidden;height:100%}
+.mini-video{width:78%;aspect-ratio:9/13;min-height:0;border-radius:16px;overflow:hidden;box-shadow:0 30px 50px -25px rgba(60,10,20,.6);transform:translateY(30px)}
+.mini-card{width:62%;transform:rotate(-4deg) translateY(24px);box-shadow:0 30px 50px -25px rgba(60,10,20,.55)}
+@media (max-width:900px){.coll-grid{grid-template-columns:1fr;max-width:520px;margin:auto}}
+
+/* how it works */
+.steps{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
+.steps::before{content:"";position:absolute;top:44px;left:16%;right:16%;border-top:1.5px dashed var(--gold-soft)}
+.step{position:relative;text-align:center;padding:0 12px}
+.step .ic{position:relative;width:88px;height:88px;margin:0 auto 22px;border-radius:50%;display:grid;place-items:center;background:var(--surface);border:1px solid var(--line);color:var(--maroon);box-shadow:0 0 0 8px var(--bg)}
+.sec.alt .step .ic{box-shadow:0 0 0 8px var(--sand)}
+.step .ic svg{width:32px;height:32px}
+.step .n{position:absolute;top:-4px;right:-4px;width:28px;height:28px;border-radius:50%;background:var(--gold);color:#2A1A10;font-size:13px;font-weight:600;display:grid;place-items:center}
+.step h3{font-size:28px;margin-bottom:8px}
+.step p{color:var(--muted);max-width:28ch;margin:auto}
+.center{text-align:center}
+@media (max-width:800px){.steps{grid-template-columns:1fr;gap:40px}.steps::before{top:40px;bottom:40px;left:50%;right:auto;border-top:0;border-left:1.5px dashed var(--gold-soft)}}
+
+/* features */
+.feat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden}
+.feat{background:var(--surface);padding:28px 24px;display:flex;flex-direction:column;gap:10px;transition:background .25s}
+.feat:hover{background:color-mix(in srgb,var(--sand) 60%,var(--surface))}
+.feat .ic{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:var(--sand);color:var(--maroon)}
+.feat .ic svg{width:22px;height:22px}
+.feat h3{font-size:22px}
+.feat p{color:var(--muted);font-size:14.5px}
+
+/* faq */
+.faq{max-width:820px;margin:auto;display:flex;flex-direction:column;gap:12px}
+.acc{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-md);overflow:hidden;transition:border-color .25s}
+.acc.open{border-color:var(--gold-soft)}
+.acc button.q{width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 22px;background:none;border:0;text-align:left;cursor:pointer;font-family:var(--serif);font-size:21px;font-weight:600}
+.acc .pm{flex:none;width:30px;height:30px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;transition:transform .3s,background .3s}
+.acc .pm svg{width:14px;height:14px}
+.acc.open .pm{transform:rotate(45deg);background:var(--maroon);color:var(--on-maroon);border-color:var(--maroon)}
+.acc .a{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s ease}
+.acc.open .a{grid-template-rows:1fr}
+.acc .a > div{overflow:hidden}
+.acc .a p{padding:0 22px 22px;color:var(--muted)}
+
+/* cta band */
+.cta-band{position:relative;border-radius:32px;overflow:hidden;padding:88px 30px;text-align:center;color:var(--on-maroon);background:radial-gradient(80% 120% at 50% 0%,#8C2336,#4B0E1B 70%)}
+.cta-band .pat{position:absolute;inset:0;opacity:.14;color:#E9C98A;pointer-events:none;background-repeat:repeat}
+.cta-band h2{position:relative;font-size:clamp(38px,5vw,62px);font-weight:500}
+.cta-band p{position:relative;margin:16px auto 30px;max-width:34em;opacity:.85;font-size:18px}
+.cta-band .btn{position:relative}
+.cta-band .arch{position:absolute;width:210px;opacity:.22;color:#E9C98A}
+.cta-band .arch.l{left:26px;bottom:26px}.cta-band .arch.r{right:26px;bottom:26px;transform:scaleX(-1)}
+@media (max-width:820px){.cta-band .arch{display:none}}
+
+/* quick links + footer */
+.ql{padding:70px 0 40px;border-top:1px solid var(--line)}
+.ql-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:34px}
+.ql h4{font-family:var(--sans);font-size:14px;font-weight:600;color:var(--gold);margin-bottom:14px}
+.ql ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:9px}
+.ql ul a{text-decoration:none;color:var(--muted)}
+.ql ul a:hover{color:var(--maroon)}
+.ql .brand p{color:var(--muted);margin:14px 0 18px;max-width:30ch}
+.socials{display:flex;gap:10px}
+.foot{border-top:1px solid var(--line);padding:22px 0;font-size:14px;color:var(--muted)}
+.foot .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.foot a{text-decoration:none;color:var(--muted)}
+.foot a:hover{color:var(--maroon)}
+.foot nav{display:flex;gap:18px}
+@media (max-width:800px){.ql-grid{grid-template-columns:1fr 1fr}.ql .brand{grid-column:1/-1}}
+
+/* page head + crumbs */
+.phead{padding:44px 0 34px}
+.crumbs{display:flex;flex-wrap:wrap;gap:8px;font-size:14px;color:var(--muted);margin-bottom:18px}
+.crumbs a{text-decoration:none;color:var(--muted)}
+.crumbs a:hover{color:var(--maroon)}
+.crumbs span.sep{opacity:.5}
+.phead h1{font-size:clamp(40px,5vw,64px);font-weight:500}
+.phead p{color:var(--muted);font-size:18px;margin-top:10px;max-width:38em}
+
+/* listing */
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:18px}
+.tab{padding:9px 18px;border-radius:999px;border:1px solid var(--line);background:var(--surface);text-decoration:none;font-size:14.5px;cursor:pointer}
+.tab.on{background:var(--maroon);border-color:var(--maroon);color:var(--on-maroon)}
+.toolbar{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding:16px 0 26px;border-bottom:1px solid var(--line);margin-bottom:34px}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{padding:7px 14px;border-radius:999px;border:1px solid var(--line);background:transparent;cursor:pointer;font-size:14px;color:var(--muted);transition:all .2s}
+.chip:hover{color:var(--maroon);border-color:var(--gold-soft)}
+.chip.on{background:var(--sand);color:var(--maroon);border-color:var(--gold)}
+.sel{padding:10px 14px;border-radius:var(--r-sm);border:1px solid var(--line);background:var(--surface);font-size:14.5px}
+.tgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:30px}
+.tcard{display:flex;flex-direction:column;text-decoration:none;color:inherit}
+.tcard .thumb{position:relative;aspect-ratio:4/5;border-radius:var(--r-lg);overflow:hidden;background:var(--sand)}
+.tcard .thumb > .tin{position:absolute;inset:0;transition:transform .7s ease}
+.tcard:hover .thumb > .tin{transform:scale(1.05)}
+.tcard .thumb img{width:100%;height:100%;object-fit:cover}
+.tcard .badge{position:absolute;top:14px;left:14px;z-index:2;padding:5px 11px;border-radius:999px;background:rgba(255,250,240,.92);color:#6B1426;font-size:12.5px;font-weight:500}
+.tcard .play{position:absolute;z-index:2;right:14px;bottom:14px;width:50px;height:50px;border-radius:50%;background:rgba(255,248,235,.9);display:grid;place-items:center;color:#6B1426;box-shadow:0 10px 30px rgba(0,0,0,.25);transition:transform .3s}
+.tcard:hover .play{transform:scale(1.08)}
+.tcard .play svg{width:24px;height:24px;margin-left:3px}
+.tcard .meta{padding:16px 4px 0;display:flex;flex-direction:column;gap:6px}
+.tcard .meta .row{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.tcard h3{font-size:25px}
+.tcard .price{font-weight:600;color:var(--maroon);white-space:nowrap}
+.tcard p{color:var(--muted);font-size:14.5px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.tcard .view{margin-top:6px;font-size:14.5px;font-weight:500;color:var(--maroon);display:inline-flex;gap:6px;align-items:center}
+.tcard .view svg{width:16px;height:16px;transition:transform .25s}
+.tcard:hover .view svg{transform:translateX(3px)}
+.empty{grid-column:1/-1;text-align:center;padding:60px 20px;border:1px dashed var(--line);border-radius:var(--r-lg);color:var(--muted)}
+.empty .btn{margin-top:16px}
+
+/* detail */
+.detail{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;padding:10px 0 80px}
+.detail .info .pill{display:inline-flex;gap:8px;align-items:center;padding:6px 13px;border-radius:999px;background:var(--sand);color:var(--maroon);font-size:13.5px;font-weight:500}
+.detail .info .pill svg{width:16px;height:16px}
+.detail h1{font-size:clamp(40px,4.8vw,64px);font-weight:500;margin:18px 0 16px}
+.detail .desc{color:var(--muted);font-size:18px;max-width:32em}
+.detail .price{font-family:var(--serif);font-size:48px;font-weight:600;color:var(--maroon);margin:26px 0 4px;line-height:1}
+.detail .price-note{font-size:14px;color:var(--muted)}
+.detail .ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.detail .tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:26px}
+.detail .tags span{font-size:13px;padding:5px 12px;border:1px solid var(--line);border-radius:999px;color:var(--muted)}
+.detail .quick{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:30px;max-width:480px}
+.detail .quick div{border-top:1px solid var(--line);padding-top:12px;font-size:13.5px;color:var(--muted)}
+.detail .quick strong{display:block;color:var(--ink);font-size:15px;font-weight:500}
+.detail .stage{display:flex;flex-direction:column;align-items:center;gap:22px;position:relative;padding:30px 0}
+.detail .stage::before{content:"";position:absolute;inset:0 6%;border-radius:220px 220px 30px 30px;background:linear-gradient(180deg,var(--sand),transparent)}
+.detail .stage > *{position:relative}
+.hint{font-size:13px;color:var(--muted)}
+@media (max-width:900px){.detail{grid-template-columns:1fr;gap:20px}}
+.two{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px;align-items:start}
+.two h2{font-size:clamp(34px,4vw,50px);font-weight:500}
+.prose p{color:var(--muted);font-size:17.5px;margin-bottom:16px;font-family:var(--serif);font-size:20px;line-height:1.6;color:var(--ink)}
+@media (max-width:900px){.two{grid-template-columns:1fr;gap:20px}}
+.who-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+.who{padding:24px;border-radius:var(--r-md);background:var(--surface);border:1px solid var(--line);display:flex;gap:14px;align-items:flex-start}
+.who .ic{flex:none;width:38px;height:38px;border-radius:50%;background:var(--sand);color:var(--maroon);display:grid;place-items:center}
+.who .ic svg{width:18px;height:18px}
+.who p{font-size:15.5px}
+.checks{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:4px 30px;max-width:900px;margin:auto}
+.checks li{list-style:none;display:flex;gap:12px;align-items:center;padding:13px 0;border-bottom:1px solid var(--line)}
+.checks li svg{flex:none;width:20px;height:20px;color:var(--gold)}
+.checks{padding:0}
+
+/* demo */
+.demo-bar{position:sticky;top:0;z-index:60;display:flex;align-items:center;gap:12px;padding:10px 16px;background:rgba(20,12,12,.86);backdrop-filter:blur(10px);color:#F5E9D6}
+.demo-bar a.back{display:inline-flex;align-items:center;gap:6px;text-decoration:none;font-size:14px;opacity:.9}
+.demo-bar a.back svg{width:17px;height:17px}
+.demo-bar .t{flex:1;text-align:center;font-family:var(--serif);font-size:19px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.demo-bar .tag{font-size:12px;opacity:.7;margin-left:6px}
+@media (max-width:640px){.demo-bar .t{display:none}.demo-bar{justify-content:space-between}}
+.demo-float{position:fixed;right:18px;bottom:18px;z-index:61;box-shadow:0 14px 34px -10px rgba(0,0,0,.45)}
+.demo-stage{min-height:calc(100vh - 58px);display:grid;place-items:center;padding:30px 16px 90px}
+
+/* blog */
+.bgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:30px}
+.bcard{text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:14px}
+.bcard .cov{aspect-ratio:16/10;border-radius:var(--r-lg);overflow:hidden;position:relative}
+.bcard .cov > *{width:100%;height:100%;object-fit:cover;transition:transform .7s}
+.bcard:hover .cov > *{transform:scale(1.05)}
+.bcard .cat{font-size:13px;color:var(--gold);font-weight:500}
+.bcard h3{font-size:27px}
+.bcard p{color:var(--muted)}
+.article{max-width:720px;margin:0 auto;padding-bottom:90px}
+.article .cov{aspect-ratio:16/8;border-radius:var(--r-lg);overflow:hidden;margin:10px 0 40px}
+.article .cov > *{width:100%;height:100%;object-fit:cover}
+.article .body h2{font-size:34px;margin:38px 0 12px}
+.article .body p{font-family:var(--serif);font-size:21px;line-height:1.65;margin-bottom:18px}
+.article .body ul{font-family:var(--serif);font-size:20px;padding-left:22px}
+.gen-cover{display:grid;place-items:center}
+.gen-cover svg{width:34%;height:auto}
+
+/* toast + modal */
+.toast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,20px);background:#2A1A17;color:#FBEFD9;padding:12px 20px;border-radius:12px;font-size:14.5px;z-index:200;opacity:0;transition:all .3s;pointer-events:none;max-width:90vw}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+.modal-bg{position:fixed;inset:0;background:rgba(25,12,14,.55);z-index:150;display:grid;place-items:center;padding:20px;animation:fade .2s}
+@keyframes fade{from{opacity:0}}
+.modal{background:var(--surface);border-radius:var(--r-lg);width:min(640px,100%);max-height:90vh;overflow:auto;padding:28px;box-shadow:0 40px 80px -30px rgba(0,0,0,.5)}
+.modal h3{font-size:28px;margin-bottom:18px}
+.modal .acts{display:flex;justify-content:flex-end;gap:10px;margin-top:22px}
+
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
+}
+/* ===== invitation renderer ===== */
+.inv{--ib:#5E0F1E;--ib2:#3E0913;--ii:#F6E7C9;--ia:#D6AA55;--im:#E3C9A8;--if:'Marcellus',serif;background:var(--ib);color:var(--ii);font-family:var(--if);text-align:center;font-size:16px;line-height:1.55;position:relative}
+.inv.sm{font-size:10.5px}
+.inv.xs{font-size:7px}
+.inv *{box-sizing:border-box}
+.inv h3{font-family:var(--if);font-weight:400;font-size:2.1em;color:var(--ia);margin:0 0 .5em;letter-spacing:.01em}
+.inv .kick{font-size:.82em;letter-spacing:.22em;color:var(--im);text-transform:uppercase}
+.inv .cover{position:relative;min-height:42em;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:5em 2em 4em;background:radial-gradient(90% 70% at 50% 38%,var(--ib),var(--ib2));overflow:hidden}
+.inv.full .cover{min-height:100vh}
+.inv .cover .frame{position:absolute;inset:1.4em;border:1px solid color-mix(in srgb,var(--ia) 55%,transparent);border-radius:12em 12em 1em 1em;pointer-events:none}
+.inv .cover .frame::after{content:"";position:absolute;inset:.45em;border:1px solid color-mix(in srgb,var(--ia) 25%,transparent);border-radius:12em 12em .7em .7em}
+.inv .orn{color:var(--ia);width:7em;margin:0 auto 1.4em}
+.inv .orn svg{width:100%;height:auto;display:block}
+.inv .orn.wide{width:13em}
+.inv .greet{font-size:1.05em;letter-spacing:.24em;text-transform:uppercase;color:var(--ia);margin-bottom:1.2em}
+.inv .with{font-size:.95em;color:var(--im);font-style:italic;max-width:22em;margin:0 auto 1.4em}
+.inv .names{font-family:'Great Vibes',cursive;font-size:4.4em;line-height:1.05;color:var(--ia);font-weight:400}
+.inv .names.plain{font-family:var(--if);font-size:3.4em;color:var(--ii);letter-spacing:.02em}
+.inv .amp{display:block;font-family:'Great Vibes',cursive;font-size:.62em;color:var(--im);margin:.1em 0}
+.inv .date{margin-top:1.4em;font-size:1.15em;letter-spacing:.2em;text-transform:uppercase}
+.inv .place{margin-top:.4em;color:var(--im);font-size:.95em}
+.inv .scrollcue{margin-top:2.4em;font-size:.75em;letter-spacing:.3em;color:var(--im);text-transform:uppercase}
+.inv .corner{position:absolute;width:9em;color:var(--ia);opacity:.35;pointer-events:none}
+.inv .corner.tl{top:-2em;left:-2em}.inv .corner.br{bottom:-2em;right:-2em;transform:rotate(180deg)}
+.inv .blk{padding:4.2em 2em;position:relative;border-top:1px solid color-mix(in srgb,var(--ia) 22%,transparent)}
+.inv .blk.tint{background:var(--ib2)}
+.inv .blk p{max-width:30em;margin:0 auto;color:var(--ii);opacity:.9}
+.inv .cd{display:flex;justify-content:center;gap:.8em;margin-top:1.2em}
+.inv .cd div{min-width:4.6em;padding:.9em .3em;border:1px solid color-mix(in srgb,var(--ia) 45%,transparent);border-radius:.7em}
+.inv .cd b{display:block;font-size:2em;font-weight:400;color:var(--ia);line-height:1.1;font-variant-numeric:tabular-nums}
+.inv .cd span{font-size:.72em;letter-spacing:.14em;text-transform:uppercase;color:var(--im)}
+.inv .events{display:grid;gap:1em;max-width:34em;margin:1.4em auto 0}
+.inv.full .events{grid-template-columns:repeat(auto-fit,minmax(15em,1fr));max-width:60em}
+.inv .ev{padding:1.6em 1.2em;border-radius:6em 6em .8em .8em;border:1px solid color-mix(in srgb,var(--ia) 40%,transparent);background:color-mix(in srgb,var(--ib) 70%,var(--ib2))}
+.inv .ev .ei{width:2.6em;height:2.6em;margin:0 auto .6em;color:var(--ia)}
+.inv .ev .ei svg{width:100%;height:100%}
+.inv .ev h4{font-family:var(--if);font-weight:400;font-size:1.5em;margin:0 0 .3em;color:var(--ii)}
+.inv .ev .when{color:var(--ia);font-size:.95em}
+.inv .ev .where{color:var(--im);font-size:.88em;margin-top:.2em}
+.inv .venue-card{max-width:30em;margin:1.2em auto 0;border-radius:1em;overflow:hidden;border:1px solid color-mix(in srgb,var(--ia) 40%,transparent)}
+.inv .map{height:11em;position:relative;background:
+  linear-gradient(90deg,transparent 48%,color-mix(in srgb,var(--ia) 30%,transparent) 48% 52%,transparent 52%),
+  linear-gradient(0deg,transparent 60%,color-mix(in srgb,var(--ia) 22%,transparent) 60% 63%,transparent 63%),
+  linear-gradient(35deg,transparent 30%,color-mix(in srgb,var(--ia) 18%,transparent) 30% 33%,transparent 33%),
+  var(--ib2)}
+.inv .map .pin{position:absolute;left:50%;top:44%;transform:translate(-50%,-100%);width:2.4em;color:var(--ia)}
+.inv .venue-card .vb{padding:1.2em}
+.inv .venue-card h4{font-family:var(--if);font-weight:400;font-size:1.35em;margin:0 0 .2em}
+.inv .ibtn{display:inline-flex;align-items:center;gap:.5em;margin-top:.9em;padding:.75em 1.5em;border-radius:99em;background:var(--ia);color:var(--ib2);text-decoration:none;font-family:'Jost',sans-serif;font-size:.9em;font-weight:500;border:0;cursor:pointer}
+.inv .ibtn.o{background:transparent;color:var(--ia);border:1px solid var(--ia)}
+.inv .gal{display:grid;grid-template-columns:1fr 1fr;gap:.6em;max-width:34em;margin:1.4em auto 0}
+.inv.full .gal{grid-template-columns:repeat(3,1fr);max-width:54em}
+.inv .gal div{aspect-ratio:3/4;border-radius:.8em;display:flex;align-items:flex-end;justify-content:center;padding:.8em;font-size:.82em;color:var(--ii);position:relative;overflow:hidden;background:linear-gradient(160deg,color-mix(in srgb,var(--ia) 45%,var(--ib)),var(--ib2))}
+.inv .gal div:nth-child(2n){aspect-ratio:3/3.4;background:linear-gradient(200deg,color-mix(in srgb,var(--im) 40%,var(--ib)),var(--ib2))}
+.inv .gal div svg{position:absolute;width:55%;top:22%;left:22.5%;opacity:.35;color:var(--ii)}
+.inv .gal div span{position:relative}
+.inv .fam{display:grid;grid-template-columns:1fr 1fr;gap:1.2em;max-width:34em;margin:1.2em auto 0}
+.inv .fam h4{font-family:var(--if);font-weight:400;font-size:1.2em;color:var(--ia);margin:0 0 .3em}
+.inv .fam p{font-size:.92em}
+.inv form.rsvp{max-width:26em;margin:1.4em auto 0;display:grid;gap:.7em;text-align:left;font-family:'Jost',sans-serif}
+.inv form.rsvp label{font-size:.85em;color:var(--im)}
+.inv form.rsvp input,.inv form.rsvp select{width:100%;padding:.8em 1em;border-radius:.6em;border:1px solid color-mix(in srgb,var(--ia) 45%,transparent);background:color-mix(in srgb,var(--ib2) 60%,transparent);color:var(--ii);font-size:.95em;margin-top:.3em}
+.inv form.rsvp .ibtn{justify-content:center;margin-top:.4em}
+.inv .ok{padding:1.4em;border:1px solid var(--ia);border-radius:.8em;max-width:26em;margin:1.4em auto 0}
+.inv .contact{display:flex;flex-wrap:wrap;justify-content:center;gap:1.4em;margin-top:1em}
+.inv .contact div{font-size:.92em}
+.inv .contact b{display:block;font-weight:400;color:var(--ia);font-size:1.1em}
+.inv .endnote{padding:4em 2em 5em;background:var(--ib2)}
+.inv .endnote .names{font-size:3em}
+.inv .tag{margin-top:1em;color:var(--im);letter-spacing:.1em}
+.inv .music{position:fixed;right:18px;bottom:80px;z-index:62;width:46px;height:46px;border-radius:50%;border:1px solid var(--ia);background:var(--ib2);color:var(--ia);display:grid;place-items:center;cursor:pointer}
+.inv .music svg{width:20px;height:20px}
+.inv .music.on{animation:spin 6s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* video */
+.vid{position:relative;width:100%;height:100%;overflow:hidden;background:radial-gradient(90% 70% at 50% 40%,var(--ib),var(--ib2));color:var(--ii);font-family:var(--if);text-align:center;--ib:#171A2B;--ib2:#0D0F1C;--ii:#EDE3CF;--ia:#C9A45C;--im:#BFB39B;--if:'Marcellus',serif}
+.vid .bgorn{position:absolute;width:130%;left:-15%;top:10%;color:var(--ia);opacity:.13;animation:slowspin 60s linear infinite}
+@keyframes slowspin{to{transform:rotate(360deg)}}
+.vid .scene{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:12% 10%;opacity:0;transform:scale(.97);transition:opacity 1s ease,transform 4s ease}
+.vid .scene.on{opacity:1;transform:scale(1.02)}
+.vid .scene .k{font-size:.8em;letter-spacing:.3em;text-transform:uppercase;color:var(--im);margin-bottom:.8em}
+.vid .scene .big{font-family:'Great Vibes',cursive;font-size:3.6em;color:var(--ia);line-height:1.05}
+.vid .scene .mid{font-size:1.9em;line-height:1.2}
+.vid .scene .sm{font-size:1em;color:var(--im);margin-top:.6em}
+.vid .scene .orn{width:6em;color:var(--ia);margin-bottom:1em}
+.vid .scene .orn svg{width:100%;height:auto}
+.vid .bar{position:absolute;left:8%;right:8%;bottom:5%;height:2px;background:color-mix(in srgb,var(--ii) 20%,transparent);border-radius:2px;overflow:hidden}
+.vid .bar i{display:block;height:100%;width:0;background:var(--ia)}
+.vid .ctrl{position:absolute;right:5%;bottom:8%;width:2.8em;height:2.8em;border-radius:50%;border:1px solid color-mix(in srgb,var(--ia) 60%,transparent);background:transparent;color:var(--ia);display:grid;place-items:center;cursor:pointer;font-size:inherit}
+.vid .ctrl svg{width:45%;height:45%}
+.vid.sm{font-size:10px}.vid.xs{font-size:8px}
+.vid-full{width:min(420px,100%);aspect-ratio:9/16;min-height:0;border-radius:22px;overflow:hidden;box-shadow:0 40px 80px -30px rgba(0,0,0,.6)}
+.vid-full .vid{font-size:14px}
+
+/* card */
+.card-inv{--ib:#FFF8E7;--ib2:#F2E1B5;--ii:#4A3411;--ia:#B8862B;--im:#7A6440;--if:'Cormorant Garamond',serif;position:relative;aspect-ratio:5/7;min-height:0;background:radial-gradient(90% 70% at 50% 35%,var(--ib),var(--ib2));color:var(--ii);font-family:var(--if);text-align:center;padding:9% 9%;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;font-size:16px}
+.card-inv::before{content:"";position:absolute;inset:3.2%;border:1.5px solid var(--ia);border-radius:.4em}
+.card-inv::after{content:"";position:absolute;inset:4.6%;border:1px solid color-mix(in srgb,var(--ia) 45%,transparent);border-radius:.3em}
+.card-inv > *{position:relative;z-index:1}
+.card-inv .orn{width:5.5em;color:var(--ia);margin-bottom:.6em}
+.card-inv .orn svg{width:100%;height:auto;display:block}
+.card-inv .g{font-size:.78em;letter-spacing:.3em;text-transform:uppercase;color:var(--ia)}
+.card-inv .inv-l{font-size:.84em;font-style:italic;color:var(--im);margin:.8em 0 .5em;max-width:22em}
+.card-inv .n{font-family:'Great Vibes',cursive;font-size:3em;color:var(--ia);line-height:1.05}
+.card-inv .n.plain{font-family:var(--if);font-size:2.3em;color:var(--ii)}
+.card-inv .par{font-size:.72em;color:var(--im);margin:.25em 0}
+.card-inv .d{margin-top:.8em;font-size:1.02em;letter-spacing:.14em;text-transform:uppercase}
+.card-inv .v{font-size:.82em;color:var(--im);margin-top:.2em}
+.card-inv .evs{display:flex;gap:.4em 1.1em;flex-wrap:wrap;justify-content:center;margin-top:.9em;font-size:.72em;border-top:1px solid color-mix(in srgb,var(--ia) 45%,transparent);padding-top:.7em}
+.card-inv .evs b{color:var(--ia);font-weight:600}
+.card-inv .cor{position:absolute;width:22%;color:var(--ia);opacity:.55;z-index:0}
+.card-inv .cor.a{top:5%;left:5%}.card-inv .cor.b{top:5%;right:5%;transform:scaleX(-1)}.card-inv .cor.c{bottom:5%;left:5%;transform:scaleY(-1)}.card-inv .cor.d{bottom:5%;right:5%;transform:scale(-1)}
+.card-inv.sm{font-size:9px}.card-inv.xs{font-size:6px}
+.card-full{width:min(520px,100%);box-shadow:0 40px 80px -30px rgba(0,0,0,.45);border-radius:6px;overflow:hidden}
+.card-full .card-inv{font-size:clamp(11px,3.3vw,19px)}
+.phone .card-wrap{height:100%;display:grid;place-items:center;padding:30px 12px;background:linear-gradient(#EDE4D6,#D9CBB5)}
+.phone .card-wrap .card-inv{width:100%;font-size:10px;box-shadow:0 20px 40px -20px rgba(0,0,0,.5)}
+
+[hidden]{display:none!important}
+/* uploaded videos */
+.uvid{background:#000}
+.vsound{position:absolute;right:12px;bottom:14px;z-index:4;width:40px;height:40px;border-radius:50%;border:0;background:rgba(0,0,0,.55);color:#fff;display:grid;place-items:center;cursor:pointer}
+.vsound svg{width:18px;height:18px}
+.vsound.on{background:#B8893B}
+.vmiss{position:absolute;inset:0;display:grid;place-items:center;padding:20px;text-align:center;color:#fff;background:#1a1a1a;font-size:13px;line-height:1.5}
+/* uploaded preview images */
+.shot{display:block;width:100%;height:auto}
+.shot-fill{display:block;width:100%;height:100%;object-fit:cover}
+.phone .card-wrap .shot{box-shadow:0 20px 40px -20px rgba(0,0,0,.5)}
+.phone.auto .scroll > .shot{animation:autoscroll 38s ease-in-out infinite alternate}
+.demo-shot{width:min(480px,100%);margin:0 auto;box-shadow:0 40px 80px -30px rgba(0,0,0,.45);border-radius:14px;overflow:hidden;background:#fff}
+/* thumbs */
+.tin.site{display:flex;align-items:stretch}
+.tin .inv{width:100%}
+.tin .inv .cover{min-height:100%;height:100%;padding:3em 1.6em}
+.tin.cardt{display:grid;place-items:center;padding:9%;background:linear-gradient(160deg,#EDE4D6,#D8C8AF)}
+.tin.cardt .card-inv{width:100%;box-shadow:0 20px 34px -18px rgba(0,0,0,.45)}
+
+/* ===== admin ===== */
+.adm{display:grid;grid-template-columns:250px 1fr;min-height:100vh;background:var(--bg)}
+.adm-side{background:#2B0B14;color:#EAD9C2;padding:22px 14px;position:sticky;top:0;height:100vh;display:flex;flex-direction:column;gap:4px;overflow:auto}
+.adm-side .logo{color:#F3DFB8;padding:4px 10px 22px;font-size:24px}
+.adm-side a,.adm-side button{display:flex;align-items:center;gap:11px;padding:10px 12px;border-radius:10px;text-decoration:none;color:#D8C4AA;font-size:14.5px;background:none;border:0;cursor:pointer;text-align:left;width:100%}
+.adm-side a svg,.adm-side button svg{width:18px;height:18px;flex:none;opacity:.85}
+.adm-side a:hover,.adm-side button:hover{background:rgba(255,255,255,.06);color:#fff}
+.adm-side a.on{background:#F3DFB8;color:#2B0B14}
+.adm-side .sub{padding-left:40px;font-size:13.5px}
+.adm-side .grow{flex:1}
+.adm-side .sep{height:1px;background:rgba(255,255,255,.08);margin:10px 4px}
+.adm-main{min-width:0}
+.adm-top{display:flex;align-items:center;gap:14px;padding:16px 30px;border-bottom:1px solid var(--line);background:var(--surface);position:sticky;top:0;z-index:20}
+.adm-top h1{font-size:28px;font-weight:600;flex:1}
+.adm-top .who{font-size:14px;color:var(--muted)}
+.adm-body{padding:28px 30px 60px}
+.adm-burger{display:none}
+@media (max-width:900px){
+  .adm{grid-template-columns:1fr}
+  .adm-side{position:fixed;left:0;top:0;bottom:0;width:260px;z-index:80;transform:translateX(-100%);transition:transform .3s}
+  .adm-side.open{transform:none;box-shadow:0 0 0 100vmax rgba(0,0,0,.4)}
+  .adm-burger{display:grid}
+  .adm-top{padding:12px 16px}.adm-body{padding:20px 16px 60px}
+}
+.stats{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:14px;margin-bottom:28px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-md);padding:18px;text-decoration:none;color:inherit;transition:border-color .2s}
+.stat:hover{border-color:var(--gold-soft)}
+.stat span{font-size:13.5px;color:var(--muted)}
+.stat b{display:block;font-family:var(--serif);font-size:40px;font-weight:600;line-height:1.1;margin-top:4px}
+.stat.hl{background:var(--maroon);color:var(--on-maroon);border-color:var(--maroon)}
+.stat.hl span{color:var(--on-maroon);opacity:.8}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-md);overflow:hidden;margin-bottom:24px}
+.panel-h{display:flex;align-items:center;gap:12px;padding:16px 18px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.panel-h h2{font-size:22px;flex:1}
+.panel-b{padding:20px}
+.tbl-wrap{overflow-x:auto}
+table.tbl{width:100%;border-collapse:collapse;font-size:14.5px}
+.tbl th{text-align:left;font-weight:500;color:var(--muted);font-size:13px;padding:11px 14px;border-bottom:1px solid var(--line);white-space:nowrap;background:color-mix(in srgb,var(--sand) 50%,var(--surface))}
+.tbl td{padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:middle}
+.tbl tr:last-child td{border-bottom:0}
+.tbl .th-img{width:46px;height:56px;border-radius:8px;overflow:hidden;position:relative;background:var(--sand)}
+.tbl .th-img > *{position:absolute;inset:0}
+.tbl .nm{font-weight:500}
+.tbl .sub{font-size:13px;color:var(--muted)}
+.acts-row{display:flex;gap:4px;justify-content:flex-end}
+.ib{width:34px;height:34px;border-radius:9px;border:1px solid transparent;background:none;display:grid;place-items:center;cursor:pointer;color:var(--muted);text-decoration:none}
+.ib:hover{background:var(--sand);color:var(--maroon)}
+.ib svg{width:17px;height:17px}
+.ib.on{color:var(--gold)}
+.st{display:inline-block;padding:3px 10px;border-radius:999px;font-size:12.5px;font-weight:500;white-space:nowrap}
+.st-new{background:#E4EEFB;color:#1D4E8F}.st-contacted{background:#EFE7FB;color:#5B3A99}.st-payment-pending{background:#FDF0D8;color:#8A5A0B}.st-paid{background:#DDF3E6;color:#16693C}.st-in-progress{background:#FBE6DA;color:#96421A}.st-completed{background:#E3F0EC;color:#1E5B4B}.st-cancelled{background:#F3E1E1;color:#8E2727}
+.st-pub{background:#DDF3E6;color:#16693C}.st-draft{background:var(--sand);color:var(--muted)}
+.sw{position:relative;width:40px;height:23px;flex:none;display:inline-block}
+.sw input{opacity:0;width:0;height:0;position:absolute}
+.sw span{position:absolute;inset:0;border-radius:99px;background:#CDBFAE;cursor:pointer;transition:background .2s}
+.sw span::after{content:"";position:absolute;left:3px;top:3px;width:17px;height:17px;border-radius:50%;background:#fff;transition:transform .2s}
+.sw input:checked + span{background:#1F8F55}
+.sw input:checked + span::after{transform:translateX(17px)}
+.sw input:focus-visible + span{outline:2px solid var(--gold);outline-offset:2px}
+.form{display:grid;gap:18px}
+.form .row2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form .row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
+@media (max-width:700px){.form .row2,.form .row3{grid-template-columns:1fr}}
+.fld{display:flex;flex-direction:column;gap:6px}
+.fld > label,.fld > .lbl{font-size:13.5px;font-weight:500}
+.fld .help{font-size:12.5px;color:var(--muted)}
+.inp{width:100%;padding:11px 13px;border-radius:var(--r-sm);border:1px solid var(--line);background:var(--bg);font-size:15px}
+.inp:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px color-mix(in srgb,var(--gold) 20%,transparent)}
+textarea.inp{min-height:96px;resize:vertical;line-height:1.5}
+textarea.inp.tall{min-height:260px}
+.checkrow{display:flex;gap:10px 22px;flex-wrap:wrap}
+.checkrow label{display:flex;gap:8px;align-items:center;font-size:14.5px;cursor:pointer}
+.fsec{border-top:1px solid var(--line);padding-top:18px;margin-top:6px}
+.fsec h3{font-size:22px;margin-bottom:4px}
+.fsec > p{font-size:13.5px;color:var(--muted);margin-bottom:12px}
+.upl{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.upl .pv{width:84px;height:100px;border-radius:10px;overflow:hidden;background:var(--sand);position:relative;border:1px solid var(--line)}
+.upl .pv img{width:100%;height:100%;object-fit:cover}
+.upl .pv.logo{width:64px;height:64px}
+.upl .pv.logo img{object-fit:contain}
+.form-foot{position:sticky;bottom:0;background:var(--surface);border-top:1px solid var(--line);padding:14px 20px;display:flex;justify-content:flex-end;gap:10px;margin:0 -20px -20px}
+.search{display:flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:999px;padding:0 14px;background:var(--bg)}
+.search svg{width:16px;height:16px;color:var(--muted)}
+.search input{border:0;background:none;padding:9px 0;outline:none;min-width:180px;font-size:14.5px}
+.login{min-height:100vh;display:grid;grid-template-columns:1fr 1fr}
+.login .art{position:relative;background:radial-gradient(80% 100% at 50% 30%,#8C2336,#3B0A15);color:#F1D9A8;display:grid;place-items:center;overflow:hidden}
+.login .art svg{width:60%;max-width:340px;opacity:.9}
+.login .box{display:grid;place-items:center;padding:30px}
+.login form{width:min(380px,100%);display:grid;gap:16px}
+.login h1{font-size:44px;font-weight:500}
+.login .err{color:#A12A2A;font-size:14px;min-height:20px}
+.login .demo{font-size:13px;color:var(--muted);background:var(--sand);padding:10px 14px;border-radius:10px}
+@media (max-width:800px){.login{grid-template-columns:1fr}.login .art{display:none}}
+.order-list{display:flex;flex-direction:column;gap:8px}
+.faq-row{display:flex;gap:12px;align-items:center;padding:14px 16px;border-bottom:1px solid var(--line)}
+.faq-row:last-child{border-bottom:0}
+.faq-row .q{flex:1;min-width:0}
+.faq-row .q b{font-weight:500;display:block}
+.faq-row .q span{font-size:13.5px;color:var(--muted);display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden}
+.ordn{font-family:var(--serif);font-size:20px;color:var(--gold);width:26px;text-align:center}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.57.4/dist/umd/supabase.js"></script>
+<script>
+"use strict";
+/* ---------- utilities ---------- */
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const inr = n => '₹' + Number(n || 0).toLocaleString('en-IN');
+const slugify = s => String(s || '').toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 70);
+const uid = p => (p || 'id') + '-' + Math.random().toString(36).slice(2, 8) + Date.now().toString(36).slice(-3);
+const lines = s => String(s || '').split('\n').map(x => x.trim()).filter(Boolean);
+const fmtDate = (iso, o) => { const d = new Date(iso + (iso && iso.length === 10 ? 'T00:00:00' : '')); return isNaN(d) ? '' : d.toLocaleDateString('en-IN', o || {day:'numeric', month:'long', year:'numeric'}); };
+const addDays = (iso, n) => { const d = new Date(iso + 'T00:00:00'); d.setDate(d.getDate() + n); return d.toISOString().slice(0, 10); };
+function toast(msg){ const t = $('#toast'); t.textContent = msg; t.classList.add('show'); clearTimeout(toast._t); toast._t = setTimeout(() => t.classList.remove('show'), 2600); }
+
+/* ---------- icons ---------- */
+const IP = {
+  design:'<path d="M12 3l2.4 4.9 5.4.8-3.9 3.8.9 5.4L12 15.4 7.2 17.9l.9-5.4-3.9-3.8 5.4-.8z"/>',
+  story:'<path d="M4 19.5V5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 19.5A2 2 0 0 0 6 21h13"/><path d="M9 8h6M9 12h4"/>',
+  link:'<path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/>',
+  phone:'<rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/>',
+  share:'<circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/>',
+  whatsapp:'<path d="M3.5 20.5l1.3-4.2A8.5 8.5 0 1 1 8 19.4z"/><path d="M9 8.5c0 3.5 2.8 6.5 6.5 6.8l1.2-1.5-2-1-1 .9a5 5 0 0 1-2.9-2.9l.9-1-1-2z"/>',
+  rsvp:'<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/>',
+  calendar:'<rect x="3" y="4.5" width="18" height="16.5" rx="2"/><path d="M16 2.5v4M8 2.5v4M3 10h18"/>',
+  map:'<path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/>',
+  gallery:'<rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.8"/><path d="M21 15l-5-5L5 21"/>',
+  events:'<path d="M12 2c1.5 3 4 4.5 4 8a4 4 0 0 1-8 0c0-3.5 2.5-5 4-8z"/><path d="M8 20h8M10 16v4M14 16v4"/>',
+  music:'<path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/>',
+  heart:'<path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z"/>',
+  clock:'<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
+  url:'<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/>',
+  bolt:'<path d="M13 2L4 14h7l-1 8 9-12h-7z"/>',
+  sparkle:'<path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5L18 18M6 18l2.5-2.5M15.5 8.5L18 6"/>',
+  check:'<circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.7 2.7L16 9.8"/>',
+  tick:'<path d="M5 12.5l4.5 4.5L19 7.5"/>',
+  play:'<path d="M7 4.5v15l12.5-7.5z" fill="currentColor"/>',
+  pause:'<path d="M8 5v14M16 5v14" stroke-width="3"/>',
+  menu:'<path d="M4 7h16M4 12h16M4 17h16"/>',
+  close:'<path d="M6 6l12 12M18 6L6 18"/>',
+  plus:'<path d="M12 5v14M5 12h14"/>',
+  mail:'<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/>',
+  insta:'<rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/>',
+  search:'<circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/>',
+  edit:'<path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/>',
+  trash:'<path d="M3 6h18M8 6V4h8v2M19 6l-1 14H6L5 6M10 11v6M14 11v6"/>',
+  eye:'<path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/>',
+  star:'<path d="M12 3l2.6 5.6 6 .6-4.5 4 1.3 6-5.4-3.1-5.4 3.1 1.3-6-4.5-4 6-.6z"/>',
+  starf:'<path d="M12 3l2.6 5.6 6 .6-4.5 4 1.3 6-5.4-3.1-5.4 3.1 1.3-6-4.5-4 6-.6z" fill="currentColor"/>',
+  logout:'<path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"/>',
+  dashboard:'<rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/>',
+  template:'<rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/>',
+  video:'<rect x="2.5" y="5" width="14" height="14" rx="2"/><path d="M16.5 10l5-3v10l-5-3z"/>',
+  card:'<rect x="4" y="2.5" width="16" height="19" rx="1.5"/><path d="M8 7h8M9 11h6M10 15h4"/>',
+  orders:'<path d="M6 2l-2 4v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6l-2-4z"/><path d="M4 6h16M16 10a4 4 0 0 1-8 0"/>',
+  faq:'<circle cx="12" cy="12" r="9"/><path d="M9.2 9a3 3 0 0 1 5.6 1c0 2-3 2.5-3 4.5"/><circle cx="12" cy="17.5" r=".6" fill="currentColor"/>',
+  blog:'<path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/>',
+  settings:'<circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-2.9 1.2V21a2 2 0 0 1-4 0v-.1A1.7 1.7 0 0 0 7 19.4a1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1A1.7 1.7 0 0 0 3.6 14H3.5a2 2 0 0 1 0-4h.1A1.7 1.7 0 0 0 5 7a1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1A1.7 1.7 0 0 0 10 3.6V3.5a2 2 0 0 1 4 0v.1a1.7 1.7 0 0 0 2.9 1.2l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0 1.2 2.9h.1a2 2 0 0 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/>',
+  features:'<path d="M12 2l3 6.5 7 .8-5.2 4.8 1.4 7L12 17.6 5.8 21l1.4-7L2 9.3l7-.8z"/>',
+  left:'<path d="M15 18l-6-6 6-6"/>',
+  right:'<path d="M5 12h14M13 6l6 6-6 6"/>',
+  up:'<path d="M18 15l-6-6-6 6"/>', down:'<path d="M6 9l6 6 6-6"/>',
+  users:'<circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.5a3.5 3.5 0 0 1 0 7M18 14a6.5 6.5 0 0 1 3.5 6"/>',
+  gift:'<rect x="3" y="8" width="18" height="4" rx="1"/><path d="M5 12v9h14v-9M12 8v13M12 8S10.5 3 8 3.5 7 8 12 8zM12 8s1.5-5 4-4.5S17 8 12 8z"/>',
+  crown:'<path d="M3 18h18M4 16L3 7l5 4 4-6 4 6 5-4-1 9z"/>',
+  ext:'<path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/>',
+  refresh:'<path d="M21 12a9 9 0 1 1-2.6-6.4L21 8M21 3v5h-5"/>',
+  palette:'<circle cx="12" cy="12" r="9"/><circle cx="8" cy="10" r="1.2" fill="currentColor"/><circle cx="12" cy="7.5" r="1.2" fill="currentColor"/><circle cx="16" cy="10" r="1.2" fill="currentColor"/><path d="M12 21a2 2 0 0 1 0-4h2a3 3 0 0 0 3-3"/>'
+};
+const ico = (k, cls) => `<svg ${cls ? `class="${cls}"` : ''} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${IP[k] || IP.sparkle}</svg>`;
+const ICON_KEYS = Object.keys(IP).filter(k => !['play','pause','menu','close','left','right','up','down','tick','starf','logout','refresh','ext'].includes(k));
+
+/* ---------- ornaments ---------- */
+const ORN = {
+  mandala(){ let p='',q=''; for(let i=0;i<16;i++) p+=`<ellipse cx="60" cy="27" rx="6.5" ry="20" transform="rotate(${i*22.5} 60 60)"/>`; for(let i=0;i<8;i++) q+=`<ellipse cx="60" cy="42" rx="5" ry="11" transform="rotate(${i*45+22.5} 60 60)"/>`; return `<svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width=".9">${p}${q}<circle cx="60" cy="60" r="8"/><circle cx="60" cy="60" r="3" fill="currentColor"/><circle cx="60" cy="60" r="57"/><circle cx="60" cy="60" r="53" stroke-dasharray="1.5 3"/></svg>`; },
+  arch(){ return `<svg viewBox="0 0 226 148" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><g transform="translate(0,148) scale(0.1,-0.1)"><path d="M1788 1450 c-8 -19 -32 -82 -54 -139 -46 -122 -95 -184 -204 -255 -57 -38 -86 -68 -162 -169 -89 -119 -194 -237 -209 -237 -32 0 -315 216 -425 325 -39 39 -94 86 -121 105 -33 22 -57 49 -68 75 -28 62 -65 177 -65 202 0 12 -5 25 -11 29 -15 9 -4 -69 20 -139 35 -100 62 -146 99 -169 20 -12 84 -68 143 -124 104 -99 254 -218 357 -283 28 -18 52 -36 52 -40 0 -4 -15 -22 -34 -40 l-34 -33 -60 36 c-35 21 -73 36 -91 36 -28 0 -31 3 -31 30 0 34 -19 80 -33 80 -5 0 -6 -8 -2 -17 24 -55 42 -301 25 -334 -12 -21 -13 -22 -26 -5 -7 10 -18 49 -24 87 -7 38 -16 69 -21 69 -15 0 -10 -33 22 -145 31 -109 33 -160 8 -191 -30 -37 -60 -1 -100 118 -14 42 -29 75 -32 72 -11 -12 6 -69 45 -152 48 -102 49 -149 5 -170 -26 -13 -34 -11 -90 17 -70 34 -162 111 -156 129 2 7 35 -15 78 -53 78 -69 106 -84 124 -66 8 8 5 11 -10 11 -20 0 -100 62 -215 167 -26 23 -71 53 -100 66 -49 22 -128 94 -128 117 0 6 -4 10 -10 10 -29 0 38 -93 89 -122 26 -15 43 -34 51 -57 7 -20 21 -48 32 -63 40 -58 36 -190 -7 -210 -27 -12 -46 4 -81 72 -10 19 -47 88 -81 153 -35 64 -70 143 -78 175 -18 68 -45 142 -58 160 -5 6 -16 110 -23 230 -8 119 -21 251 -29 292 -18 86 -44 160 -56 160 -12 0 -12 -1 7 -46 28 -68 52 -233 59 -414 6 -139 12 -185 27 -225 32 -80 57 -159 58 -177 0 -16 16 -49 125 -253 69 -129 81 -145 115 -145 78 0 94 116 34 238 -20 40 -34 75 -32 77 2 3 23 -9 46 -26 33 -24 42 -37 42 -61 0 -55 147 -166 233 -175 55 -6 87 27 87 88 0 32 4 39 20 39 29 0 40 30 40 109 0 39 4 71 10 71 19 0 32 84 25 167 -7 81 -6 83 16 83 27 0 103 -37 125 -61 14 -15 14 -25 -1 -106 -26 -131 -25 -152 6 -175 25 -19 28 -19 57 -4 17 9 36 26 43 37 l11 21 22 -21 c26 -25 68 -27 87 -5 10 12 10 35 1 116 -12 98 -12 101 9 116 12 8 33 28 47 43 47 54 59 40 42 -50 -11 -60 -2 -88 33 -96 14 -4 31 -24 47 -58 15 -31 39 -61 59 -75 19 -12 42 -36 52 -52 23 -36 67 -60 114 -60 36 0 108 38 132 69 15 20 83 225 83 252 0 10 5 19 10 19 13 0 12 -23 -5 -95 -24 -100 -20 -197 10 -233 32 -38 67 -47 105 -27 29 15 30 18 30 84 0 51 8 92 34 167 19 54 37 117 41 139 4 22 23 71 43 110 34 69 35 73 43 240 9 191 19 263 55 388 3 9 1 17 -4 17 -27 0 -72 -280 -72 -443 0 -110 -1 -114 -40 -197 -22 -47 -40 -95 -40 -107 0 -12 -12 -55 -26 -95 -39 -105 -56 -188 -49 -230 13 -76 -80 -90 -118 -17 -20 38 -17 108 9 210 8 31 14 87 14 124 0 36 5 75 10 85 7 13 7 21 0 25 -14 9 -30 -38 -30 -87 l0 -41 -45 6 c-38 6 -48 3 -75 -20 l-32 -26 17 39 c48 111 50 152 10 168 -11 4 -14 12 -10 25 9 29 -22 54 -58 47 -68 -14 -82 -27 -162 -158 -17 -27 -28 -34 -69 -40 -27 -4 -54 -12 -59 -17 -17 -17 -27 -13 -27 12 0 13 -8 31 -18 40 -16 15 -21 13 -71 -34 -29 -27 -68 -56 -86 -64 -39 -15 -59 -51 -69 -115 -11 -75 -26 -111 -52 -120 -56 -22 -72 13 -51 113 9 40 18 89 22 110 5 31 24 56 103 135 53 53 133 144 176 202 95 126 139 174 186 202 51 31 149 127 170 169 31 59 101 250 97 263 -2 6 -11 -5 -19 -24z m-31 -707 c4 -9 0 -28 -9 -42 -122 -207 -141 -233 -185 -252 -109 -46 -220 -3 -175 68 10 16 98 53 127 53 30 0 49 20 79 79 24 46 68 94 96 104 30 11 61 7 67 -10z m32 -67 c11 -14 7 -59 -9 -81 -3 -5 -28 -63 -55 -128 -40 -99 -54 -122 -84 -143 -42 -28 -105 -32 -139 -8 -17 12 -52 72 -52 89 0 2 24 6 54 9 57 8 131 51 143 84 11 28 116 192 123 192 4 0 13 -6 19 -14z m79 -154 c9 -6 5 -32 -19 -113 -41 -135 -51 -153 -102 -184 -61 -35 -107 -33 -152 6 -39 35 -44 49 -16 49 53 0 154 87 178 153 28 79 72 113 111 89z m-614 -112 c8 -101 5 -110 -29 -110 -63 0 -74 120 -18 182 31 35 40 21 47 -72z M1100 1320 c-12 -17 -20 -36 -17 -43 2 -7 10 0 17 15 16 33 45 45 67 27 34 -28 1 -124 -68 -197 -11 -12 -16 -22 -10 -22 18 0 97 98 108 134 28 91 -47 157 -97 86z M971 1314 c-12 -15 -21 -34 -21 -43 0 -30 49 -116 86 -151 l37 -35 -43 61 c-43 63 -61 133 -42 163 16 22 50 3 62 -34 11 -34 30 -48 30 -22 0 15 -27 57 -48 75 -23 18 -38 15 -61 -14z"/></g></svg>`; },
+  floral(){ const fl=(x,y,r,s)=>{let o='';for(let i=0;i<6;i++)o+=`<ellipse cx="${x}" cy="${y-r}" rx="${r*.55}" ry="${r}" transform="rotate(${i*60} ${x} ${y})"/>`;return o+`<circle cx="${x}" cy="${y}" r="${r*.45}" fill="currentColor"/>`;}; return `<svg viewBox="0 0 160 70" fill="none" stroke="currentColor" stroke-width="1"><path d="M8 50C40 30 60 58 80 40 100 58 120 30 152 50"/>${fl(80,32,9)}${fl(42,44,6)}${fl(118,44,6)}<path d="M58 46c4-8 12-9 16-6-6 5-12 7-16 6zM102 46c-4-8-12-9-16-6 6 5 12 7 16 6zM24 48c3-6 9-7 12-4-4 4-9 5-12 4zM136 48c-3-6-9-7-12-4 4 4 9 5 12 4z"/><circle cx="14" cy="47" r="2" fill="currentColor"/><circle cx="146" cy="47" r="2" fill="currentColor"/></svg>`; },
+  temple(){ return `<svg viewBox="0 0 120 130" fill="none" stroke="currentColor" stroke-width="1.1"><path d="M60 4v8"/><circle cx="60" cy="14" r="3" fill="currentColor"/><path d="M50 30h20l-3-13H53z"/><path d="M42 46h36l-4-16H46z"/><path d="M34 64h52l-4-18H38z"/><path d="M26 84h68l-4-20H30z"/><path d="M18 106h84l-4-22H22z"/><path d="M10 126h100v-20H10z"/><path d="M50 126v-12a10 10 0 0 1 20 0v12"/><path d="M56 40h8M52 56h16M46 75h28M40 96h40"/></svg>`; },
+  toran(){ let s=''; for(let i=0;i<9;i++){const x=10+i*17.5;s+=`<path d="M${x} 12c-5 8-5 18 0 26 5-8 5-18 0-26z"/><path d="M${x} 14v22"/>`; if(i<8) s+=`<circle cx="${x+8.75}" cy="16" r="4.5"/><circle cx="${x+8.75}" cy="16" r="1.6" fill="currentColor"/>`;} return `<svg viewBox="0 0 160 44" fill="none" stroke="currentColor" stroke-width="1"><path d="M2 10Q80 16 158 10"/>${s}</svg>`; },
+  line(){ return `<svg viewBox="0 0 160 20" fill="none" stroke="currentColor" stroke-width="1"><path d="M4 10h58M98 10h58"/><path d="M80 2l8 8-8 8-8-8z"/><circle cx="80" cy="10" r="2" fill="currentColor"/><circle cx="66" cy="10" r="1.5" fill="currentColor"/><circle cx="94" cy="10" r="1.5" fill="currentColor"/></svg>`; },
+  rings(){ return `<svg viewBox="0 0 120 80" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="46" cy="44" r="24"/><circle cx="74" cy="44" r="24"/><path d="M74 20l-5-8h10z" fill="currentColor"/><path d="M20 12l4 4M100 12l-4 4M60 4v6" stroke-linecap="round"/></svg>`; },
+  corner(){ return `<svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1"><path d="M4 96V30C4 16 16 4 30 4h66"/><path d="M12 96V34c0-12 10-22 22-22h62" stroke-dasharray="2 3"/><circle cx="30" cy="30" r="10"/><circle cx="30" cy="30" r="3" fill="currentColor"/><path d="M30 20c4-8 12-10 18-8M20 30c-8 4-10 12-8 18"/></svg>`; },
+  marigold(){ let p=''; for(let i=0;i<12;i++) p+=`<ellipse cx="30" cy="14" rx="5" ry="11" transform="rotate(${i*30} 30 30)"/>`; return `<svg viewBox="0 0 60 60" fill="none" stroke="currentColor" stroke-width="1.2">${p}<circle cx="30" cy="30" r="7" fill="currentColor" opacity=".5"/></svg>`; },
+  spark(){ return `<svg viewBox="0 0 40 40" fill="currentColor"><path d="M20 0c1.5 10 8.5 18.5 20 20-11.5 1.5-18.5 10-20 20-1.5-10-8.5-18.5-20-20C11.5 18.5 18.5 10 20 0z"/></svg>`; },
+  heart(){ return `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21l-8.5-8.2a5.3 5.3 0 0 1 7.5-7.5L12 6.3l1-1a5.3 5.3 0 0 1 7.5 7.5z"/></svg>`; },
+  logo(){ return `<svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 38V20C6 12 13 8 17 6c2-1 3-3 3-5 0 2 1 4 3 5 4 2 11 6 11 14v18"/><path d="M13 38V24a7 7 0 0 1 14 0v14"/><circle cx="20" cy="20" r="2" fill="currentColor"/></svg>`; }
+};
+const orn = k => (ORN[k] || ORN.mandala)();
+
+/* ---------- themes ---------- */
+const THEMES = {
+  maroon:{label:'Royal maroon', ib:'#5E0F1E', ib2:'#3A0812', ii:'#F6E7C9', ia:'#D8AC57', im:'#E1C6A2', font:"'Marcellus', serif"},
+  blush:{label:'Blush floral', ib:'#FBF0EC', ib2:'#F1D8D1', ii:'#5A2A33', ia:'#B45E71', im:'#8A5F66', font:"'Cormorant Garamond', serif"},
+  gold:{label:'Heritage gold', ib:'#FFF7E4', ib2:'#EFDAA6', ii:'#4A3411', ia:'#A97A22', im:'#7A6440', font:"'Cormorant Garamond', serif"},
+  ivory:{label:'Minimal ivory', ib:'#FAF7F1', ib2:'#EEE8DC', ii:'#2E2A25', ia:'#8E7C5E', im:'#6C6356', font:"'Cormorant Garamond', serif"},
+  kanjivaram:{label:'Kanjivaram green', ib:'#17473A', ib2:'#0D2C23', ii:'#F4E6C3', ia:'#D6AB4E', im:'#C9BC98', font:"'Marcellus', serif"},
+  dusk:{label:'Modern dusk blue', ib:'#EDF1F4', ib2:'#D6E0E8', ii:'#1F2E3D', ia:'#B9784A', im:'#56687A', font:"'Jost', sans-serif"},
+  midnight:{label:'Cinematic midnight', ib:'#1A1C2E', ib2:'#0C0E1B', ii:'#EFE5D0', ia:'#CBA55C', im:'#B9AE98', font:"'Marcellus', serif"},
+  haldi:{label:'Haldi and kumkum', ib:'#FFF1CF', ib2:'#F6D27A', ii:'#661616', ia:'#B3211C', im:'#7C3B1E', font:"'Marcellus', serif"},
+  sage:{label:'Sage garden', ib:'#F1F4EB', ib2:'#DCE5D0', ii:'#33412D', ia:'#AE6E60', im:'#5E6B55', font:"'Cormorant Garamond', serif"},
+  ruby:{label:'Ruby red', ib:'#8A1A1D', ib2:'#590E11', ii:'#FCEBD0', ia:'#E9B95B', im:'#EACCA2', font:"'Marcellus', serif"},
+  beige:{label:'Soft beige', ib:'#F4ECDF', ib2:'#E5D6BE', ii:'#4A3A2A', ia:'#9E7A4E', im:'#75644F', font:"'Cormorant Garamond', serif"},
+  peacock:{label:'Peacock teal', ib:'#0F3C46', ib2:'#07262D', ii:'#F2E5C7', ia:'#D9AF5F', im:'#B9C1AE', font:"'Marcellus', serif"},
+  pastel:{label:'Modern pastel', ib:'#F6EEF5', ib2:'#E3EEE9', ii:'#3E3550', ia:'#A57BB5', im:'#6F6680', font:"'Jost', sans-serif"}
+};
+const MOTIFS = {arch:'Pinky promise hands', mandala:'Mandala', floral:'Floral vine', temple:'Temple gopuram', toran:'Mango leaf toran', line:'Minimal line', rings:'Wedding rings'};
+function themeVars(t){ const th = THEMES[t.theme] || THEMES.maroon; return `--ib:${th.ib};--ib2:${th.ib2};--ii:${th.ii};--ia:${th.ia};--im:${th.im};--if:${th.font}`; }
+
+const CATEGORIES = [['traditional','Traditional'],['modern','Modern'],['minimal','Minimal'],['floral','Floral'],['royal','Royal'],['south-indian','South Indian'],['north-indian','North Indian'],['luxury','Luxury']];
+const catLabel = c => (CATEGORIES.find(x => x[0] === c) || [c, c])[1];
+const TYPES = {website:{label:'Website Invitation', plural:'Website Templates', route:'websites', short:'Website', suffix:'Wedding Invitation', icon:'phone'}, video:{label:'Video Invitation', plural:'Video Templates', route:'videos', short:'Video', suffix:'Video Invitation', icon:'video'}, card:{label:'Card Invitation', plural:'Card Templates', route:'cards', short:'Card', suffix:'Wedding Card', icon:'card'}};
+const ROUTE_TYPE = {websites:'website', videos:'video', cards:'card'};
+const fullTitle = t => `${t.name} ${TYPES[t.type].suffix}`;
+const STATUSES = ['New','Contacted','Payment Pending','Paid','In Progress','Completed','Cancelled'];
+/* ---------- seed data ---------- */
+const EVSETS = {
+  north:[['Haldi',-2,'10:00 AM'],['Mehendi',-2,'4:00 PM'],['Sangeet',-1,'7:30 PM'],['Wedding Ceremony',0,'7:00 PM'],['Reception',1,'8:00 PM']],
+  tamil:[['Nichayathartham',-1,'6:00 PM'],['Muhurtham',0,'7:30 AM'],['Reception',0,'7:00 PM']],
+  telugu:[['Pellikuthuru',-2,'10:00 AM'],['Mehendi and Sangeet',-1,'6:30 PM'],['Pelli Muhurtham',0,'9:30 AM'],['Reception',1,'7:30 PM']],
+  modern:[['Welcome Dinner',-1,'8:00 PM'],['Haldi Brunch',0,'10:30 AM'],['Wedding Ceremony',0,'5:30 PM'],['After Party',0,'9:00 PM']],
+  punjabi:[['Chunni Ceremony',-2,'5:00 PM'],['Mehendi',-1,'2:00 PM'],['Anand Karaj',0,'10:00 AM'],['Reception',0,'8:00 PM']]
+};
+function mkDemo(o){
+  const evs = (EVSETS[o.set] || EVSETS.north).map(([name, off, time]) => ({name, date:addDays(o.date, off), time, venue: /Reception|Sangeet|After|Dinner/.test(name) ? (o.venue2 || o.venue) : o.venue}));
+  return {
+    bride:o.b, groom:o.g, date:o.date, city:o.city, venue:o.venue, address:o.addr || (o.venue + ', ' + o.city),
+    greeting:o.greet || 'Shubh Vivah',
+    welcome:o.welcome || `With the blessings of our elders, we invite you to celebrate the wedding of ${o.b} and ${o.g}. Your presence will make our celebrations complete.`,
+    story:o.story || `${o.g} and ${o.b} met through family friends and found that they laughed at the same things. A few years, many long calls and one very nervous proposal later, they are ready to begin their forever.`,
+    events:evs,
+    brideParents:o.bp || 'Mr. & Mrs. Sharma', groomParents:o.gp || 'Mr. & Mrs. Verma',
+    contacts:o.contacts || [{name:'Family of the Bride', phone:'+91 98xxx xxx10'},{name:'Family of the Groom', phone:'+91 98xxx xxx20'}],
+    hashtag:o.tag || ('#' + o.g + 'Weds' + o.b)
+  };
+}
+function typeDefaults(type){
+  if(type === 'website') return {
+    included:['Personalized couple names','Wedding date','Multiple wedding events','Venue details','Google Maps','Photo gallery','Wedding countdown','RSVP','WhatsApp sharing','Mobile responsive design','Custom URL','Background music'],
+    who:['Couples looking for a modern wedding invitation','Traditional Indian weddings','Multi-day celebrations','Families wanting WhatsApp-friendly invitations','Couples who want a premium online experience'],
+    why:['Premium design','Easy customization','Mobile responsive','WhatsApp friendly','Multiple events','Photo gallery','Google Maps','RSVP','Countdown','Background music'],
+    delivery:'48 hours', format:'Website link'
+  };
+  if(type === 'video') return {
+    included:['Personalized names and wedding date','45 to 60 second cinematic video','A scene for every event','Venue details','Background music of your choice','Full HD vertical 9:16 video','WhatsApp-ready file','One round of revisions'],
+    who:['Couples who want a cinematic save the date','Families sharing invites on WhatsApp status','Multi-day celebrations','Couples inviting guests abroad','Anyone who loves a story told in motion'],
+    why:['Cinematic motion design','Easy customization','WhatsApp friendly','Multiple events','Background music','Instagram story ready','Fast delivery','Mobile first'],
+    delivery:'3 to 4 days', format:'MP4 video'
+  };
+  return {
+    included:['Personalized names and family details','Event schedule','Venue details','High resolution image and PDF','WhatsApp-ready size','Instagram story version','One round of revisions'],
+    who:['Families who love a classic printed look','Quick WhatsApp sharing','Traditional Indian weddings','Couples on a tight timeline','Elders who prefer a simple card'],
+    why:['Premium design','Easy customization','WhatsApp friendly','Multiple events','Print ready PDF','Fast delivery'],
+    delivery:'24 hours', format:'Image and PDF'
+  };
+}
+function templateFaq(type){
+  const d = typeDefaults(type);
+  const base = [
+    ['Can this template be customized?','Yes. Names, dates, events, venue, colours within the palette and your personal message are all personalised for you.'],
+    ['How quickly will I receive my invitation?',`Usually within ${d.delivery} after we receive all your details and photos.`],
+    ['Can I add multiple events?','Yes. Add Haldi, Mehendi, Sangeet, the wedding, the reception or any other ceremony you are planning.'],
+    ['Can I change photos later?', type === 'website' ? 'Yes. Send us new photos on WhatsApp and we update your live invitation.' : 'Yes. One round of revisions is included, and further changes can be made at a small fee.'],
+    ['Can I share it on WhatsApp?','Absolutely. Every invitation is made to be shared on WhatsApp, Instagram and email.'],
+    ['Can I add a custom message?','Yes. Add a welcome note, a message from your parents, or a line about your story.'],
+    ['Is the invitation mobile friendly?','Yes. Every design is made mobile first, because that is where your guests will open it.']
+  ];
+  return base.map(([q,a]) => ({q,a}));
+}
+function T(id, name, type, cats, price, theme, motif, desc, about, demo, extra){
+  const d = typeDefaults(type);
+  return Object.assign({
+    id, slug:id, name, type, categories:cats, price, theme, motif, description:desc, about,
+    previewImage:'', demoUrl:'', demo, included:d.included.slice(), who:d.who.slice(), why:d.why.slice(), faq:templateFaq(type),
+    published:true, featured:false, order:0, popularity:50, createdAt:'2026-01-01',
+    seoTitle:'', seoDescription:''
+  }, extra || {});
+}
+function seedTemplates(){
+  const L = [];
+  // websites
+  L.push(T('royal-maroon','Royal Maroon','website',['royal','traditional','north-indian','luxury'],4999,'maroon','arch',
+    'A regal maroon and gold wedding website with Mughal arches, made for grand celebrations.',
+    'Royal Maroon takes its colours from palace walls and bridal lehengas. Deep maroon, antique gold and carved arch frames give every section the feel of walking through a haveli courtyard, while the layout stays light and easy to read on any phone.',
+    mkDemo({b:'Ananya', g:'Arjun', date:'2026-12-15', city:'Jaipur', venue:'Sheesh Bagh Palace', venue2:'Sheesh Bagh Palace Lawns', set:'north', bp:'Mr. Rajesh & Mrs. Sunita Mehra', gp:'Mr. Anil & Mrs. Kavita Singh', tag:'#ArjunKiAnanya'}),
+    {featured:true, order:1, popularity:98, createdAt:'2026-03-10'}));
+  L.push(T('elegant-floral','Elegant Floral','website',['floral','modern','luxury'],4499,'blush','floral',
+    'Soft blush tones and hand drawn florals for a romantic, garden-style wedding website.',
+    'Elegant Floral is soft and romantic. Blush pinks, dusty rose accents and delicate floral vines frame your story, making it a natural fit for daytime weddings, garden venues and couples who want something gentle rather than grand.',
+    mkDemo({b:'Meera', g:'Rohan', date:'2027-01-24', city:'Udaipur', venue:'Lakeview Gardens', set:'north', bp:'Mr. Vinod & Mrs. Asha Joshi', gp:'Mr. Sameer & Mrs. Neeta Kapoor', tag:'#RoMeeraKiShaadi', greet:'Shubh Vivah'}),
+    {featured:true, order:2, popularity:91, createdAt:'2026-05-02'}));
+  L.push(T('traditional-gold','Traditional Gold','website',['traditional','royal','north-indian'],3999,'gold','mandala',
+    'A warm golden website with mandala details, rooted in tradition and full of warmth.',
+    'Traditional Gold is built around the mandala, a symbol of wholeness that appears on rangolis, temple ceilings and wedding cards across India. Warm ivory and gold keep it festive without being loud.',
+    mkDemo({b:'Kavya', g:'Vikram', date:'2026-11-29', city:'Hyderabad', venue:'Nizam Heritage Hall', set:'north', bp:'Mr. Suresh & Mrs. Lata Agarwal', gp:'Mr. Ramesh & Mrs. Usha Rathore', tag:'#VikKav'}),
+    {order:3, popularity:84, createdAt:'2026-02-14'}));
+  L.push(T('minimal-ivory','Minimal Ivory','website',['minimal','modern'],3499,'ivory','line',
+    'Clean ivory pages, fine lines and generous space for couples who love understated elegance.',
+    'Minimal Ivory lets your names and your story do the talking. Fine rules, quiet serif type and lots of breathing room make it feel like a beautifully printed stationery suite, only interactive.',
+    mkDemo({b:'Isha', g:'Kabir', date:'2027-02-06', city:'Goa', venue:'Casa Serena, Assagao', set:'modern', bp:'Mr. Ajay & Mrs. Nandini Rao', gp:'Mr. Farhan & Mrs. Sara Khanna', tag:'#KabirAndIsha', greet:'Save the date', welcome:'We are getting married by the sea, and we would love for you to be there. Pack light, bring your dancing shoes.'}),
+    {order:4, popularity:77, createdAt:'2026-06-20'}));
+  L.push(T('south-indian-heritage','South Indian Heritage','website',['south-indian','traditional','luxury'],4999,'kanjivaram','temple',
+    'Kanjivaram green and temple gold with gopuram motifs, made for a traditional South Indian wedding.',
+    'South Indian Heritage borrows from Kanjivaram silk borders and temple gopurams. Deep green, zari gold and stepped temple silhouettes create an invitation that feels at home in a kalyana mandapam.',
+    mkDemo({b:'Lakshmi', g:'Karthik', date:'2027-01-18', city:'Chennai', venue:'Sri Kalyana Mandapam, Mylapore', set:'tamil', greet:'Subha Muhurtham', bp:'Mr. S. Venkatesan & Mrs. Radha', gp:'Mr. R. Subramanian & Mrs. Meenakshi', tag:'#KarthikWedsLakshmi', welcome:'With the blessings of the Almighty and our elders, we request the pleasure of your presence at the wedding of our children.'}),
+    {featured:true, order:5, popularity:89, createdAt:'2026-04-12'}));
+  L.push(T('modern-couple','Modern Couple','website',['modern','minimal'],3999,'dusk','rings',
+    'A contemporary wedding website in dusk blue and copper, perfect for city couples.',
+    'Modern Couple is made for couples who met at work, in college or on an app and want an invite that feels like them. Clean sans-serif type, dusk blue and copper accents and a relaxed tone keep it fresh.',
+    mkDemo({b:'Tara', g:'Aditya', date:'2026-12-05', city:'Bengaluru', venue:'The Glasshouse, Whitefield', set:'modern', greet:'We are getting married', bp:'Mr. Prakash & Mrs. Anjali Nair', gp:'Mr. Mohan & Mrs. Deepa Iyer', tag:'#AdiTakesTara', welcome:'Two engineers, one very long debugging session, and now a wedding. Come celebrate with us.'}),
+    {order:6, popularity:80, createdAt:'2026-07-01'}));
+  // videos
+  L.push(T('royal-wedding-story','Royal Wedding Story','video',['royal','luxury','north-indian'],3499,'maroon','arch',
+    'A cinematic video invite with palace arches and gold detailing, told scene by scene.',
+    'Royal Wedding Story unfolds like the opening of a period film. Arches reveal your names, each ceremony gets its own scene, and the finale invites guests to the palace.',
+    mkDemo({b:'Riya', g:'Siddharth', date:'2026-12-12', city:'Jodhpur', venue:'Umaid Bagh Courtyard', set:'north', tag:'#SidRiyaForever'}),
+    {featured:true, order:1, popularity:95, createdAt:'2026-03-01'}));
+  L.push(T('floral-celebration','Floral Celebration','video',['floral','modern'],2999,'sage','floral',
+    'Fresh sage greens and blooming florals in a light, joyful video invitation.',
+    'Floral Celebration is breezy and bright. Soft sage and terracotta florals drift across the screen as each event is introduced, ideal for day weddings and outdoor venues.',
+    mkDemo({b:'Sneha', g:'Nikhil', date:'2027-02-14', city:'Pune', venue:'The Orchard Estate', set:'modern', greet:'Save the date', tag:'#NikSneha'}),
+    {order:2, popularity:82, createdAt:'2026-05-15'}));
+  L.push(T('cinematic-love','Cinematic Love','video',['modern','luxury'],3999,'midnight','rings',
+    'A moody midnight and gold video invite with film-style title cards.',
+    'Cinematic Love borrows from movie title sequences. Midnight blue, champagne gold and slow reveals make your wedding feel like a premiere your guests cannot miss.',
+    mkDemo({b:'Aisha', g:'Dev', date:'2026-12-20', city:'Mumbai', venue:'The Sea Pavilion, Juhu', set:'modern', greet:'Coming this December', tag:'#DevLovesAisha'}),
+    {featured:true, order:3, popularity:93, createdAt:'2026-06-05'}));
+  L.push(T('traditional-telugu-wedding','Traditional Telugu Wedding','video',['south-indian','traditional'],2999,'haldi','toran',
+    'Haldi yellow, kumkum red and mango leaf torans for a traditional Telugu pelli invitation.',
+    'Traditional Telugu Wedding opens with a mango leaf toran, the first thing that goes up at every Telugu home before a wedding. Turmeric yellow and kumkum red carry through every scene, from Pellikuthuru to the Muhurtham.',
+    mkDemo({b:'Harika', g:'Sai Teja', date:'2027-02-10', city:'Vijayawada', venue:'Sri Venkateswara Kalyana Mandapam', set:'telugu', greet:'Subha Lekha', bp:'Sri K. Ramana Rao & Smt. Padmavathi', gp:'Sri V. Srinivas & Smt. Lakshmi', tag:'#SaiWedsHarika', welcome:'With the blessings of Sri Venkateswara Swamy and our elders, we cordially invite you to the marriage of our children.'}),
+    {order:4, popularity:88, createdAt:'2026-04-25'}));
+  L.push(T('minimal-elegant','Minimal Elegant','video',['minimal','modern'],1999,'ivory','line',
+    'Quiet ivory frames and clean typography in a short, elegant video invite.',
+    'Minimal Elegant is short, calm and refined. Simple fades, fine lines and serif titles make it a graceful choice for intimate weddings and courthouse celebrations.',
+    mkDemo({b:'Naina', g:'Varun', date:'2026-11-22', city:'New Delhi', venue:'The Lodhi Terrace', set:'modern', greet:'Save the date', tag:'#VarunNaina'}),
+    {order:5, popularity:70, createdAt:'2026-07-18'}));
+  L.push(T('grand-celebration','Grand Celebration','video',['royal','luxury','traditional'],4999,'peacock','mandala',
+    'Peacock teal and gold with rotating mandalas, made for a big fat Indian wedding.',
+    'Grand Celebration is made for weddings with a guest list in the hundreds. Peacock teal, gold mandalas and a longer runtime give every ceremony its moment.',
+    mkDemo({b:'Prachi', g:'Harsh', date:'2027-01-30', city:'Ahmedabad', venue:'Riverside Royal Lawns', set:'north', greet:'Shubh Lagna', tag:'#HarshKiPrachi'}),
+    {order:6, popularity:86, createdAt:'2026-02-28'}));
+  // cards
+  L.push(T('classic-gold','Classic Gold','card',['traditional','royal','north-indian'],799,'gold','mandala',
+    'A timeless gold mandala card, the digital version of the card your parents would pick.',
+    'Classic Gold is the card your parents would pick, made digital. A central mandala, double gold border and a clear event schedule make it easy for every generation to read.',
+    mkDemo({b:'Pooja', g:'Rahul', date:'2026-12-08', city:'Lucknow', venue:'Awadh Heritage Lawns', set:'north', bp:'Mr. Alok & Mrs. Rekha Srivastava', gp:'Mr. Naresh & Mrs. Poonam Mishra'}),
+    {featured:true, order:1, popularity:92, createdAt:'2026-01-20'}));
+  L.push(T('floral-ivory','Floral Ivory','card',['floral','minimal'],699,'blush','floral',
+    'Delicate blush florals on soft ivory, a gentle card for WhatsApp sharing.',
+    'Floral Ivory is soft and graceful. Blush florals sit above and below your names, leaving plenty of calm space for your details.',
+    mkDemo({b:'Simran', g:'Aman', date:'2027-01-10', city:'Amritsar', venue:'Gurdwara Sahib and Heritage Gardens', set:'punjabi', greet:'Ik Onkar', bp:'S. Harpreet Singh & Smt. Jaspreet Kaur', gp:'S. Gurcharan Singh & Smt. Manjit Kaur'}),
+    {order:2, popularity:79, createdAt:'2026-05-30'}));
+  L.push(T('royal-red','Royal Red','card',['royal','traditional','north-indian'],899,'ruby','arch',
+    'Ruby red and gold with an arch frame, bold and festive like a bridal lehenga.',
+    'Royal Red takes its colour from the bridal lehenga. A gold arch frames your names, with corner filigree that echoes zardozi work.',
+    mkDemo({b:'Diya', g:'Yash', date:'2026-11-26', city:'Indore', venue:'Lalbagh Palace Grounds', set:'north', bp:'Mr. Pankaj & Mrs. Seema Jain', gp:'Mr. Rakesh & Mrs. Mamta Patidar'}),
+    {order:3, popularity:85, createdAt:'2026-03-22'}));
+  L.push(T('temple-heritage','Temple Heritage','card',['south-indian','traditional','luxury'],999,'kanjivaram','temple',
+    'A gopuram crowned card in Kanjivaram green and gold for South Indian weddings.',
+    'Temple Heritage is crowned by a gopuram and bordered in zari gold on Kanjivaram green, a natural choice for weddings in a temple or kalyana mandapam.',
+    mkDemo({b:'Divya', g:'Srinivas', date:'2027-02-03', city:'Madurai', venue:'Meenakshi Kalyana Mahal', set:'tamil', greet:'Subha Muhurtham', bp:'Mr. K. Raghavan & Mrs. Saraswathi', gp:'Mr. P. Natarajan & Mrs. Kamala'}),
+    {featured:true, order:4, popularity:87, createdAt:'2026-04-02'}));
+  L.push(T('minimal-beige','Minimal Beige','card',['minimal','modern'],499,'beige','line',
+    'A clean beige card with fine rules, simple and quietly elegant.',
+    'Minimal Beige keeps things simple. Soft beige, a single fine ornament and clean serif type, perfect for intimate weddings.',
+    mkDemo({b:'Rhea', g:'Neil', date:'2026-12-27', city:'Kochi', venue:'Fort House Courtyard', set:'modern', greet:'Save the date', bp:'Mr. George & Mrs. Anita Thomas', gp:'Mr. Rohit & Mrs. Priya Menon'}),
+    {order:5, popularity:68, createdAt:'2026-08-01'}));
+  L.push(T('modern-pastel','Modern Pastel','card',['modern','floral'],599,'pastel','rings',
+    'Lilac and mint pastels with a playful rings motif, made for Instagram.',
+    'Modern Pastel is fresh and playful. Lilac and mint tones with a rings motif make it look great as an Instagram story or a WhatsApp status.',
+    mkDemo({b:'Myra', g:'Ishaan', date:'2027-02-20', city:'Chandigarh', venue:'The Garden Pavilion', set:'modern', greet:'We said yes', bp:'Mr. Vikas & Mrs. Ritu Sethi', gp:'Mr. Arun & Mrs. Shalini Bedi'}),
+    {order:6, popularity:74, createdAt:'2026-08-20'}));
+  return L;
+}
+function seed(){
+  return {
+    version:1,
+    settings:{
+      brand:'Aamantran', logo:'', whatsapp:'919999999999', email:'hello@aamantran.in', instagram:'https://instagram.com/aamantran.invites',
+      heroEyebrow:'Beautifully Crafted Wedding Invitations', heroTitle:'Digital Indian Wedding Invitations',
+      heroDesc:'Share your wedding the way your guests actually open it. Choose an interactive wedding website, a cinematic video or an elegant digital card, personalised with your names, events and story.',
+      ctaPrimary:'Browse Templates', ctaSecondary:'Create Your Invite',
+      footerText:'Beautiful digital wedding invitations crafted for unforgettable celebrations.'
+    },
+    admin:{email:'admin@aamantran.in', passHash:'240be518fabd2724ddb6f04eeb1da5967448d7e831c08c8fa822809f74c720a9'},
+    templates:seedTemplates(),
+    features:[
+      ['design','Beautiful Premium Designs','Designed by hand around Indian wedding traditions, colours and motifs.'],
+      ['phone','Mobile Friendly','Built for phones first, because that is where guests open invites.'],
+      ['share','Easy Sharing','One link or file to share across every group and family chat.'],
+      ['heart','Personalized Content','Your names, your story, your parents\' blessings, in your words.'],
+      ['whatsapp','WhatsApp Sharing','Opens beautifully inside WhatsApp with a rich preview.'],
+      ['rsvp','RSVP Support','Guests confirm attendance and headcount right from the invite.'],
+      ['calendar','Event Details','Dates, times and dress codes for every ceremony in one place.'],
+      ['map','Google Maps Integration','One tap directions to every venue, no more lost relatives.'],
+      ['gallery','Photo Gallery','Share your pre-wedding shoot and favourite moments together.'],
+      ['events','Multiple Wedding Events','Haldi, Mehendi, Sangeet, wedding and reception, all covered.'],
+      ['music','Background Music','Add a song that means something to the two of you.'],
+      ['users','Custom Couple Names','Your names set beautifully in the typography of your theme.'],
+      ['clock','Countdown Timer','A live countdown that builds excitement for the big day.'],
+      ['url','Personalized URL','A short, memorable link with your names in it.'],
+      ['bolt','Fast Delivery','Most invitations are ready within one to three days.']
+    ].map(([icon,title,desc],i) => ({id:'f'+(i+1), icon, title, desc, published:true, order:i+1})),
+    faqs:[
+      ['What is a digital wedding invitation?','It is a wedding invite that lives on your guests\' phones instead of on paper. It can be an interactive website, a short video or a designed card image, shared over WhatsApp, Instagram or email.'],
+      ['How does a wedding invitation website work?','We set up a personal web page for your wedding with your names, events, venues, maps, photos and RSVP. You get a link that you can share with everyone, and it opens instantly on any phone.'],
+      ['Can I customize the invitation?','Yes. Every template is personalised with your names, dates, events, venues, photos, message and music. Colours can be adjusted within the design.'],
+      ['How long does it take to create my invitation?','Cards are usually ready within 24 hours, websites within 48 hours and videos within 3 to 4 days of receiving your details.'],
+      ['Can I share the invitation on WhatsApp?','Yes. Every invitation is designed to be shared on WhatsApp, with a clean preview for website links and ready-to-send video and image files.'],
+      ['Can I add multiple wedding events?','Yes. Add as many ceremonies as you like, each with its own date, time, venue and dress code.'],
+      ['Can I add photos and videos?','Website invitations include a photo gallery and can include a video. Video invitations can include your photos inside scenes.'],
+      ['Can I add Google Maps location?','Yes. Each venue gets a directions button that opens Google Maps.'],
+      ['Do you provide video invitations?','Yes. Browse our video templates for cinematic invitations made for WhatsApp and Instagram.'],
+      ['Do you provide digital wedding cards?','Yes. Our card templates are delivered as high resolution images and PDFs.'],
+      ['How will I receive my invitation?','Websites are delivered as a link, videos as an MP4 file and cards as image and PDF files, all on WhatsApp or email.'],
+      ['Can I make changes after ordering?','Yes. One round of revisions is included with every order, and website invitations can be updated even after they go live.']
+    ].map(([q,a],i) => ({id:'q'+(i+1), q, a, published:true, order:i+1})),
+    blogs:[
+      {id:'b1', slug:'digital-vs-printed-wedding-invitations', title:'Digital or printed? Choosing your wedding invitation in 2026', category:'Planning', date:'2026-08-28', published:true, cover:'', coverTheme:'maroon', coverMotif:'arch',
+        excerpt:'Most guests will see your invite on their phone first. Here is how to decide between digital, printed or both.',
+        seoTitle:'Digital vs printed wedding invitations in India', seoDescription:'How to choose between digital and printed wedding invitations for an Indian wedding.',
+        content:'Most Indian families still print a small batch of cards for elders and close relatives. But for the rest of the guest list, the invite that actually gets opened is the one on WhatsApp.\n\n## Where digital wins\nA digital invitation reaches everyone instantly, costs a fraction of printing and posting, and can carry far more information than a card. Venues, maps, dress codes and RSVP all live in one place.\n\n## Where printed still matters\nFor grandparents, family priests and the first card offered at the temple, a printed card carries weight. Many couples print twenty to fifty cards and go digital for everyone else.\n\n## Our suggestion\nPick one design language and carry it across both. A card template can be printed as well as shared, and a website can be linked with a QR code on the printed card.'},
+      {id:'b2', slug:'wedding-events-checklist-indian-wedding', title:'The events checklist for a multi-day Indian wedding', category:'Traditions', date:'2026-08-10', published:true, cover:'', coverTheme:'haldi', coverMotif:'toran',
+        excerpt:'Haldi, Mehendi, Sangeet, Muhurtham, Reception. What to include on your invite and in what order.',
+        seoTitle:'Indian wedding events checklist for your invitation', seoDescription:'A simple guide to listing Haldi, Mehendi, Sangeet and wedding events on your invite.',
+        content:'A multi-day wedding can have anywhere from three to eight ceremonies. Listing them clearly on your invitation saves your family hundreds of phone calls.\n\n## List events in the order they happen\nGuests read an invite top to bottom like a schedule. Start with the earliest ceremony and end with the reception.\n\n## Add a time and a venue to every event\nEven if two events are at the same venue, repeat it. People screenshot single events and forward them.\n\n## Mention dress codes\nA short line such as yellow for Haldi or Indian formal for the reception helps guests plan their outfits.'},
+      {id:'b3', slug:'wedding-invitation-wording-ideas', title:'Wedding invitation wording ideas that feel like you', category:'Inspiration', date:'2026-07-22', published:true, cover:'', coverTheme:'blush', coverMotif:'floral',
+        excerpt:'From traditional blessings to playful modern lines, a few ways to open your invite.',
+        seoTitle:'Wedding invitation wording ideas for Indian weddings', seoDescription:'Traditional and modern wording ideas for Indian wedding invitations.',
+        content:'The first line of your invitation sets the tone for everything that follows.\n\n## Traditional openings\nWith the blessings of our elders, we request the pleasure of your company at the wedding of our children.\n\n## Warm and personal\nWe found each other, and now we would love for you to celebrate with us.\n\n## Playful and modern\nTwo people, one very long guest list, and a lot of dancing. You are invited.'}
+    ],
+    orders:[
+      {id:'o1', name:'Priya Reddy', phone:'+91 90000 11111', templateId:'south-indian-heritage', templateName:'South Indian Heritage', type:'website', price:4999, status:'New', date:'2026-09-17', notes:'Wants Tamil and English text.'},
+      {id:'o2', name:'Rahul Mehta', phone:'+91 90000 22222', templateId:'royal-maroon', templateName:'Royal Maroon', type:'website', price:4999, status:'Payment Pending', date:'2026-09-15', notes:'Wedding on 12 Dec, Jaipur.'},
+      {id:'o3', name:'Sana Qureshi', phone:'+91 90000 33333', templateId:'cinematic-love', templateName:'Cinematic Love', type:'video', price:3999, status:'In Progress', date:'2026-09-12', notes:'Photos received.'},
+      {id:'o4', name:'Karan Gill', phone:'+91 90000 44444', templateId:'classic-gold', templateName:'Classic Gold', type:'card', price:799, status:'Completed', date:'2026-09-05', notes:''},
+      {id:'o5', name:'Lavanya S', phone:'+91 90000 55555', templateId:'traditional-telugu-wedding', templateName:'Traditional Telugu Wedding', type:'video', price:2999, status:'Contacted', date:'2026-09-16', notes:'Asked for Telugu script version.'}
+    ]
+  };
+}
+
+/* ---------- store: Supabase database ---------- */
+// Your Supabase project. The publishable key is safe to keep in website code.
+const SUPABASE_URL = 'https://rhntomocjfaigyoosnag.supabase.co';
+const SUPABASE_KEY = 'sb_publishable_wZKLybhVb2aY1XpjnceYDA_TIbNkN1e';
+const sb = window.supabase ? window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY) : null;
+
+// How each section of the site maps to a database table: [field in code, column in database]
+const MAPS = {
+  templates:{table:'templates', f:[['id'],['slug'],['name'],['type'],['categories'],['price'],['theme'],['motif'],['description'],['about'],['previewImage','preview_image'],['videoUrl','video_url'],['demoUrl','demo_url'],['demo'],['included'],['who'],['why'],['faq'],['published'],['featured'],['order','sort_order'],['popularity'],['seoTitle','seo_title'],['seoDescription','seo_description'],['createdAt','created_at']]},
+  orders:{table:'enquiries', f:[['id'],['name'],['phone'],['templateId','template_id'],['templateName','template_name'],['type'],['price'],['status'],['date'],['notes']]},
+  blogs:{table:'blogs', f:[['id'],['slug'],['title'],['category'],['date'],['published'],['cover'],['coverTheme','cover_theme'],['coverMotif','cover_motif'],['excerpt'],['content'],['seoTitle','seo_title'],['seoDescription','seo_description']]},
+  faqs:{table:'faqs', f:[['id'],['q'],['a'],['published'],['order','sort_order']]},
+  features:{table:'features', f:[['id'],['icon'],['title'],['desc','description'],['published'],['order','sort_order']]}
+};
+const NULLABLE = /image|_url|^cover$|^template_id$/;
+function toRow(k, x){ const r = {}; MAPS[k].f.forEach(([a, c]) => { const col = c || a; let v = x[a]; if(v === undefined) v = null; if(v === '' && NULLABLE.test(col)) v = null; if(col === 'created_at' && !v) v = new Date().toISOString().slice(0, 10); r[col] = v; }); return r; }
+function fromRow(k, r){ const x = {}; MAPS[k].f.forEach(([a, c]) => { const v = r[c || a]; x[a] = v === null || v === undefined ? '' : v; }); if(k === 'templates'){ ['categories','included','who','why','faq'].forEach(f => { if(!Array.isArray(x[f])) x[f] = []; }); if(!x.demo || typeof x.demo !== 'object') x.demo = seed().templates[0].demo; } return x; }
+
+let DB = {version:1, settings:Object.assign({}, seed().settings), templates:[], orders:[], blogs:[], faqs:[], features:[]};
+let SNAP = {};
+function snapshot(){ Object.keys(MAPS).forEach(k => SNAP[k] = new Map(DB[k].map(x => [x.id, JSON.stringify(x)]))); SNAP.settings = JSON.stringify(DB.settings); }
+
+async function loadAll(){
+  const q = t => sb.from(t).select('*');
+  const res = await Promise.all([q('templates'), q('blogs'), q('faqs'), q('features'), sb.from('settings').select('data').eq('id', 1).maybeSingle(), ADMIN ? q('enquiries') : Promise.resolve({data:[]})]);
+  const bad = res.find(r => r.error); if(bad) throw bad.error;
+  const [tp, bl, fq, ft, st, en] = res;
+  DB = {version:1, settings:Object.assign({}, seed().settings, (st.data && st.data.data) || {}),
+    templates:tp.data.map(r => fromRow('templates', r)), blogs:bl.data.map(r => fromRow('blogs', r)), faqs:fq.data.map(r => fromRow('faqs', r)),
+    features:ft.data.map(r => fromRow('features', r)), orders:en.data.map(r => fromRow('orders', r))};
+  snapshot();
+}
+
+/* files go to the "media" storage bucket, the database keeps only their links */
+async function uploadMedia(file, folder, ext){
+  const path = `${folder}/${Date.now()}-${Math.random().toString(36).slice(2, 7)}.${ext}`;
+  const {error} = await sb.storage.from('media').upload(path, file, {contentType:file.type || undefined, cacheControl:'31536000', upsert:false});
+  if(error) throw error;
+  return sb.storage.from('media').getPublicUrl(path).data.publicUrl;
+}
+async function uploadDataUrl(dataUrl, folder){ const blob = await (await fetch(dataUrl)).blob(); const ext = (blob.type.split('/')[1] || 'jpg').replace('jpeg', 'jpg').replace('svg+xml', 'svg'); return uploadMedia(blob, folder, ext); }
+function removeMedia(url){ const m = String(url || '').split('/storage/v1/object/public/media/')[1]; if(m && sb) sb.storage.from('media').remove([decodeURIComponent(m)]).catch(() => {}); }
+const PREP = {
+  templates:async x => { if(/^data:/.test(x.previewImage || '')) x.previewImage = await uploadDataUrl(x.previewImage, 'previews'); },
+  blogs:async x => { if(/^data:/.test(x.cover || '')) x.cover = await uploadDataUrl(x.cover, 'blog-covers'); }
+};
+
+/* save(): sends only what changed since the last load or save. Returns a promise of true or false. */
+let SYNC = Promise.resolve(true);
+function save(){ SYNC = SYNC.then(syncNow, syncNow); return SYNC; }
+async function syncNow(){
+  if(!ADMIN){ toast('Log in as admin to save changes.'); return false; }
+  try {
+    for(const k of Object.keys(MAPS)){
+      const cur = new Map(DB[k].map(x => [x.id, x])); const up = [];
+      for(const [id, x] of cur){ if(SNAP[k].get(id) !== JSON.stringify(x)){ if(PREP[k]) await PREP[k](x); up.push(x); } }
+      const del = [...SNAP[k].keys()].filter(id => !cur.has(id));
+      if(up.length){ const {error} = await sb.from(MAPS[k].table).upsert(up.map(x => toRow(k, x))); if(error) throw error; up.forEach(x => SNAP[k].set(x.id, JSON.stringify(x))); }
+      if(del.length){ const {error} = await sb.from(MAPS[k].table).delete().in('id', del); if(error) throw error; del.forEach(id => SNAP[k].delete(id)); }
+    }
+    if(SNAP.settings !== JSON.stringify(DB.settings)){
+      if(/^data:/.test(DB.settings.logo || '')) DB.settings.logo = await uploadDataUrl(DB.settings.logo, 'logo');
+      const {error} = await sb.from('settings').upsert({id:1, data:DB.settings}); if(error) throw error;
+      SNAP.settings = JSON.stringify(DB.settings);
+    }
+    return true;
+  } catch(e){ console.error(e); toast('Could not save: ' + (e.message || 'network error') + '. Your change was not stored.'); return false; }
+}
+const S = () => DB.settings;
+const pubTemplates = type => DB.templates.filter(t => t.published && (!type || t.type === type));
+const getTpl = slug => DB.templates.find(t => t.slug === slug || t.id === slug);
+
+/* ---------- video storage (IndexedDB holds large files, localStorage cannot) ---------- */
+const VIDB = {
+  open(){ return this._p || (this._p = new Promise((res, rej) => { const r = indexedDB.open('aamantran-videos', 1); r.onupgradeneeded = () => r.result.createObjectStore('videos'); r.onsuccess = () => res(r.result); r.onerror = () => rej(r.error); })); },
+  async put(key, blob){ const db = await this.open(); return new Promise((res, rej) => { const tx = db.transaction('videos', 'readwrite'); tx.objectStore('videos').put(blob, key); tx.oncomplete = () => res(); tx.onerror = () => rej(tx.error); }); },
+  async get(key){ const db = await this.open(); return new Promise((res, rej) => { const q = db.transaction('videos').objectStore('videos').get(key); q.onsuccess = () => res(q.result || null); q.onerror = () => rej(q.error); }); },
+  async del(key){ try { const db = await this.open(); return new Promise(res => { const tx = db.transaction('videos', 'readwrite'); tx.objectStore('videos').delete(key); tx.oncomplete = res; tx.onerror = res; }); } catch(e){} }
+};
+const hasVideo = t => t.type === 'video' && !!(t.videoKey || t.videoUrl);
+function videoTag(t, o){
+  o = o || {};
+  const src = t.videoKey ? `data-vkey="${esc(t.videoKey)}"` : `src="${esc(t.videoUrl)}"`;
+  return `<video class="shot-fill uvid" ${src} ${t.previewImage ? `poster="${t.previewImage}"` : ''} playsinline loop muted autoplay ${o.controls ? 'controls' : ''} preload="metadata"></video>`
+    + (o.controls ? '' : `<button class="vsound" type="button" aria-label="Turn sound on">${ico('music')}</button>`);
+}
+/* ---------- invitation renderers ---------- */
+const TIMERS = [];
+function evIcon(name){ const n = name.toLowerCase(); if(/haldi|pellikuthuru|chunni/.test(n)) return orn('marigold'); if(/mehendi|mehndi/.test(n)) return orn('floral'); if(/sangeet|party|dinner/.test(n)) return ico('music'); if(/reception/.test(n)) return ico('heart'); if(/nichay|engage/.test(n)) return orn('rings'); return orn('arch'); }
+const isScript = t => !['dusk','pastel'].includes(t.theme);
+function namesHTML(t, cls){ const d = t.demo; return `<div class="names ${isScript(t) ? '' : 'plain'} ${cls || ''}">${esc(d.bride)}<span class="amp">&amp;</span>${esc(d.groom)}</div>`; }
+function mapUrl(q){ return 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(q); }
+
+function siteCover(t){
+  const d = t.demo;
+  return `<section class="cover">
+    <div class="frame"></div>
+    <div class="corner tl">${orn('corner')}</div><div class="corner br">${orn('corner')}</div>
+    <div class="orn ${['floral','toran','line','arch'].includes(t.motif) ? 'wide' : ''}">${orn(t.motif)}</div>
+    <div class="greet">${esc(d.greeting)}</div>
+    <div class="with">Together with their families</div>
+    ${namesHTML(t)}
+    <div class="date">${esc(fmtDate(d.date, {day:'numeric', month:'long', year:'numeric'}))}</div>
+    <div class="place">${esc(d.city)}</div>
+    <div class="scrollcue">Scroll to open</div>
+  </section>`;
+}
+function renderSite(t, mode){
+  const d = t.demo, full = mode === 'full';
+  const gal = ['The roka','Our first trip','Pre-wedding shoot','The proposal','With the families','Engagement'];
+  return `<div class="inv ${full ? 'full' : 'sm'}" style="${themeVars(t)}">
+    ${siteCover(t)}
+    <section class="blk"><div class="kick">Welcome</div><h3>You are invited</h3><p>${esc(d.welcome)}</p></section>
+    <section class="blk tint"><div class="kick">Counting down to</div><h3>${esc(fmtDate(d.date, {day:'numeric', month:'long'}))}</h3>
+      <div class="cd" data-cd="${esc(d.date)}"><div><b>--</b><span>Days</span></div><div><b>--</b><span>Hours</span></div><div><b>--</b><span>Mins</span></div><div><b>--</b><span>Secs</span></div></div></section>
+    <section class="blk"><div class="kick">Our story</div><h3>How it began</h3><p>${esc(d.story)}</p></section>
+    <section class="blk tint"><div class="kick">The celebrations</div><h3>Wedding events</h3>
+      <div class="events">${d.events.map(e => `<div class="ev"><div class="ei">${evIcon(e.name)}</div><h4>${esc(e.name)}</h4><div class="when">${esc(fmtDate(e.date, {weekday:'short', day:'numeric', month:'short'}))}, ${esc(e.time)}</div><div class="where">${esc(e.venue)}</div></div>`).join('')}</div></section>
+    <section class="blk"><div class="kick">Venue</div><h3>Where we celebrate</h3>
+      <div class="venue-card"><div class="map"><div class="pin">${ico('map')}</div></div><div class="vb"><h4>${esc(d.venue)}</h4><p>${esc(d.address)}</p>
+      <a class="ibtn" href="${mapUrl(d.address)}" target="_blank" rel="noopener">${ico('map')} Get directions</a></div></div></section>
+    <section class="blk tint"><div class="kick">Moments</div><h3>Photo gallery</h3>
+      <div class="gal">${gal.map(g => `<div>${orn(t.motif === 'toran' ? 'marigold' : t.motif)}<span>${g}</span></div>`).join('')}</div></section>
+    <section class="blk"><div class="kick">With blessings from</div><h3>Our families</h3>
+      <div class="fam"><div><h4>Bride's family</h4><p>${esc(d.brideParents)}</p></div><div><h4>Groom's family</h4><p>${esc(d.groomParents)}</p></div></div></section>
+    <section class="blk tint"><div class="kick">Kindly respond</div><h3>RSVP</h3>
+      <form class="rsvp" data-rsvp>
+        <label>Your name<input required name="n" placeholder="Full name"></label>
+        <label>Guests<select name="g"><option>1</option><option>2</option><option>3</option><option>4</option><option>5+</option></select></label>
+        <label>Will you attend?<select name="a"><option>Joyfully accepts</option><option>Regretfully declines</option></select></label>
+        <button class="ibtn" type="submit">Send RSVP</button>
+      </form></section>
+    <section class="blk"><div class="kick">Questions?</div><h3>Contact</h3>
+      <div class="contact">${d.contacts.map(c => `<div><b>${esc(c.name)}</b>${esc(c.phone)}</div>`).join('')}</div></section>
+    <section class="endnote"><div class="orn">${orn(t.motif === 'toran' || t.motif === 'line' ? 'mandala' : t.motif)}</div>${namesHTML(t)}<div class="tag">${esc(d.hashtag)}</div></section>
+    ${full ? `<button class="music" type="button" data-music aria-label="Play background music">${ico('music')}</button>` : ''}
+  </div>`;
+}
+function videoScenes(t){
+  const d = t.demo, S = [];
+  S.push(`<div class="orn">${orn(t.motif)}</div><div class="k">${esc(d.greeting)}</div><div class="big">${esc(d.bride)}<br>&amp; ${esc(d.groom)}</div>`);
+  S.push(`<div class="k">are getting married</div><div class="mid">${esc(fmtDate(d.date, {day:'numeric', month:'long'}))}</div><div class="sm">${esc(new Date(d.date).getFullYear())}, ${esc(d.city)}</div>`);
+  d.events.slice(0, 4).forEach(e => S.push(`<div class="orn" style="width:3.4em">${evIcon(e.name)}</div><div class="k">${esc(e.name)}</div><div class="mid">${esc(fmtDate(e.date, {weekday:'long', day:'numeric', month:'short'}))}</div><div class="sm">${esc(e.time)}<br>${esc(e.venue)}</div>`));
+  S.push(`<div class="k">Venue</div><div class="mid">${esc(d.venue)}</div><div class="sm">${esc(d.city)}</div>`);
+  S.push(`<div class="big">See you there</div><div class="sm">Your presence is our blessing<br>${esc(d.hashtag)}</div>`);
+  return S;
+}
+function renderVideo(t, size, still){
+  const sc = videoScenes(t);
+  return `<div class="vid ${size || ''} ${still ? 'static' : ''}" style="${themeVars(t)}">
+    <div class="bgorn">${orn('mandala')}</div>
+    ${sc.map((s, i) => `<div class="scene ${i === 0 ? 'on' : ''}">${s}</div>`).join('')}
+    ${still ? '' : `<div class="bar"><i></i></div><button class="ctrl" type="button" aria-label="Pause">${ico('pause')}</button>`}
+  </div>`;
+}
+function renderCard(t, size){
+  const d = t.demo; const evs = d.events.slice(0, 4);
+  return `<div class="card-inv ${size || ''}" style="${themeVars(t)}">
+    <div class="cor a">${orn('corner')}</div><div class="cor b">${orn('corner')}</div><div class="cor c">${orn('corner')}</div><div class="cor d">${orn('corner')}</div>
+    <div class="orn">${orn(t.motif)}</div>
+    <div class="g">${esc(d.greeting)}</div>
+    <div class="inv-l">Together with their families request the pleasure of your company at the wedding of</div>
+    <div class="n ${isScript(t) ? '' : 'plain'}">${esc(d.bride)}</div>
+    <div class="par">daughter of ${esc(d.brideParents)}</div>
+    <div class="g" style="margin:.4em 0">with</div>
+    <div class="n ${isScript(t) ? '' : 'plain'}">${esc(d.groom)}</div>
+    <div class="par">son of ${esc(d.groomParents)}</div>
+    <div class="d">${esc(fmtDate(d.date, {weekday:'long', day:'numeric', month:'long', year:'numeric'}))}</div>
+    <div class="v">${esc(d.venue)}, ${esc(d.city)}</div>
+    <div class="evs">${evs.map(e => `<span><b>${esc(e.name)}</b> ${esc(fmtDate(e.date, {day:'numeric', month:'short'}))}, ${esc(e.time)}</span>`).join('')}</div>
+  </div>`;
+}
+function thumb(t){
+  if(t.previewImage) return `<div class="tin"><img src="${t.previewImage}" alt="${esc(t.name)} template preview" loading="lazy"></div>`;
+  if(t.type === 'website') return `<div class="tin site"><div class="inv xs" style="${themeVars(t)}">${siteCover(t)}</div></div>`;
+  if(t.type === 'video') return `<div class="tin">${renderVideo(t, 'xs', true)}</div>`;
+  return `<div class="tin cardt">${renderCard(t, 'xs')}</div>`;
+}
+function phoneMock(t, o){
+  o = o || {};
+  let inner;
+  const img = t.previewImage ? `<img class="shot" src="${t.previewImage}" alt="${esc(fullTitle(t))} preview">` : '';
+  if(hasVideo(t)) inner = videoTag(t);
+  else if(img && t.type === 'card') inner = `<div class="card-wrap">${img}</div>`;
+  else if(img && t.type === 'video') inner = `<img class="shot-fill" src="${t.previewImage}" alt="${esc(fullTitle(t))} preview">`;
+  else if(img) inner = `<div class="scroll">${img}</div>`;
+  else if(t.type === 'website') inner = `<div class="scroll">${renderSite(t, 'sm')}</div>`;
+  else if(t.type === 'video') inner = renderVideo(t, 'sm');
+  else inner = `<div class="card-wrap">${renderCard(t)}</div>`;
+  return `<div class="phone ${o.float ? 'float' : ''} ${o.auto && t.type === 'website' ? 'auto' : ''} ${o.lg ? 'lg' : ''}" role="img" aria-label="${esc(t.name)} invitation preview on a phone"><div class="scr">${inner}</div></div>`;
+}
+
+/* live behaviours inside invitations */
+function mountLive(root){
+  root = root || document;
+  // countdowns
+  const cds = $$('[data-cd]', root);
+  if(cds.length){ const upd = () => { cds.forEach(el => { const tgt = new Date(el.dataset.cd + 'T18:00:00').getTime(); let s = Math.max(0, Math.floor((tgt - Date.now()) / 1000)); const v = [Math.floor(s/86400), Math.floor(s%86400/3600), Math.floor(s%3600/60), s%60]; $$('b', el).forEach((b, i) => b.textContent = String(v[i]).padStart(i ? 2 : 1, '0')); }); }; upd(); const iv = setInterval(upd, 1000); TIMERS.push(() => clearInterval(iv)); }
+  // video players
+  $$('.vid:not(.static)', root).forEach(v => {
+    if(v.dataset.m) return; v.dataset.m = '1';
+    const sc = $$('.scene', v), bar = $('.bar i', v), btn = $('.ctrl', v), D = 3400; let el = 0, playing = true, last = performance.now();
+    const iv = setInterval(() => { if(!v.isConnected){ clearInterval(iv); return; } const now = performance.now(); if(playing) el += now - last; last = now; const tot = D * sc.length, x = el % tot, n = Math.floor(x / D); sc.forEach((s, j) => s.classList.toggle('on', j === n)); if(bar) bar.style.width = (x / tot * 100) + '%'; }, 120);
+    TIMERS.push(() => clearInterval(iv));
+    if(btn) btn.addEventListener('click', e => { e.preventDefault(); e.stopPropagation(); playing = !playing; btn.innerHTML = ico(playing ? 'pause' : 'play'); btn.setAttribute('aria-label', playing ? 'Pause' : 'Play'); });
+  });
+  // uploaded videos
+  $$('video.uvid', root).forEach(async v => {
+    if(v.dataset.vkey){
+      try {
+        const blob = await VIDB.get(v.dataset.vkey);
+        if(!blob){ v.insertAdjacentHTML('afterend', '<div class="vmiss">Video not found in this browser. Upload it again from the admin page.</div>'); return; }
+        const u = URL.createObjectURL(blob); v.src = u; TIMERS.push(() => URL.revokeObjectURL(u)); v.play().catch(() => {});
+      } catch(e){ return; }
+    }
+    const b = v.nextElementSibling;
+    if(b && b.classList.contains('vsound')) b.addEventListener('click', () => { v.muted = !v.muted; if(!v.muted) v.play().catch(() => {}); b.classList.toggle('on', !v.muted); b.setAttribute('aria-label', v.muted ? 'Turn sound on' : 'Turn sound off'); });
+  });
+  // auto scrolling phone height
+  $$('.phone.auto', root).forEach(p => { const scr = $('.scr', p); p.style.setProperty('--sh', scr.clientHeight + 'px'); });
+  // rsvp
+  $$('[data-rsvp]', root).forEach(f => f.addEventListener('submit', e => { e.preventDefault(); const n = f.n.value.trim() || 'Guest'; const a = f.a.value; const box = document.createElement('div'); box.className = 'ok'; box.innerHTML = `<b>Thank you, ${esc(n)}.</b><br>Your RSVP (${esc(a.toLowerCase())}, ${esc(f.g.value)} guest${f.g.value === '1' ? '' : 's'}) has been noted. This is a demo, so nothing was sent.`; f.replaceWith(box); }));
+  // music
+  $$('[data-music]', root).forEach(b => b.addEventListener('click', () => toggleMusic(b)));
+}
+let AUDIO = null;
+function toggleMusic(btn){
+  try {
+    if(AUDIO){ const a = AUDIO; AUDIO = null; a.g.gain.setTargetAtTime(0, a.ctx.currentTime, .3); setTimeout(() => a.ctx.close(), 900); btn.classList.remove('on'); return; }
+    const ctx = new (window.AudioContext || window.webkitAudioContext)(); const g = ctx.createGain(); g.gain.value = 0; g.connect(ctx.destination);
+    [146.83, 220, 293.66, 110].forEach((f, i) => { const o = ctx.createOscillator(); o.type = i === 3 ? 'triangle' : 'sine'; o.frequency.value = f; const og = ctx.createGain(); og.gain.value = [.5, .35, .18, .3][i]; const lfo = ctx.createOscillator(); lfo.frequency.value = .1 + i * .07; const lg = ctx.createGain(); lg.gain.value = .15; lfo.connect(lg).connect(og.gain); o.connect(og).connect(g); o.start(); lfo.start(); });
+    g.gain.setTargetAtTime(.06, ctx.currentTime, 1.2); AUDIO = {ctx, g}; btn.classList.add('on');
+    TIMERS.push(() => { if(AUDIO){ AUDIO.ctx.close(); AUDIO = null; } });
+  } catch(e){ toast('Audio is not available in this browser.'); }
+}
+
+/* ---------- whatsapp ---------- */
+function waNumber(){ return String(S().whatsapp || '').replace(/\D/g, ''); }
+function waLink(t){
+  const msg = t ? `Hi! I would like to order the ${fullTitle(t)}.\n\nTemplate: ${fullTitle(t)}\nType: ${TYPES[t.type].label}\nTemplate ID: ${t.slug}\nPrice: ${inr(t.price)}\n\nPlease share the next steps.`
+    : `Hi! I would like to create a digital wedding invitation with ${S().brand}. Please share the details.`;
+  return `https://wa.me/${waNumber()}?text=${encodeURIComponent(msg)}`;
+}
+const waBtn = (t, label, cls) => `<a class="btn ${cls || 'btn-primary'}" href="${waLink(t)}" target="_blank" rel="noopener">${ico('whatsapp')} ${esc(label)}</a>`;
+/* ---------- public layout ---------- */
+function setMeta(title, desc){ document.title = title ? `${title} | ${S().brand}` : `${S().brand} | Digital Indian Wedding Invitations`; let m = $('meta[name="description"]'); if(m && desc) m.setAttribute('content', desc); }
+const logoHTML = () => `<a class="logo" href="#/" aria-label="${esc(S().brand)} home">${S().logo ? `<img src="${S().logo}" alt="">` : ORN.logo()}<span>${esc(S().brand)}</span></a>`;
+const NAV = [['Website Templates','#/templates/websites','/templates/websites'],['Video Invite Templates','#/templates/videos','/templates/videos'],['Card Invite Templates','#/templates/cards','/templates/cards']];
+function header(path){
+  return `<header class="hdr" id="hdr"><div class="wrap hdr-in">
+    ${logoHTML()}
+    <nav class="nav" aria-label="Main">${NAV.map(([l, h, p]) => `<a href="${h}" class="${p && path.startsWith(p) ? 'on' : ''}">${l}</a>`).join('')}</nav>
+    <div class="hdr-cta">
+      <a class="btn btn-primary btn-sm btn-browse" href="#/templates">Browse Templates</a>
+      <a class="icon-btn" href="${waLink()}" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">${ico('whatsapp')}</a>
+      <button class="icon-btn burger" id="burger" aria-label="Open menu" aria-expanded="false">${ico('menu')}</button>
+    </div>
+  </div></header>
+  <div class="mnav" id="mnav">${NAV.map(([l, h]) => `<a class="l" href="${h}">${l}</a>`).join('')}
+    <a class="btn btn-primary" href="#/templates">Browse Templates</a>${waBtn(null, 'Chat on WhatsApp', 'btn-wa')}</div>`;
+}
+function footer(){
+  const s = S();
+  return `<section class="ql"><div class="wrap ql-grid">
+    <div class="brand">${logoHTML()}<p>${esc(s.footerText)}</p>
+      <div class="socials"><a class="icon-btn" href="${waLink()}" target="_blank" rel="noopener" aria-label="WhatsApp">${ico('whatsapp')}</a><a class="icon-btn" href="${esc(s.instagram)}" target="_blank" rel="noopener" aria-label="Instagram">${ico('insta')}</a><a class="icon-btn" href="mailto:${esc(s.email)}" aria-label="Email">${ico('mail')}</a></div></div>
+    <div><h4>Templates</h4><ul><li><a href="#/templates/websites">Website Templates</a></li><li><a href="#/templates/videos">Video Templates</a></li><li><a href="#/templates/cards">Card Templates</a></li><li><a href="#/templates">All Templates</a></li></ul></div>
+    <div><h4>Company</h4><ul><li><a href="#/about">About Us</a></li><li><a href="#/?to=how">How It Works</a></li><li><a href="#/?to=features">Features</a></li><li><a href="#/blogs">Blogs</a></li><li><a href="#/?to=faq">FAQs</a></li></ul></div>
+    <div><h4>Support</h4><ul><li><a href="${waLink()}" target="_blank" rel="noopener">WhatsApp</a></li><li><a href="mailto:${esc(s.email)}">Email</a></li><li><a href="${esc(s.instagram)}" target="_blank" rel="noopener">Instagram</a></li></ul></div>
+  </div></section>
+  <footer class="foot"><div class="wrap"><span>© ${new Date().getFullYear()} ${esc(s.brand)}. All rights reserved.</span><nav><a href="#/privacy">Privacy Policy</a><a href="#/terms">Terms &amp; Conditions</a></nav></div></footer>`;
+}
+function layout(path, body){ return header(path) + `<main id="main">${body}</main>` + footer(); }
+function crumbs(items){ return `<nav class="crumbs" aria-label="Breadcrumb">${items.map((it, i) => i < items.length - 1 ? `<a href="${it[1]}">${esc(it[0])}</a><span class="sep">/</span>` : `<span aria-current="page">${esc(it[0])}</span>`).join('')}</nav>`; }
+function secHead(title, sub){ return `<div class="sec-head"><div class="orn-rule">${ORN.spark()}</div><h2>${esc(title)}</h2>${sub ? `<p>${esc(sub)}</p>` : ''}</div>`; }
+function faqHTML(items){ return `<div class="faq">${items.map((f, i) => `<div class="acc"><button class="q" type="button" aria-expanded="false" data-acc>${esc(f.q)}<span class="pm">${ico('plus')}</span></button><div class="a"><div><p>${esc(f.a)}</p></div></div></div>`).join('')}</div>`; }
+function tcard(t){
+  return `<a class="tcard" href="#/template/${esc(t.slug)}">
+    <div class="thumb">${thumb(t)}${t.featured ? '<span class="badge">Bestseller</span>' : ''}${t.type === 'video' ? `<span class="play">${ico('play')}</span>` : ''}</div>
+    <div class="meta"><div class="row"><h3>${esc(t.name)}</h3><span class="price">${inr(t.price)}</span></div><p>${esc(t.description)}</p><span class="view">View Template ${ico('right')}</span></div></a>`;
+}
+function ctaBand(title, text, btns){
+  return `<div class="cta-band"><div class="arch l">${orn('arch')}</div><div class="arch r">${orn('arch')}</div><h2>${esc(title)}</h2><p>${esc(text)}</p><div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;position:relative">${btns}</div></div>`;
+}
+
+/* ---------- home ---------- */
+function pageHome(q){
+  const s = S();
+  setMeta('', s.heroDesc);
+  const heroT = pubTemplates('website').sort((a, b) => (b.featured - a.featured) || a.order - b.order)[0];
+  const pick = type => pubTemplates(type).sort((a, b) => (b.featured - a.featured) || a.order - b.order)[0];
+  const [w, v, c] = [pick('website'), pick('video'), pick('card')];
+  const feats = DB.features.filter(f => f.published).sort((a, b) => a.order - b.order);
+  const faqs = DB.faqs.filter(f => f.published).sort((a, b) => a.order - b.order);
+  const titleParts = s.heroTitle.trim().split(' '); const split = Math.ceil(titleParts.length / 2);
+  const coll = (href, vis, title, desc, btn) => `<a class="coll" href="${href}"><div class="vis">${vis}</div><div class="body"><h3>${title}</h3><p>${desc}</p><span class="btn btn-ghost btn-sm">${btn} ${ico('right')}</span></div></a>`;
+  const counts = {w:pubTemplates('website').length, v:pubTemplates('video').length, c:pubTemplates('card').length};
+  const body = `
+  <section class="hero"><div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">${esc(s.heroEyebrow)}</span>
+      <h1>${esc(titleParts.slice(0, split).join(' '))} <span class="l2">${esc(titleParts.slice(split).join(' '))}</span></h1>
+      <p class="lead">${esc(s.heroDesc)}</p>
+      <div class="ctas"><a class="btn btn-primary" href="#/templates">${esc(s.ctaPrimary)}</a>${waBtn(null, s.ctaSecondary, 'btn-ghost')}</div>
+      <div class="hero-meta"><div><strong>${counts.w + counts.v + counts.c}</strong>designs to choose from</div><div><strong>3</strong>invite formats</div><div><strong>24 to 72 hrs</strong>typical delivery</div></div>
+    </div>
+    <div class="hero-stage">
+      <div class="deco d1">${ORN.marigold()}</div><div class="deco d2">${ORN.heart()}</div><div class="deco d3">${ORN.floral()}</div><div class="deco d4">${ORN.spark()}</div><div class="deco d5">${ORN.spark()}</div><div class="deco d6">${ORN.mandala()}</div>
+      ${heroT ? phoneMock(heroT, {float:true, auto:true, lg:true}) : ''}
+    </div>
+  </div></section>
+
+  <section class="sec" id="collections"><div class="wrap">
+    ${secHead('Our Collections', 'Choose the perfect way to tell your wedding story.')}
+    <div class="coll-grid">
+      ${coll('#/templates/websites', w ? `<div class="mini-phone"><div class="scr">${w.previewImage ? `<img class="shot-fill" src="${w.previewImage}" alt="" style="object-position:top">` : `<div class="inv xs" style="${themeVars(w)};height:100%">${siteCover(w)}</div>`}</div></div>` : '', 'Website Invitations', 'Beautiful interactive wedding websites designed around your story.', 'Explore Websites')}
+      ${coll('#/templates/videos', v ? `<div class="mini-video">${v.previewImage ? `<img class="shot-fill" src="${v.previewImage}" alt="">` : renderVideo(v, 'xs')}</div>` : '', 'Video Invitations', 'Beautiful cinematic wedding invitation videos made to share with your loved ones.', 'Explore Videos')}
+      ${coll('#/templates/cards', c ? `<div class="mini-card">${c.previewImage ? `<img class="shot" src="${c.previewImage}" alt="">` : renderCard(c, 'xs')}</div>` : '', 'Card Invitations', 'Elegant digital wedding cards perfect for WhatsApp and social sharing.', 'Explore Cards')}
+    </div>
+  </div></section>
+
+  <section class="sec alt" id="how"><div class="wrap">
+    ${secHead('How It Works', 'Create and share your wedding invitation in just a few simple steps.')}
+    <div class="steps">
+      <div class="step"><div class="ic">${ico('design')}<span class="n">1</span></div><h3>Pick a Design</h3><p>Choose from our collection of beautifully designed wedding invitations.</p></div>
+      <div class="step"><div class="ic">${ico('story')}<span class="n">2</span></div><h3>Share Your Story</h3><p>Add your names, wedding details, photos, venue, events and personal message.</p></div>
+      <div class="step"><div class="ic">${ico('link')}<span class="n">3</span></div><h3>Get Your Link</h3><p>Receive your personalized invitation and share it with your family and friends.</p></div>
+    </div>
+    <div class="center" style="margin-top:50px"><a class="btn btn-primary" href="#/templates">Browse Templates</a></div>
+  </div></section>
+
+  <section class="sec" id="features"><div class="wrap">
+    ${secHead('Everything You Need for Your Perfect Invite', 'Every invitation comes with the details your guests actually look for.')}
+    <div class="feat-grid">${feats.map(f => `<div class="feat"><div class="ic">${ico(f.icon)}</div><h3>${esc(f.title)}</h3><p>${esc(f.desc)}</p></div>`).join('')}</div>
+  </div></section>
+
+  <section class="sec alt" id="faq"><div class="wrap">
+    ${secHead('Frequently Asked Questions', 'Everything couples usually ask before ordering.')}
+    ${faqs.length ? faqHTML(faqs) : '<p class="center muted">Questions will appear here soon.</p>'}
+  </div></section>
+
+  <section class="sec"><div class="wrap">
+    ${ctaBand('Start Creating Your Wedding Invite', 'Your story deserves an invitation as beautiful as your celebration.', `<a class="btn btn-gold" href="#/templates">Browse Templates</a>`)}
+  </div></section>`;
+  return {html:layout('/', body), after:() => { const to = q.get('to'); if(to){ const el = document.getElementById(to); if(el) setTimeout(() => el.scrollIntoView({behavior:'smooth'}), 60); } }};
+}
+
+/* ---------- listing ---------- */
+function pageListing(kind){
+  const type = ROUTE_TYPE[kind] || null;
+  const heads = {website:['Wedding Website Templates','Choose a beautiful design for your wedding story.'], video:['Wedding Video Invitation Templates','Cinematic invitation videos, ready for WhatsApp and Instagram.'], card:['Digital Wedding Card Templates','Elegant cards, delivered as high resolution images and PDFs.']};
+  const [h, sub] = type ? heads[type] : ['All Wedding Invitation Templates', 'Websites, videos and digital cards, all in one place.'];
+  setMeta(h, sub);
+  const state = {cat:'all', sort:'popular', type:type || 'all'};
+  const tabs = type ? '' : `<div class="tabs" role="tablist">${[['all','All'],['website','Websites'],['video','Videos'],['card','Cards']].map(([k, l]) => `<button class="tab ${k === 'all' ? 'on' : ''}" data-tab="${k}" role="tab">${l}</button>`).join('')}</div>`;
+  const typeTabs = type ? `<div class="tabs">${Object.entries(TYPES).map(([k, v]) => `<a class="tab ${k === type ? 'on' : ''}" href="#/templates/${v.route}">${v.short}s</a>`).join('')}</div>` : '';
+  const body = `<section class="phead"><div class="wrap">${crumbs(type ? [['Home','#/'],['Templates','#/templates'],[TYPES[type].plural]] : [['Home','#/'],['Templates']])}<h1>${esc(h)}</h1><p>${esc(sub)}</p></div></section>
+  <section class="wrap" style="padding-bottom:90px">
+    ${tabs}${typeTabs}
+    <div class="toolbar">
+      <div class="chips" role="group" aria-label="Filter by style"><button class="chip on" data-cat="all">All styles</button>${CATEGORIES.map(([k, l]) => `<button class="chip" data-cat="${k}">${l}</button>`).join('')}</div>
+      <label class="sr" for="sort">Sort templates</label>
+      <select class="sel" id="sort"><option value="popular">Popular</option><option value="newest">Newest</option><option value="low">Price: Low to High</option><option value="high">Price: High to Low</option></select>
+    </div>
+    <div class="tgrid" id="grid"></div>
+  </section>`;
+  const draw = () => {
+    let L = pubTemplates(state.type === 'all' ? null : state.type);
+    if(state.cat !== 'all') L = L.filter(t => t.categories.includes(state.cat));
+    const sorters = {popular:(a, b) => (b.featured - a.featured) || b.popularity - a.popularity, newest:(a, b) => b.createdAt.localeCompare(a.createdAt), low:(a, b) => a.price - b.price, high:(a, b) => b.price - a.price};
+    L.sort(sorters[state.sort]);
+    $('#grid').innerHTML = L.length ? L.map(tcard).join('') : `<div class="empty"><p>No templates match this style yet.</p><button class="btn btn-ghost btn-sm" data-cat="all">Show all styles</button></div>`;
+  };
+  return {html:layout('/templates' + (type ? '/' + kind : ''), body), after:() => {
+    draw();
+    $('#main').addEventListener('click', e => {
+      const c = e.target.closest('[data-cat]'); if(c){ state.cat = c.dataset.cat; $$('.chip').forEach(x => x.classList.toggle('on', x.dataset.cat === state.cat)); draw(); }
+      const tb = e.target.closest('[data-tab]'); if(tb){ state.type = tb.dataset.tab; $$('[data-tab]').forEach(x => x.classList.toggle('on', x === tb)); draw(); }
+    });
+    $('#sort').addEventListener('change', e => { state.sort = e.target.value; draw(); });
+  }};
+}
+
+/* ---------- template detail ---------- */
+function whyIcon(s){ const x = s.toLowerCase(); const m = [['whatsapp','whatsapp'],['map','map'],['rsvp','rsvp'],['countdown','clock'],['music','music'],['gallery','gallery'],['event','events'],['mobile','phone'],['custom','edit'],['fast','bolt'],['cinematic','video'],['instagram','insta'],['print','card'],['premium','crown'],['design','design']]; const f = m.find(([k]) => x.includes(k)); return f ? f[1] : 'sparkle'; }
+const WHY_DESC = {
+  'premium design':'Crafted by hand with balanced type, colour and Indian motifs.', 'easy customization':'Send your details on WhatsApp and we personalise everything.', 'mobile responsive':'Looks right on every phone, tablet and laptop.', 'whatsapp friendly':'Made to be forwarded across every family group.', 'multiple events':'Give each ceremony its own date, time and venue.', 'photo gallery':'Show off your pre-wedding shoot and favourite moments.', 'google maps':'One tap directions to every venue.', 'rsvp':'Know your headcount before the caterer asks.', 'countdown':'A live timer to the big day.', 'background music':'A song that sets the mood as guests scroll.', 'cinematic motion design':'Smooth, film-style transitions between scenes.', 'instagram story ready':'Vertical format that fits stories and reels.', 'fast delivery':'Ready within days, not weeks.', 'mobile first':'Framed for phone screens from the start.', 'print ready pdf':'Print a few copies for elders if you like.'
+};
+function pageDetail(slug){
+  const t = getTpl(slug);
+  if(!t || !t.published) return pageNotFound('This template is not available.');
+  const tp = TYPES[t.type];
+  setMeta(t.seoTitle || fullTitle(t), t.seoDescription || t.description);
+  const body = `<section class="wrap">
+    <div style="padding-top:34px">${crumbs([['Home','#/'],[tp.plural, '#/templates/' + tp.route],[t.name]])}</div>
+    <div class="detail">
+      <div class="info">
+        <span class="pill">${ico(tp.icon)} ${tp.label}</span>
+        <h1>${esc(fullTitle(t))}</h1>
+        <p class="desc">${esc(t.description)}</p>
+        <div class="price">${inr(t.price)}</div><div class="price-note">One-time price, includes personalisation</div>
+        <div class="ctas"><a class="btn btn-ghost" href="#/demo/${esc(t.slug)}">${ico('eye')} View Demo</a>${waBtn(t, 'Order Now')}</div>
+        <div class="quick"><div><strong>${esc(typeDefaults(t.type).delivery)}</strong>Delivery</div><div><strong>${esc(typeDefaults(t.type).format)}</strong>Format</div><div><strong>WhatsApp</strong>Ordering</div></div>
+        <div class="tags">${t.categories.map(c => `<span>${esc(catLabel(c))}</span>`).join('')}</div>
+      </div>
+      <div class="stage">${phoneMock(t, {lg:true})}<a class="btn btn-primary btn-sm" href="#/demo/${esc(t.slug)}">${ico('eye')} View Demo</a><span class="hint">${hasVideo(t) ? 'Tap the speaker for sound' : t.previewImage && t.type !== 'website' ? 'Preview of this design' : t.type === 'website' ? 'Scroll inside the phone to explore' : t.type === 'video' ? 'Playing a preview of the video' : 'This is how your card will look'}</span></div>
+    </div>
+  </section>
+  <section class="sec alt"><div class="wrap two">
+    <div><div class="orn-rule" style="justify-content:flex-start">${ORN.spark()}</div><h2>About This Template</h2></div>
+    <div class="prose">${String(t.about || '').split('\n').filter(Boolean).map(p => `<p>${esc(p)}</p>`).join('')}<p class="muted" style="font-size:17px;font-family:var(--sans)">Theme: ${esc((THEMES[t.theme] || {}).label || '')}. Motif: ${esc(MOTIFS[t.motif] || '')}.</p></div>
+  </div></section>
+  ${t.who.length ? `<section class="sec"><div class="wrap">${secHead('Who Is This Template For?')}<div class="who-grid">${t.who.map(w => `<div class="who"><span class="ic">${ico('heart')}</span><p>${esc(w)}</p></div>`).join('')}</div></div></section>` : ''}
+  ${t.why.length ? `<section class="sec alt"><div class="wrap">${secHead('Why Choose This Template?')}<div class="feat-grid">${t.why.map(w => `<div class="feat"><div class="ic">${ico(whyIcon(w))}</div><h3>${esc(w)}</h3><p>${esc(WHY_DESC[w.toLowerCase()] || 'Thoughtfully included so your invitation feels complete.')}</p></div>`).join('')}</div></div></section>` : ''}
+  ${t.included.length ? `<section class="sec"><div class="wrap">${secHead("What's Included")}<ul class="checks">${t.included.map(i => `<li>${ico('check')}<span>${esc(i)}</span></li>`).join('')}</ul></div></section>` : ''}
+  ${t.faq.length ? `<section class="sec alt"><div class="wrap">${secHead('Questions About This Template')}${faqHTML(t.faq)}</div></section>` : ''}
+  <section class="sec"><div class="wrap">${ctaBand(`Ready to Create Your ${t.name} Invitation?`, 'Turn this beautiful design into your personalized wedding invitation.', waBtn(t, 'Get Started', 'btn-gold') + waBtn(t, 'Order Now', 'btn-ghost'))}</div></section>`;
+  return {html:layout('/templates/' + tp.route, body)};
+}
+
+/* ---------- demo ---------- */
+function pageDemo(slug){
+  const t = getTpl(slug);
+  if(!t || !t.published) return pageNotFound('This demo is not available.');
+  setMeta('Demo: ' + fullTitle(t), t.description);
+  if(t.demoUrl && /^https?:\/\//.test(t.demoUrl)){
+    return {html:`<div class="demo-bar"><a class="back" href="#/template/${esc(t.slug)}">${ico('left')} Back</a><div class="t">${esc(fullTitle(t))}</div>${waBtn(t, 'Order This Invitation', 'btn-wa btn-sm')}</div>
+      <div class="demo-stage"><div style="text-align:center;max-width:460px"><h2 style="font-size:36px">This demo opens on its own page</h2><p class="muted" style="margin:12px 0 22px">The live demo for this template is hosted separately.</p><a class="btn btn-primary" href="${esc(t.demoUrl)}" target="_blank" rel="noopener">${ico('ext')} Open live demo</a></div></div>`};
+  }
+  let inner;
+  if(hasVideo(t)) inner = `<div class="demo-stage" style="background:#120c0c"><div class="vid-full" style="position:relative">${videoTag(t, {controls:true})}</div></div>`;
+  else if(t.previewImage){
+    const bg = t.type === 'video' ? '#120c0c' : 'linear-gradient(#EDE4D6,#D6C5AA)';
+    inner = `<div class="demo-stage" style="background:${bg}"><div class="demo-shot"><img class="shot" src="${t.previewImage}" alt="${esc(fullTitle(t))} design"></div></div>`;
+  }
+  else if(t.type === 'website') inner = renderSite(t, 'full');
+  else if(t.type === 'video') inner = `<div class="demo-stage" style="background:#120c0c"><div class="vid-full">${renderVideo(t)}</div></div>`;
+  else inner = `<div class="demo-stage" style="background:linear-gradient(#EDE4D6,#D6C5AA)"><div class="card-full">${renderCard(t)}</div></div>`;
+  return {html:`<div class="demo-bar"><a class="back" href="#/template/${esc(t.slug)}">${ico('left')} Back to template</a><div class="t">${esc(fullTitle(t))}<span class="tag">Demo</span></div>${waBtn(t, 'Order This Invitation', 'btn-wa btn-sm')}</div>${inner}`};
+}
+
+/* ---------- blogs ---------- */
+function blogCover(b){ if(b.cover) return `<img src="${b.cover}" alt="${esc(b.title)}" loading="lazy">`; const th = THEMES[b.coverTheme] || THEMES.maroon; return `<div class="gen-cover" style="background:radial-gradient(80% 90% at 50% 40%,${th.ib},${th.ib2});color:${th.ia}">${orn(b.coverMotif || 'mandala')}</div>`; }
+function md(src){ return String(src || '').split(/\n{2,}|\n(?=## )/).map(block => { block = block.trim(); if(!block) return ''; if(block.startsWith('## ')){ const [h, ...rest] = block.split('\n'); return `<h2>${esc(h.slice(3))}</h2>` + (rest.length ? `<p>${esc(rest.join(' '))}</p>` : ''); } if(/^- /m.test(block)) return `<ul>${block.split('\n').map(l => `<li>${esc(l.replace(/^- /, ''))}</li>`).join('')}</ul>`; return `<p>${esc(block).replace(/\n/g, '<br>')}</p>`; }).join(''); }
+function pageBlogs(){
+  setMeta('Blogs', 'Ideas, traditions and planning tips for Indian weddings.');
+  const L = DB.blogs.filter(b => b.published).sort((a, b) => b.date.localeCompare(a.date));
+  const body = `<section class="phead"><div class="wrap">${crumbs([['Home','#/'],['Blogs']])}<h1>Wedding Journal</h1><p>Ideas, traditions and planning tips for Indian weddings.</p></div></section>
+  <section class="wrap" style="padding-bottom:90px"><div class="bgrid">${L.length ? L.map(b => `<a class="bcard" href="#/blog/${esc(b.slug)}"><div class="cov">${blogCover(b)}</div><span class="cat">${esc(b.category)}, ${esc(fmtDate(b.date))}</span><h3>${esc(b.title)}</h3><p>${esc(b.excerpt)}</p></a>`).join('') : '<div class="empty">New articles are on the way.</div>'}</div></section>`;
+  return {html:layout('/blogs', body)};
+}
+function pageBlog(slug){
+  const b = DB.blogs.find(x => x.slug === slug && x.published);
+  if(!b) return pageNotFound('This article is not available.');
+  setMeta(b.seoTitle || b.title, b.seoDescription || b.excerpt);
+  const more = DB.blogs.filter(x => x.published && x.id !== b.id).slice(0, 2);
+  const body = `<section class="wrap"><div class="article" style="padding-top:34px">${crumbs([['Home','#/'],['Blogs','#/blogs'],[b.title]])}
+    <span class="eyebrow">${esc(b.category)}</span><h1 style="font-size:clamp(38px,5vw,58px);font-weight:500;margin:14px 0 10px">${esc(b.title)}</h1><p class="muted">${esc(fmtDate(b.date))}</p>
+    <div class="cov">${blogCover(b)}</div><div class="body">${md(b.content)}</div>
+    <div style="margin-top:40px;display:flex;gap:12px;flex-wrap:wrap"><a class="btn btn-primary" href="#/templates">Browse Templates</a><a class="btn btn-ghost" href="#/blogs">More articles</a></div>
+  </div></section>
+  ${more.length ? `<section class="sec alt"><div class="wrap"><div class="bgrid">${more.map(x => `<a class="bcard" href="#/blog/${esc(x.slug)}"><div class="cov">${blogCover(x)}</div><span class="cat">${esc(x.category)}</span><h3>${esc(x.title)}</h3></a>`).join('')}</div></div></section>` : ''}`;
+  return {html:layout('/blogs', body)};
+}
+
+/* ---------- static pages ---------- */
+function simplePage(path, title, paras){
+  setMeta(title);
+  return {html:layout(path, `<section class="wrap"><div class="article" style="padding-top:34px">${crumbs([['Home','#/'],[title]])}<h1 style="font-size:clamp(38px,5vw,58px);font-weight:500;margin-bottom:26px">${esc(title)}</h1><div class="body">${paras.map(p => p.startsWith('## ') ? `<h2>${esc(p.slice(3))}</h2>` : `<p>${esc(p)}</p>`).join('')}</div><div style="margin-top:30px">${waBtn(null, 'Chat with us on WhatsApp', 'btn-wa')}</div></div></section>`)};
+}
+const pageAbout = () => simplePage('/about', 'About Us', [`${S().brand} designs digital wedding invitations for Indian families. We started because the invite that really gets opened today is the one on WhatsApp, and it deserved the same care as a printed card.`, 'Every design is made by hand, drawing on the colours, motifs and rituals of weddings across India, from Mughal arches and mandalas to temple gopurams and mango leaf torans.', '## How we work', 'You pick a design, send us your details on WhatsApp, and we personalise it for you. No accounts, no complicated forms.']);
+const pagePrivacy = () => simplePage('/privacy', 'Privacy Policy', ['We only collect the details you choose to share with us on WhatsApp or email to create your invitation, such as names, dates, venues and photos.', '## How we use your details', 'Your details are used only to design, deliver and update your invitation. We do not sell or share them with third parties.', '## Your guests', 'RSVP responses collected through your invitation are shared only with you.', '## Contact', `Write to ${S().email} to have your details removed at any time.`]);
+const pageTerms = () => simplePage('/terms', 'Terms & Conditions', ['Orders are confirmed once the agreed payment is received. Delivery timelines begin after we receive all your details and photos.', '## Revisions', 'One round of revisions is included with every order. Additional changes may be charged.', '## Content', 'You confirm that you have the right to use the photos and music you send us.', '## Refunds', 'As each invitation is personalised, payments are non-refundable once design work has started.']);
+function pageNotFound(msg){ setMeta('Page not found'); return {html:layout('', `<section class="wrap" style="padding:110px 0;text-align:center"><div style="width:120px;margin:0 auto 20px;color:var(--gold)">${orn('arch')}</div><h1 style="font-size:52px;font-weight:500">${esc(msg || 'We could not find that page.')}</h1><p class="muted" style="margin:12px 0 26px">It may have been moved or unpublished.</p><a class="btn btn-primary" href="#/templates">Browse Templates</a> <a class="btn btn-ghost" href="#/">Go home</a></section>`)}; }
+/* ---------- admin: auth (Supabase Auth + admins table) ---------- */
+let ADMIN = null;
+async function refreshAuth(){
+  ADMIN = null; if(!sb) return;
+  const {data} = await sb.auth.getSession(); const u = data && data.session && data.session.user; if(!u) return;
+  const {data:ok, error} = await sb.rpc('is_admin'); if(!error && ok) ADMIN = {email:u.email};
+}
+function session(){ return ADMIN; }
+async function logout(){ try { await sb.auth.signOut(); } catch(e){} ADMIN = null; try { await loadAll(); } catch(e){} location.hash = '#/admin/login'; toast('Logged out.'); }
+
+function pageAdminLogin(){
+  document.title = 'Admin login | ' + S().brand;
+  if(session()) { location.hash = '#/admin'; return {html:''}; }
+  return {html:`<div class="login"><div class="art">${orn('arch')}</div><div class="box"><form id="loginF" novalidate>
+    ${logoHTML()}
+    <h1>Admin login</h1>
+    <div class="fld"><label for="le">Email</label><input class="inp" id="le" type="email" autocomplete="username" required></div>
+    <div class="fld"><label for="lp">Password</label><input class="inp" id="lp" type="password" autocomplete="current-password" required></div>
+    <div class="err" id="lerr" role="alert"></div>
+    <button class="btn btn-primary btn-block" type="submit" id="lbtn">Log in</button>
+    <p class="demo">Use the admin email and password you created in Supabase.</p>
+    <a href="#/" class="muted" style="font-size:14px">Back to website</a>
+  </form></div></div>`, after:() => {
+    $('#loginF').addEventListener('submit', async e => {
+      e.preventDefault(); const em = $('#le').value.trim().toLowerCase(), pw = $('#lp').value, btn = $('#lbtn');
+      if(!em || !pw){ $('#lerr').textContent = 'Enter your email and password.'; return; }
+      btn.disabled = true; btn.textContent = 'Logging in...'; $('#lerr').textContent = '';
+      const done = msg => { btn.disabled = false; btn.textContent = 'Log in'; $('#lerr').textContent = msg; };
+      const {data, error} = await sb.auth.signInWithPassword({email:em, password:pw});
+      if(error) return done(/invalid login/i.test(error.message) ? 'That email and password do not match. Check them and try again.' : error.message);
+      const {data:ok} = await sb.rpc('is_admin');
+      if(!ok){ await sb.auth.signOut(); return done('This account is not an admin yet. Add its email to the admins table in Supabase.'); }
+      ADMIN = {email:data.user.email};
+      try { await loadAll(); } catch(err){ return done('Logged in, but the data could not load: ' + err.message); }
+      location.hash = '#/admin';
+    });
+  }};
+}
+
+/* ---------- admin: shell ---------- */
+function adminLayout(active, title, body, actions){
+  const L = (k, href, label, icon, sub) => `<a href="${href}" class="${active === k ? 'on' : ''} ${sub ? 'sub' : ''}">${sub ? '' : ico(icon)}${label}</a>`;
+  return `<div class="adm"><aside class="adm-side" id="aside">
+    <a class="logo" href="#/admin">${S().logo ? `<img src="${S().logo}" alt="">` : ORN.logo()}<span>${esc(S().brand)}</span></a>
+    ${L('dash', '#/admin', 'Dashboard', 'dashboard')}
+    ${L('tpl', '#/admin/templates', 'Templates', 'template')}
+    ${L('tpl-website', '#/admin/templates?type=website', 'Website Templates', '', true)}
+    ${L('tpl-video', '#/admin/templates?type=video', 'Video Templates', '', true)}
+    ${L('tpl-card', '#/admin/templates?type=card', 'Card Templates', '', true)}
+    ${L('orders', '#/admin/orders', 'Orders / Enquiries', 'orders')}
+    ${L('faqs', '#/admin/faqs', 'FAQs', 'faq')}
+    ${L('blogs', '#/admin/blogs', 'Blogs', 'blog')}
+    ${L('features', '#/admin/features', 'Features', 'features')}
+    ${L('settings', '#/admin/settings', 'Settings', 'settings')}
+    <div class="grow"></div><div class="sep"></div>
+    <a href="#/" target="_blank" rel="noopener">${ico('ext')}View website</a>
+    <button type="button" id="logoutB">${ico('logout')}Logout</button>
+  </aside>
+  <div class="adm-main"><div class="adm-top"><button class="icon-btn adm-burger" id="aburger" aria-label="Open menu">${ico('menu')}</button><h1>${esc(title)}</h1>${actions || ''}<span class="who">${esc(session().email)}</span></div><div class="adm-body">${body}</div></div></div>`;
+}
+function adminBind(){
+  $('#logoutB').onclick = logout;
+  $('#aburger').onclick = e => { e.stopPropagation(); $('#aside').classList.toggle('open'); };
+  document.addEventListener('click', function close(e){ const a = $('#aside'); if(!a){ document.removeEventListener('click', close); return; } if(a.classList.contains('open') && !a.contains(e.target)) a.classList.remove('open'); });
+}
+function modal(html, onMount){
+  const bg = document.createElement('div'); bg.className = 'modal-bg'; bg.innerHTML = `<div class="modal" role="dialog" aria-modal="true">${html}</div>`;
+  document.body.appendChild(bg);
+  const close = () => { bg.remove(); document.removeEventListener('keydown', esck); };
+  const esck = e => { if(e.key === 'Escape') close(); };
+  document.addEventListener('keydown', esck);
+  bg.addEventListener('mousedown', e => { if(e.target === bg) close(); });
+  $$('[data-close]', bg).forEach(b => b.onclick = close);
+  const f = $('input,select,textarea', bg); if(f) f.focus();
+  if(onMount) onMount(bg, close);
+  return close;
+}
+function confirmBox(text, onYes){ modal(`<h3>Are you sure?</h3><p class="muted">${esc(text)}</p><div class="acts"><button class="btn btn-ghost btn-sm" data-close>Keep it</button><button class="btn btn-primary btn-sm" id="yes">Delete</button></div>`, (bg, close) => { $('#yes', bg).onclick = () => { close(); onYes(); }; }); }
+function readImage(file, max){
+  return new Promise((res, rej) => { const fr = new FileReader(); fr.onerror = rej; fr.onload = () => { if(file.type === 'image/svg+xml'){ res(fr.result); return; } const img = new Image(); img.onerror = rej; img.onload = () => { const sc = Math.min(1, (max || 1000) / Math.max(img.width, img.height)); const c = document.createElement('canvas'); c.width = Math.round(img.width * sc); c.height = Math.round(img.height * sc); c.getContext('2d').drawImage(img, 0, 0, c.width, c.height); res(c.toDataURL(file.type === 'image/png' ? 'image/png' : 'image/jpeg', .82)); }; img.src = fr.result; }; fr.readAsDataURL(file); });
+}
+const sw = (attrs, on) => `<label class="sw"><input type="checkbox" ${attrs} ${on ? 'checked' : ''}><span></span></label>`;
+const stClass = s => 'st st-' + slugify(s);
+
+/* ---------- admin: dashboard ---------- */
+function adminDash(){
+  const T = DB.templates, O = DB.orders;
+  const stat = (label, n, href, hl) => `<a class="stat ${hl ? 'hl' : ''}" href="${href}"><span>${label}</span><b>${n}</b></a>`;
+  const recent = O.slice().sort((a, b) => b.date.localeCompare(a.date)).slice(0, 6);
+  const paid = O.filter(o => ['Paid','In Progress','Completed'].includes(o.status)).reduce((s, o) => s + Number(o.price || 0), 0);
+  const body = `<div class="stats">
+    ${stat('Total Templates', T.length, '#/admin/templates')}
+    ${stat('Website Templates', T.filter(t => t.type === 'website').length, '#/admin/templates?type=website')}
+    ${stat('Video Templates', T.filter(t => t.type === 'video').length, '#/admin/templates?type=video')}
+    ${stat('Card Templates', T.filter(t => t.type === 'card').length, '#/admin/templates?type=card')}
+    ${stat('Total Orders / Enquiries', O.length, '#/admin/orders')}
+    ${stat('New Enquiries', O.filter(o => o.status === 'New').length, '#/admin/orders?status=New', true)}
+    ${stat('Published Templates', T.filter(t => t.published).length, '#/admin/templates')}
+    ${stat('Confirmed revenue', inr(paid), '#/admin/orders')}
+  </div>
+  <div class="panel"><div class="panel-h"><h2>Recent enquiries</h2><a class="btn btn-ghost btn-sm" href="#/admin/orders">View all</a></div>
+    <div class="tbl-wrap"><table class="tbl"><thead><tr><th>Customer</th><th>Template</th><th>Price</th><th>Status</th><th>Date</th></tr></thead><tbody>
+    ${recent.map(o => `<tr><td><div class="nm">${esc(o.name)}</div><div class="sub">${esc(o.phone)}</div></td><td>${esc(o.templateName)}<div class="sub">${esc(TYPES[o.type] ? TYPES[o.type].label : '')}</div></td><td>${inr(o.price)}</td><td><span class="${stClass(o.status)}">${esc(o.status)}</span></td><td>${esc(fmtDate(o.date, {day:'numeric', month:'short'}))}</td></tr>`).join('') || '<tr><td colspan="5" class="muted">No enquiries yet.</td></tr>'}
+    </tbody></table></div></div>
+  <div class="panel"><div class="panel-h"><h2>Quick actions</h2></div><div class="panel-b" style="display:flex;gap:10px;flex-wrap:wrap">
+    <a class="btn btn-primary btn-sm" href="#/admin/templates/new">${ico('plus')} Add template</a><button class="btn btn-ghost btn-sm" id="qOrder">${ico('plus')} Log an enquiry</button><a class="btn btn-ghost btn-sm" href="#/admin/blogs/new">${ico('plus')} Write a blog</a><a class="btn btn-ghost btn-sm" href="#/admin/settings">${ico('settings')} Update WhatsApp number</a></div></div>`;
+  return {html:adminLayout('dash', 'Dashboard', body), after:() => { adminBind(); $('#qOrder').onclick = () => orderModal(null, () => router()); }};
+}
+
+/* ---------- admin: templates ---------- */
+function adminTemplates(q){
+  const type = q.get('type'); const active = type ? 'tpl-' + type : 'tpl';
+  const state = {s:''};
+  const body = `<div class="panel"><div class="panel-h">
+      <div class="tabs" style="margin:0">${[['','All'],['website','Website'],['video','Video'],['card','Card']].map(([k, l]) => `<a class="tab ${String(type || '') === k ? 'on' : ''}" href="#/admin/templates${k ? '?type=' + k : ''}">${l}</a>`).join('')}</div>
+      <div style="flex:1"></div><div class="search">${ico('search')}<input id="ts" placeholder="Search templates" aria-label="Search templates"></div></div>
+    <div class="tbl-wrap"><table class="tbl"><thead><tr><th></th><th>Template</th><th>Type</th><th>Price</th><th>Order</th><th>Published</th><th>Featured</th><th></th></tr></thead><tbody id="tb"></tbody></table></div></div>`;
+  const draw = () => {
+    const L = DB.templates.filter(t => (!type || t.type === type) && (!state.s || (t.name + ' ' + t.categories.join(' ')).toLowerCase().includes(state.s))).sort((a, b) => a.type.localeCompare(b.type) || a.order - b.order);
+    $('#tb').innerHTML = L.map(t => `<tr data-id="${esc(t.id)}">
+      <td><div class="th-img">${thumb(t)}</div></td>
+      <td><div class="nm">${esc(t.name)}</div><div class="sub">${t.categories.map(catLabel).join(', ')}</div></td>
+      <td>${esc(TYPES[t.type].short)}</td><td>${inr(t.price)}</td>
+      <td><input class="inp" style="width:64px;padding:6px 8px" type="number" value="${t.order}" data-order aria-label="Display order"></td>
+      <td>${sw('data-pub aria-label="Published"', t.published)}</td>
+      <td><button class="ib ${t.featured ? 'on' : ''}" data-feat aria-label="Toggle featured">${ico(t.featured ? 'starf' : 'star')}</button></td>
+      <td><div class="acts-row"><a class="ib" href="#/template/${esc(t.slug)}" target="_blank" rel="noopener" aria-label="View on site">${ico('eye')}</a><a class="ib" href="#/admin/templates/${esc(t.id)}/edit" aria-label="Edit">${ico('edit')}</a><button class="ib" data-del aria-label="Delete">${ico('trash')}</button></div></td></tr>`).join('') || `<tr><td colspan="8"><div class="empty" style="border:0">No templates here yet. <a href="#/admin/templates/new${type ? '?type=' + type : ''}">Add the first one</a>.</div></td></tr>`;
+  };
+  return {html:adminLayout(active, type ? TYPES[type].plural : 'Templates', body, `<a class="btn btn-primary btn-sm" href="#/admin/templates/new${type ? '?type=' + type : ''}">${ico('plus')} Add template</a>`), after:() => {
+    adminBind(); draw();
+    $('#ts').oninput = e => { state.s = e.target.value.toLowerCase().trim(); draw(); };
+    $('#tb').addEventListener('change', e => { const tr = e.target.closest('tr'); const t = DB.templates.find(x => x.id === tr.dataset.id); if(e.target.matches('[data-pub]')){ t.published = e.target.checked; save(); toast(t.published ? 'Template published.' : 'Template unpublished.'); } if(e.target.matches('[data-order]')){ t.order = Number(e.target.value) || 0; save(); toast('Display order saved.'); draw(); } });
+    $('#tb').addEventListener('click', e => { const tr = e.target.closest('tr'); if(!tr) return; const t = DB.templates.find(x => x.id === tr.dataset.id);
+      if(e.target.closest('[data-feat]')){ t.featured = !t.featured; save(); draw(); toast(t.featured ? 'Marked as featured.' : 'Removed from featured.'); }
+      if(e.target.closest('[data-del]')) confirmBox(`Delete "${t.name}"? This cannot be undone.`, () => { removeMedia(t.videoUrl); removeMedia(t.previewImage); DB.templates = DB.templates.filter(x => x !== t); save(); draw(); toast('Template deleted.'); }); });
+  }};
+}
+function adminTemplateForm(id, q){
+  const editing = !!id; const src = editing ? DB.templates.find(t => t.id === id) : null;
+  if(editing && !src) return {html:adminLayout('tpl', 'Template not found', `<div class="empty">This template no longer exists. <a href="#/admin/templates">Back to templates</a></div>`), after:adminBind};
+  const newType = q.get('type') || 'website';
+  const t = src ? JSON.parse(JSON.stringify(src)) : T('', '', newType, [], 0, 'maroon', 'arch', '', '', mkDemo({b:'Ananya', g:'Arjun', date:'2026-12-15', city:'Jaipur', venue:'Sheesh Bagh Palace', set:'north'}), {published:false, order:DB.templates.filter(x => x.type === newType).length + 1, createdAt:new Date().toISOString().slice(0, 10)});
+  const d = t.demo;
+  const opt = (obj, cur) => Object.entries(obj).map(([k, v]) => `<option value="${k}" ${k === cur ? 'selected' : ''}>${esc(typeof v === 'string' ? v : v.label)}</option>`).join('');
+  const body = `<form id="tf" class="panel"><div class="panel-b form">
+    <div class="row2"><div class="fld"><label for="f-name">Template name</label><input class="inp" id="f-name" required value="${esc(t.name)}" placeholder="Royal Maroon"></div>
+      <div class="fld"><label for="f-slug">URL slug</label><input class="inp" id="f-slug" value="${esc(t.slug)}" placeholder="royal-maroon"><span class="help">Used in /template/<b id="slugPv">${esc(t.slug || 'your-slug')}</b></span></div></div>
+    <div class="row3"><div class="fld"><label for="f-type">Template type</label><select class="inp" id="f-type">${Object.entries(TYPES).map(([k, v]) => `<option value="${k}" ${k === t.type ? 'selected' : ''}>${v.label}</option>`).join('')}</select></div>
+      <div class="fld"><label for="f-price">Price (₹)</label><input class="inp" id="f-price" type="number" min="0" value="${t.price}"></div>
+      <div class="fld"><label for="f-order">Display order</label><input class="inp" id="f-order" type="number" value="${t.order}"></div></div>
+    <div class="fld"><span class="lbl">Categories</span><div class="checkrow">${CATEGORIES.map(([k, l]) => `<label><input type="checkbox" name="cat" value="${k}" ${t.categories.includes(k) ? 'checked' : ''}> ${l}</label>`).join('')}</div></div>
+    <div class="fld"><label for="f-desc">Short description</label><textarea class="inp" id="f-desc" style="min-height:70px">${esc(t.description)}</textarea></div>
+    <div class="fld"><label for="f-about">About this template</label><textarea class="inp" id="f-about">${esc(t.about)}</textarea></div>
+    <div class="checkrow"><label>${sw('id="f-pub"', t.published)} Published</label><label>${sw('id="f-feat"', t.featured)} Featured</label></div>
+
+    <div class="fsec"><h3>Design and preview</h3><p>The live preview is generated from the theme, motif and demo content. If you upload an image, it replaces the generated design everywhere: listing thumbnail, phone preview and demo page. For website templates, a tall full-page screenshot works best, and it scrolls inside the phone.</p>
+      <div class="row2"><div class="fld"><label for="f-theme">Colour theme</label><select class="inp" id="f-theme">${opt(THEMES, t.theme)}</select></div><div class="fld"><label for="f-motif">Motif</label><select class="inp" id="f-motif">${opt(MOTIFS, t.motif)}</select></div></div>
+      <div class="fld" style="margin-top:14px"><span class="lbl">Preview image</span><div class="upl"><div class="pv" id="pvBox">${t.previewImage ? `<img src="${t.previewImage}" alt="">` : thumb(t)}</div><input type="file" id="f-img" accept="image/*"><button type="button" class="btn btn-ghost btn-sm" id="rmImg" ${t.previewImage ? '' : 'hidden'}>Remove image</button></div></div>
+      <div class="fld" id="vidFld" style="margin-top:14px" ${t.type === 'video' ? '' : 'hidden'}><span class="lbl">Invitation video</span>
+        <div class="upl"><div class="pv" id="vpv" style="width:84px;height:150px;background:#111">${t.videoKey ? `<video class="shot-fill uvid" data-vkey="${esc(t.videoKey)}" muted autoplay loop playsinline></video>` : t.videoUrl ? `<video class="shot-fill" src="${esc(t.videoUrl)}" muted autoplay loop playsinline></video>` : ''}</div>
+        <input type="file" id="f-vid" accept="video/mp4,video/webm,video/quicktime"><button type="button" class="btn btn-ghost btn-sm" id="rmVid" ${hasVideo(t) ? '' : 'hidden'}>Remove video</button></div>
+        <input class="inp" id="f-vurl" value="${esc(t.videoUrl || '')}" placeholder="Or paste a direct video link (https://.../invite.mp4)" style="margin-top:8px">
+        <span class="help">This video plays inside the phone on the template page and on the demo page. MP4 in vertical 9:16, under 50 MB, works best. The preview image is shown as the cover until it starts.</span></div>
+      <div class="fld" style="margin-top:14px"><label for="f-demourl">External demo URL (optional)</label><input class="inp" id="f-demourl" value="${esc(t.demoUrl)}" placeholder="https://"><span class="help">Leave empty to use the built-in interactive demo.</span></div></div>
+
+    <div class="fsec"><h3>Demo content</h3><p>Sample details shown in this template's preview and demo page.</p>
+      <div class="row3"><div class="fld"><label for="d-b">Bride</label><input class="inp" id="d-b" value="${esc(d.bride)}"></div><div class="fld"><label for="d-g">Groom</label><input class="inp" id="d-g" value="${esc(d.groom)}"></div><div class="fld"><label for="d-date">Wedding date</label><input class="inp" id="d-date" type="date" value="${esc(d.date)}"></div></div>
+      <div class="row3" style="margin-top:14px"><div class="fld"><label for="d-greet">Greeting</label><input class="inp" id="d-greet" value="${esc(d.greeting)}"></div><div class="fld"><label for="d-city">City</label><input class="inp" id="d-city" value="${esc(d.city)}"></div><div class="fld"><label for="d-venue">Venue</label><input class="inp" id="d-venue" value="${esc(d.venue)}"></div></div>
+      <div class="row2" style="margin-top:14px"><div class="fld"><label for="d-bp">Bride's parents</label><input class="inp" id="d-bp" value="${esc(d.brideParents)}"></div><div class="fld"><label for="d-gp">Groom's parents</label><input class="inp" id="d-gp" value="${esc(d.groomParents)}"></div></div>
+      <div class="row2" style="margin-top:14px"><div class="fld"><label for="d-welcome">Welcome message</label><textarea class="inp" id="d-welcome">${esc(d.welcome)}</textarea></div><div class="fld"><label for="d-story">Story</label><textarea class="inp" id="d-story">${esc(d.story)}</textarea></div></div>
+      <div class="fld" style="margin-top:14px"><label for="d-events">Events</label><textarea class="inp" id="d-events">${esc(d.events.map(e => [e.name, e.date, e.time, e.venue].join(' | ')).join('\n'))}</textarea><span class="help">One per line: Name | YYYY-MM-DD | Time | Venue</span></div>
+      <div class="fld" style="margin-top:14px"><label for="d-tag">Hashtag</label><input class="inp" id="d-tag" value="${esc(d.hashtag)}"></div></div>
+
+    <div class="fsec"><h3>Template page content</h3><p>One item per line.</p>
+      <div class="row2"><div class="fld"><label for="f-inc">What's included</label><textarea class="inp" id="f-inc">${esc(t.included.join('\n'))}</textarea></div><div class="fld"><label for="f-why">Why choose this template (features)</label><textarea class="inp" id="f-why">${esc(t.why.join('\n'))}</textarea></div></div>
+      <div class="fld" style="margin-top:14px"><label for="f-who">Who is this for</label><textarea class="inp" id="f-who">${esc(t.who.join('\n'))}</textarea></div>
+      <div class="fld" style="margin-top:14px"><label for="f-faq">Template FAQ</label><textarea class="inp tall" id="f-faq">${esc(t.faq.map(f => f.q + ' :: ' + f.a).join('\n'))}</textarea><span class="help">One per line: Question :: Answer</span></div></div>
+
+    <div class="fsec"><h3>SEO</h3><p>Leave empty to use the template name and description.</p>
+      <div class="row2"><div class="fld"><label for="f-seot">SEO title</label><input class="inp" id="f-seot" value="${esc(t.seoTitle)}"></div><div class="fld"><label for="f-seod">SEO description</label><input class="inp" id="f-seod" value="${esc(t.seoDescription)}"></div></div></div>
+    <div class="form-foot"><a class="btn btn-ghost btn-sm" href="#/admin/templates">Cancel</a><button class="btn btn-primary btn-sm" type="submit">${editing ? 'Save changes' : 'Create template'}</button></div>
+  </div></form>`;
+  return {html:adminLayout('tpl-' + t.type, editing ? 'Edit template' : 'Add template', body, editing ? `<a class="btn btn-ghost btn-sm" href="#/template/${esc(t.slug)}" target="_blank" rel="noopener">${ico('eye')} View on site</a>` : ''), after:() => {
+    adminBind();
+    let slugTouched = editing;
+    $('#f-name').oninput = e => { if(!slugTouched){ $('#f-slug').value = slugify(e.target.value); $('#slugPv').textContent = $('#f-slug').value || 'your-slug'; } };
+    $('#f-slug').oninput = e => { slugTouched = true; $('#slugPv').textContent = slugify(e.target.value) || 'your-slug'; };
+    const refreshPv = () => { if(t.previewImage) return; t.theme = $('#f-theme').value; t.motif = $('#f-motif').value; t.type = $('#f-type').value; $('#pvBox').innerHTML = thumb(t); };
+    ['#f-theme','#f-motif','#f-type'].forEach(s => $(s).onchange = refreshPv);
+    $('#f-type').addEventListener('change', e => { $('#vidFld').hidden = e.target.value !== 'video'; });
+    let newVid = null, removeVid = false;
+    $('#f-vid').onchange = e => { const f = e.target.files[0]; if(!f) return;
+      if(!f.type.startsWith('video/')){ toast('Choose a video file, such as MP4.'); e.target.value = ''; return; }
+      if(f.size > 50 * 1024 * 1024){ toast('That video is over 50 MB. Compress it (HandBrake is free) and try again.'); e.target.value = ''; return; }
+      newVid = f; removeVid = false; const u = URL.createObjectURL(f); TIMERS.push(() => URL.revokeObjectURL(u));
+      $('#vpv').innerHTML = `<video class="shot-fill" src="${u}" muted autoplay loop playsinline></video>`; $('#rmVid').hidden = false; };
+    $('#rmVid').onclick = () => { newVid = null; removeVid = true; $('#f-vid').value = ''; $('#f-vurl').value = ''; $('#vpv').innerHTML = ''; $('#rmVid').hidden = true; };
+    $('#f-img').onchange = async e => { const f = e.target.files[0]; if(!f) return; try { t.previewImage = await readImage(f, 900); $('#pvBox').innerHTML = `<img src="${t.previewImage}" alt="">`; $('#rmImg').hidden = false; } catch(err){ toast('That file could not be read. Try a JPG or PNG.'); } };
+    $('#rmImg').onclick = () => { t.previewImage = ''; $('#f-img').value = ''; $('#rmImg').hidden = true; refreshPv(); };
+    $('#tf').onsubmit = async e => {
+      e.preventDefault();
+      const name = $('#f-name').value.trim(); if(!name){ toast('Add a template name.'); $('#f-name').focus(); return; }
+      const slug = slugify($('#f-slug').value || name);
+      if(DB.templates.some(x => x.slug === slug && x.id !== t.id)){ toast('Another template already uses that slug. Choose a different one.'); $('#f-slug').focus(); return; }
+      const events = lines($('#d-events').value).map(l => { const [n, dt, tm, vn] = l.split('|').map(x => (x || '').trim()); return {name:n || 'Event', date:/^\d{4}-\d{2}-\d{2}$/.test(dt) ? dt : ($('#d-date').value || d.date), time:tm || '', venue:vn || $('#d-venue').value}; });
+      Object.assign(t, {
+        name, slug, type:$('#f-type').value, price:Number($('#f-price').value) || 0, order:Number($('#f-order').value) || 0,
+        categories:$$('input[name=cat]:checked').map(x => x.value), description:$('#f-desc').value.trim(), about:$('#f-about').value.trim(),
+        published:$('#f-pub').checked, featured:$('#f-feat').checked, theme:$('#f-theme').value, motif:$('#f-motif').value, demoUrl:$('#f-demourl').value.trim(),
+        included:lines($('#f-inc').value), why:lines($('#f-why').value), who:lines($('#f-who').value),
+        faq:lines($('#f-faq').value).map(l => { const [q2, ...a] = l.split('::'); return {q:q2.trim(), a:a.join('::').trim()}; }).filter(f => f.q),
+        seoTitle:$('#f-seot').value.trim(), seoDescription:$('#f-seod').value.trim()
+      });
+      Object.assign(t.demo, {bride:$('#d-b').value.trim() || 'Ananya', groom:$('#d-g').value.trim() || 'Arjun', date:$('#d-date').value || d.date, greeting:$('#d-greet').value.trim(), city:$('#d-city').value.trim(), venue:$('#d-venue').value.trim(), address:$('#d-venue').value.trim() + ', ' + $('#d-city').value.trim(), brideParents:$('#d-bp').value.trim(), groomParents:$('#d-gp').value.trim(), welcome:$('#d-welcome').value.trim(), story:$('#d-story').value.trim(), events:events.length ? events : d.events, hashtag:$('#d-tag').value.trim()});
+      if(!editing){ t.id = slug; if(DB.templates.some(x => x.id === t.id)) t.id = uid(slug); }
+      const oldVideo = src ? src.videoUrl : '';
+      t.videoUrl = $('#f-vurl').value.trim(); t.videoKey = '';
+      const sbtn = $('#tf button[type=submit]'), sLabel = sbtn.textContent;
+      if(newVid){
+        sbtn.disabled = true; sbtn.textContent = 'Uploading video...';
+        try { const ext = (newVid.name.split('.').pop() || 'mp4').toLowerCase(); t.videoUrl = await uploadMedia(newVid, 'videos', ext); }
+        catch(err){ sbtn.disabled = false; sbtn.textContent = sLabel; toast('Video upload failed: ' + (err.message || 'network error') + '. Videos must be under 50 MB.'); return; }
+      }
+      if(oldVideo && oldVideo !== t.videoUrl) removeMedia(oldVideo);
+      sbtn.disabled = true; sbtn.textContent = 'Saving...';
+      if(editing){ const i = DB.templates.findIndex(x => x.id === t.id); DB.templates[i] = t; }
+      else DB.templates.push(t);
+      if(await save()){ toast(editing ? 'Changes saved.' : 'Template created.'); location.hash = '#/admin/templates?type=' + t.type; } else { sbtn.disabled = false; sbtn.textContent = sLabel; }
+    };
+  }};
+}
+/* ---------- admin: orders ---------- */
+function orderModal(o, done){
+  const editing = !!o; o = o || {id:uid('o'), name:'', phone:'', templateId:'', templateName:'', type:'website', price:0, status:'New', date:new Date().toISOString().slice(0, 10), notes:''};
+  const tplOpts = Object.entries(TYPES).map(([k, v]) => `<optgroup label="${v.plural}">${DB.templates.filter(t => t.type === k).map(t => `<option value="${esc(t.id)}" ${t.id === o.templateId ? 'selected' : ''}>${esc(t.name)} (${inr(t.price)})</option>`).join('')}</optgroup>`).join('');
+  modal(`<h3>${editing ? 'Edit enquiry' : 'Log an enquiry'}</h3><form class="form" id="of">
+    <div class="row2"><div class="fld"><label for="o-n">Customer name</label><input class="inp" id="o-n" required value="${esc(o.name)}"></div><div class="fld"><label for="o-p">Phone number</label><input class="inp" id="o-p" value="${esc(o.phone)}" placeholder="+91"></div></div>
+    <div class="fld"><label for="o-t">Template</label><select class="inp" id="o-t"><option value="">Select a template</option>${tplOpts}</select></div>
+    <div class="row3"><div class="fld"><label for="o-ty">Type</label><select class="inp" id="o-ty">${Object.entries(TYPES).map(([k, v]) => `<option value="${k}" ${k === o.type ? 'selected' : ''}>${v.short}</option>`).join('')}</select></div><div class="fld"><label for="o-pr">Price (₹)</label><input class="inp" id="o-pr" type="number" value="${o.price}"></div><div class="fld"><label for="o-d">Date</label><input class="inp" id="o-d" type="date" value="${esc(o.date)}"></div></div>
+    <div class="fld"><label for="o-s">Status</label><select class="inp" id="o-s">${STATUSES.map(s => `<option ${s === o.status ? 'selected' : ''}>${s}</option>`).join('')}</select></div>
+    <div class="fld"><label for="o-no">Notes</label><textarea class="inp" id="o-no">${esc(o.notes)}</textarea></div>
+    <div class="acts"><button type="button" class="btn btn-ghost btn-sm" data-close>Cancel</button><button class="btn btn-primary btn-sm" type="submit">${editing ? 'Save enquiry' : 'Add enquiry'}</button></div></form>`,
+  (bg, close) => {
+    $('#o-t', bg).onchange = e => { const t = DB.templates.find(x => x.id === e.target.value); if(t){ $('#o-ty', bg).value = t.type; $('#o-pr', bg).value = t.price; } };
+    $('#of', bg).onsubmit = async e => { e.preventDefault(); const name = $('#o-n', bg).value.trim(); if(!name){ toast('Add the customer name.'); return; }
+      const t = DB.templates.find(x => x.id === $('#o-t', bg).value);
+      Object.assign(o, {name, phone:$('#o-p', bg).value.trim(), templateId:t ? t.id : '', templateName:t ? t.name : 'Not decided', type:$('#o-ty', bg).value, price:Number($('#o-pr', bg).value) || 0, date:$('#o-d', bg).value, status:$('#o-s', bg).value, notes:$('#o-no', bg).value.trim()});
+      if(!editing) DB.orders.unshift(o); else { const i = DB.orders.findIndex(x => x.id === o.id); DB.orders[i] = o; }
+      if(await save()){ close(); toast(editing ? 'Enquiry saved.' : 'Enquiry added.'); done && done(); } };
+  });
+}
+function adminOrders(q){
+  const state = {s:'', st:q.get('status') || '', ty:''};
+  const body = `<div class="panel"><div class="panel-h">
+    <div class="search">${ico('search')}<input id="os" placeholder="Search name, phone or template" aria-label="Search enquiries"></div>
+    <select class="sel" id="ost" aria-label="Filter by status"><option value="">All statuses</option>${STATUSES.map(s => `<option ${s === state.st ? 'selected' : ''}>${s}</option>`).join('')}</select>
+    <select class="sel" id="oty" aria-label="Filter by type"><option value="">All types</option>${Object.entries(TYPES).map(([k, v]) => `<option value="${k}">${v.short}</option>`).join('')}</select>
+    <div style="flex:1"></div><span class="muted" id="ocount" style="font-size:14px"></span></div>
+    <div class="tbl-wrap"><table class="tbl"><thead><tr><th>Customer</th><th>Template</th><th>Price</th><th>Status</th><th>Date</th><th>Notes</th><th></th></tr></thead><tbody id="ob"></tbody></table></div></div>
+    <p class="muted" style="font-size:13.5px">Orders arrive on WhatsApp. Log each one here to track payment and delivery.</p>`;
+  const draw = () => {
+    const L = DB.orders.filter(o => (!state.st || o.status === state.st) && (!state.ty || o.type === state.ty) && (!state.s || (o.name + ' ' + o.phone + ' ' + o.templateName).toLowerCase().includes(state.s))).sort((a, b) => b.date.localeCompare(a.date));
+    $('#ocount').textContent = `${L.length} of ${DB.orders.length} enquiries`;
+    $('#ob').innerHTML = L.map(o => `<tr data-id="${esc(o.id)}"><td><div class="nm">${esc(o.name)}</div><div class="sub">${o.phone ? `<a href="https://wa.me/${esc(o.phone.replace(/\D/g, ''))}" target="_blank" rel="noopener">${esc(o.phone)}</a>` : ''}</div></td>
+      <td>${esc(o.templateName)}<div class="sub">${esc(TYPES[o.type] ? TYPES[o.type].label : '')}</div></td><td>${inr(o.price)}</td>
+      <td><select class="sel" style="padding:5px 8px;font-size:13px" data-st aria-label="Status">${STATUSES.map(s => `<option ${s === o.status ? 'selected' : ''}>${s}</option>`).join('')}</select></td>
+      <td>${esc(fmtDate(o.date, {day:'numeric', month:'short', year:'numeric'}))}</td><td class="sub" style="max-width:220px">${esc(o.notes)}</td>
+      <td><div class="acts-row"><button class="ib" data-edit aria-label="Edit">${ico('edit')}</button><button class="ib" data-del aria-label="Delete">${ico('trash')}</button></div></td></tr>`).join('') || `<tr><td colspan="7"><div class="empty" style="border:0">No enquiries match these filters.</div></td></tr>`;
+  };
+  return {html:adminLayout('orders', 'Orders / Enquiries', body, `<button class="btn btn-primary btn-sm" id="addO">${ico('plus')} Log an enquiry</button>`), after:() => {
+    adminBind(); draw();
+    $('#addO').onclick = () => orderModal(null, draw);
+    $('#os').oninput = e => { state.s = e.target.value.toLowerCase().trim(); draw(); };
+    $('#ost').onchange = e => { state.st = e.target.value; draw(); };
+    $('#oty').onchange = e => { state.ty = e.target.value; draw(); };
+    $('#ob').addEventListener('change', e => { if(!e.target.matches('[data-st]')) return; const o = DB.orders.find(x => x.id === e.target.closest('tr').dataset.id); o.status = e.target.value; save(); toast('Status updated to ' + o.status + '.'); });
+    $('#ob').addEventListener('click', e => { const tr = e.target.closest('tr'); if(!tr) return; const o = DB.orders.find(x => x.id === tr.dataset.id);
+      if(e.target.closest('[data-edit]')) orderModal(o, draw);
+      if(e.target.closest('[data-del]')) confirmBox(`Delete the enquiry from ${o.name}?`, () => { DB.orders = DB.orders.filter(x => x !== o); save(); draw(); toast('Enquiry deleted.'); }); });
+  }};
+}
+
+/* ---------- admin: blogs ---------- */
+function adminBlogs(){
+  const draw = () => { $('#bb').innerHTML = DB.blogs.slice().sort((a, b) => b.date.localeCompare(a.date)).map(b => `<tr data-id="${esc(b.id)}"><td><div class="th-img" style="width:70px;height:46px">${blogCover(b)}</div></td><td><div class="nm">${esc(b.title)}</div><div class="sub">/blog/${esc(b.slug)}</div></td><td>${esc(b.category)}</td><td>${esc(fmtDate(b.date, {day:'numeric', month:'short', year:'numeric'}))}</td><td>${sw('data-pub aria-label="Published"', b.published)}</td>
+    <td><div class="acts-row"><a class="ib" href="#/blog/${esc(b.slug)}" target="_blank" rel="noopener" aria-label="View">${ico('eye')}</a><a class="ib" href="#/admin/blogs/${esc(b.id)}/edit" aria-label="Edit">${ico('edit')}</a><button class="ib" data-del aria-label="Delete">${ico('trash')}</button></div></td></tr>`).join('') || `<tr><td colspan="6"><div class="empty" style="border:0">No blog posts yet.</div></td></tr>`; };
+  const body = `<div class="panel"><div class="tbl-wrap"><table class="tbl"><thead><tr><th></th><th>Title</th><th>Category</th><th>Date</th><th>Published</th><th></th></tr></thead><tbody id="bb"></tbody></table></div></div>`;
+  return {html:adminLayout('blogs', 'Blogs', body, `<a class="btn btn-primary btn-sm" href="#/admin/blogs/new">${ico('plus')} New blog</a>`), after:() => {
+    adminBind(); draw();
+    $('#bb').addEventListener('change', e => { if(!e.target.matches('[data-pub]')) return; const b = DB.blogs.find(x => x.id === e.target.closest('tr').dataset.id); b.published = e.target.checked; save(); toast(b.published ? 'Blog published.' : 'Blog unpublished.'); });
+    $('#bb').addEventListener('click', e => { const tr = e.target.closest('tr'); if(!tr || !e.target.closest('[data-del]')) return; const b = DB.blogs.find(x => x.id === tr.dataset.id); confirmBox(`Delete "${b.title}"?`, () => { DB.blogs = DB.blogs.filter(x => x !== b); save(); draw(); toast('Blog deleted.'); }); });
+  }};
+}
+function adminBlogForm(id){
+  const editing = !!id; const src = editing ? DB.blogs.find(b => b.id === id) : null;
+  if(editing && !src) return {html:adminLayout('blogs', 'Blog not found', `<div class="empty">This post no longer exists. <a href="#/admin/blogs">Back to blogs</a></div>`), after:adminBind};
+  const b = src ? JSON.parse(JSON.stringify(src)) : {id:uid('b'), slug:'', title:'', category:'Planning', date:new Date().toISOString().slice(0, 10), published:false, cover:'', coverTheme:'maroon', coverMotif:'mandala', excerpt:'', content:'', seoTitle:'', seoDescription:''};
+  const body = `<form id="bf" class="panel"><div class="panel-b form">
+    <div class="fld"><label for="b-t">Title</label><input class="inp" id="b-t" required value="${esc(b.title)}"></div>
+    <div class="row3"><div class="fld"><label for="b-s">URL slug</label><input class="inp" id="b-s" value="${esc(b.slug)}"></div><div class="fld"><label for="b-c">Category</label><input class="inp" id="b-c" value="${esc(b.category)}" list="bcats"><datalist id="bcats"><option>Planning</option><option>Traditions</option><option>Inspiration</option><option>Guides</option></datalist></div><div class="fld"><label for="b-d">Date</label><input class="inp" id="b-d" type="date" value="${esc(b.date)}"></div></div>
+    <div class="fld"><span class="lbl">Cover image</span><div class="upl"><div class="pv" id="bpv" style="width:140px;height:88px">${blogCover(b)}</div><input type="file" id="b-img" accept="image/*"><button type="button" class="btn btn-ghost btn-sm" id="b-rm" ${b.cover ? '' : 'hidden'}>Remove image</button></div><span class="help">Without an image, a patterned cover is generated.</span></div>
+    <div class="fld"><label for="b-e">Description</label><textarea class="inp" id="b-e" style="min-height:70px">${esc(b.excerpt)}</textarea></div>
+    <div class="fld"><label for="b-body">Content</label><textarea class="inp tall" id="b-body">${esc(b.content)}</textarea><span class="help">Blank line between paragraphs. Start a line with ## for a heading, or - for a list item.</span></div>
+    <div class="checkrow"><label>${sw('id="b-pub"', b.published)} Published</label></div>
+    <div class="fsec"><h3>SEO</h3><div class="row2"><div class="fld"><label for="b-st">SEO title</label><input class="inp" id="b-st" value="${esc(b.seoTitle)}"></div><div class="fld"><label for="b-sd">SEO description</label><input class="inp" id="b-sd" value="${esc(b.seoDescription)}"></div></div></div>
+    <div class="form-foot"><a class="btn btn-ghost btn-sm" href="#/admin/blogs">Cancel</a><button class="btn btn-primary btn-sm" type="submit">${editing ? 'Save changes' : 'Create blog'}</button></div>
+  </div></form>`;
+  return {html:adminLayout('blogs', editing ? 'Edit blog' : 'New blog', body), after:() => {
+    adminBind(); let touched = editing;
+    $('#b-t').oninput = e => { if(!touched) $('#b-s').value = slugify(e.target.value); };
+    $('#b-s').oninput = () => touched = true;
+    $('#b-img').onchange = async e => { const f = e.target.files[0]; if(!f) return; try { b.cover = await readImage(f, 1400); $('#bpv').innerHTML = blogCover(b); $('#b-rm').hidden = false; } catch(err){ toast('That file could not be read. Try a JPG or PNG.'); } };
+    $('#b-rm').onclick = () => { b.cover = ''; $('#b-img').value = ''; $('#bpv').innerHTML = blogCover(b); $('#b-rm').hidden = true; };
+    $('#bf').onsubmit = async e => { e.preventDefault(); const title = $('#b-t').value.trim(); if(!title){ toast('Add a title.'); return; }
+      const slug = slugify($('#b-s').value || title); if(DB.blogs.some(x => x.slug === slug && x.id !== b.id)){ toast('Another post already uses that slug.'); return; }
+      Object.assign(b, {title, slug, category:$('#b-c').value.trim() || 'Planning', date:$('#b-d').value, excerpt:$('#b-e').value.trim(), content:$('#b-body').value, published:$('#b-pub').checked, seoTitle:$('#b-st').value.trim(), seoDescription:$('#b-sd').value.trim()});
+      if(editing){ const i = DB.blogs.findIndex(x => x.id === b.id); DB.blogs[i] = b; } else DB.blogs.push(b);
+      if(await save()){ toast(editing ? 'Changes saved.' : 'Blog created.'); location.hash = '#/admin/blogs'; } };
+  }};
+}
+
+/* ---------- admin: FAQs and features (ordered lists) ---------- */
+function orderedManager(cfg){
+  const list = () => DB[cfg.key].slice().sort((a, b) => a.order - b.order);
+  const renumber = () => list().forEach((x, i) => x.order = i + 1);
+  const body = `<div class="panel"><div id="ol"></div></div><p class="muted" style="font-size:13.5px">${cfg.note}</p>`;
+  const draw = () => { $('#ol').innerHTML = list().map((x, i, arr) => `<div class="faq-row" data-id="${esc(x.id)}"><span class="ordn">${i + 1}</span>${cfg.icon ? `<span class="ib" style="background:var(--sand);color:var(--maroon)">${ico(x.icon)}</span>` : ''}<div class="q"><b>${esc(x[cfg.a])}</b><span>${esc(x[cfg.b])}</span></div>
+    ${sw('data-pub aria-label="Published"', x.published)}<button class="ib" data-up ${i === 0 ? 'disabled' : ''} aria-label="Move up">${ico('up')}</button><button class="ib" data-down ${i === arr.length - 1 ? 'disabled' : ''} aria-label="Move down">${ico('down')}</button><button class="ib" data-edit aria-label="Edit">${ico('edit')}</button><button class="ib" data-del aria-label="Delete">${ico('trash')}</button></div>`).join('') || `<div class="empty" style="border:0">Nothing here yet.</div>`; };
+  const edit = x => {
+    const isNew = !x; x = x || {id:uid(cfg.key[0]), [cfg.a]:'', [cfg.b]:'', icon:'sparkle', published:true, order:DB[cfg.key].length + 1};
+    modal(`<h3>${isNew ? 'Add ' : 'Edit '}${cfg.noun}</h3><form class="form" id="mf">
+      <div class="fld"><label for="m-a">${cfg.aLabel}</label><input class="inp" id="m-a" required value="${esc(x[cfg.a])}"></div>
+      <div class="fld"><label for="m-b">${cfg.bLabel}</label><textarea class="inp" id="m-b">${esc(x[cfg.b])}</textarea></div>
+      ${cfg.icon ? `<div class="fld"><label for="m-i">Icon</label><select class="inp" id="m-i">${ICON_KEYS.map(k => `<option ${k === x.icon ? 'selected' : ''}>${k}</option>`).join('')}</select></div>` : ''}
+      <div class="checkrow"><label>${sw('id="m-p"', x.published)} Published</label></div>
+      <div class="acts"><button type="button" class="btn btn-ghost btn-sm" data-close>Cancel</button><button class="btn btn-primary btn-sm" type="submit">${isNew ? 'Add' : 'Save'}</button></div></form>`,
+    (bg, close) => { $('#mf', bg).onsubmit = async e => { e.preventDefault(); const a = $('#m-a', bg).value.trim(); if(!a){ toast(cfg.aLabel + ' is required.'); return; } x[cfg.a] = a; x[cfg.b] = $('#m-b', bg).value.trim(); x.published = $('#m-p', bg).checked; if(cfg.icon) x.icon = $('#m-i', bg).value; if(isNew) DB[cfg.key].push(x); if(await save()){ close(); draw(); toast(isNew ? cfg.noun + ' added.' : 'Changes saved.'); } }; });
+  };
+  return {html:adminLayout(cfg.key, cfg.title, body, `<button class="btn btn-primary btn-sm" id="addM">${ico('plus')} Add ${cfg.noun.toLowerCase()}</button>`), after:() => {
+    adminBind(); draw();
+    $('#addM').onclick = () => edit(null);
+    $('#ol').addEventListener('change', e => { if(!e.target.matches('[data-pub]')) return; const x = DB[cfg.key].find(y => y.id === e.target.closest('.faq-row').dataset.id); x.published = e.target.checked; save(); toast(x.published ? 'Published.' : 'Unpublished.'); });
+    $('#ol').addEventListener('click', e => { const row = e.target.closest('.faq-row'); if(!row) return; const L = list(); const i = L.findIndex(y => y.id === row.dataset.id); const x = L[i];
+      if(e.target.closest('[data-up]') && i > 0){ [L[i - 1].order, x.order] = [x.order, L[i - 1].order]; renumber(); save(); draw(); }
+      if(e.target.closest('[data-down]') && i < L.length - 1){ [L[i + 1].order, x.order] = [x.order, L[i + 1].order]; renumber(); save(); draw(); }
+      if(e.target.closest('[data-edit]')) edit(x);
+      if(e.target.closest('[data-del]')) confirmBox(`Delete "${x[cfg.a]}"?`, () => { DB[cfg.key] = DB[cfg.key].filter(y => y !== x); renumber(); save(); draw(); toast('Deleted.'); }); });
+  }};
+}
+const adminFaqs = () => orderedManager({key:'faqs', title:'FAQs', noun:'FAQ', a:'q', b:'a', aLabel:'Question', bLabel:'Answer', note:'Published FAQs appear on the homepage in this order.'});
+const adminFeatures = () => orderedManager({key:'features', title:'Features', noun:'Feature', a:'title', b:'desc', aLabel:'Title', bLabel:'Short description', icon:true, note:'Published features appear in the homepage features grid in this order.'});
+
+/* ---------- admin: settings ---------- */
+function adminSettings(){
+  const s = S();
+  const f = (id, label, val, help, type) => `<div class="fld"><label for="${id}">${label}</label>${type === 'ta' ? `<textarea class="inp" id="${id}">${esc(val)}</textarea>` : `<input class="inp" id="${id}" type="${type || 'text'}" value="${esc(val)}">`}${help ? `<span class="help">${help}</span>` : ''}</div>`;
+  const body = `<form id="sf" class="panel"><div class="panel-b form">
+    <div class="fsec" style="border:0;padding:0;margin:0"><h3>Business details</h3><p>Used across the website, footer and WhatsApp ordering.</p>
+      <div class="row2">${f('s-brand', 'Brand name', s.brand)}${f('s-wa', 'WhatsApp business number', s.whatsapp, 'Country code and number, digits only. Example: 919876543210. Every order button uses this number.')}</div>
+      <div class="row2" style="margin-top:14px">${f('s-email', 'Email', s.email, '', 'email')}${f('s-ig', 'Instagram URL', s.instagram, '', 'url')}</div>
+      <div class="fld" style="margin-top:14px"><span class="lbl">Logo</span><div class="upl"><div class="pv logo" id="lpv">${s.logo ? `<img src="${s.logo}" alt="">` : `<span style="display:grid;place-items:center;height:100%;color:var(--maroon)">${ORN.logo()}</span>`}</div><input type="file" id="s-logo" accept="image/*"><button type="button" class="btn btn-ghost btn-sm" id="s-rm" ${s.logo ? '' : 'hidden'}>Use default logo</button></div></div></div>
+    <div class="fsec"><h3>Website content</h3><p>Hero section and footer text on the homepage.</p>
+      <div class="row2">${f('s-he', 'Hero eyebrow', s.heroEyebrow)}${f('s-ht', 'Hero title', s.heroTitle)}</div>
+      <div style="margin-top:14px">${f('s-hd', 'Hero description', s.heroDesc, '', 'ta')}</div>
+      <div class="row2" style="margin-top:14px">${f('s-c1', 'Primary button text', s.ctaPrimary)}${f('s-c2', 'Secondary button text (opens WhatsApp)', s.ctaSecondary)}</div>
+      <div style="margin-top:14px">${f('s-ft', 'Footer description', s.footerText, '', 'ta')}</div></div>
+    <div class="fsec"><h3>Your admin password</h3><p>Logged in as ${esc(session().email)}. Leave empty to keep your current password. To add or remove admins, use the admins table in Supabase.</p>
+      <div class="row2">${f('s-ap', 'New password', '', 'At least 8 characters.', 'password')}<div></div></div></div>
+    <div class="form-foot"><button class="btn btn-primary btn-sm" type="submit">Save settings</button></div>
+  </div></form>
+  <div class="panel"><div class="panel-h"><h2>Database</h2></div><div class="panel-b" style="display:flex;gap:14px;align-items:center;flex-wrap:wrap"><p class="muted" style="flex:1;min-width:240px">Everything here is stored in your Supabase database and storage. If someone else edited the site, load the latest version.</p><button class="btn btn-ghost btn-sm" id="reset">${ico('refresh')} Load latest data</button></div></div>`;
+  return {html:adminLayout('settings', 'Settings', body), after:() => {
+    adminBind(); let logo = s.logo;
+    $('#s-logo').onchange = async e => { const fl = e.target.files[0]; if(!fl) return; try { logo = await readImage(fl, 300); $('#lpv').innerHTML = `<img src="${logo}" alt="">`; $('#s-rm').hidden = false; } catch(err){ toast('That file could not be read. Try a PNG or SVG.'); } };
+    $('#s-rm').onclick = () => { logo = ''; $('#s-logo').value = ''; $('#lpv').innerHTML = `<span style="display:grid;place-items:center;height:100%;color:var(--maroon)">${ORN.logo()}</span>`; $('#s-rm').hidden = true; };
+    $('#sf').onsubmit = async e => { e.preventDefault();
+      const wa = $('#s-wa').value.replace(/\D/g, ''); if(wa.length < 10){ toast('Enter the WhatsApp number with country code, for example 919876543210.'); $('#s-wa').focus(); return; }
+      const pw = $('#s-ap').value; if(pw && pw.length < 8){ toast('Use a password with at least 8 characters.'); return; }
+      Object.assign(DB.settings, {brand:$('#s-brand').value.trim() || 'Aamantran', whatsapp:wa, email:$('#s-email').value.trim(), instagram:$('#s-ig').value.trim(), logo, heroEyebrow:$('#s-he').value.trim(), heroTitle:$('#s-ht').value.trim() || 'Digital Indian Wedding Invitations', heroDesc:$('#s-hd').value.trim(), ctaPrimary:$('#s-c1').value.trim() || 'Browse Templates', ctaSecondary:$('#s-c2').value.trim() || 'Create Your Invite', footerText:$('#s-ft').value.trim()});
+      if(pw){ const {error} = await sb.auth.updateUser({password:pw}); if(error){ toast('Password not changed: ' + error.message); return; } }
+      if(await save()){ toast(pw ? 'Settings and password saved.' : 'Settings saved.'); router(); } };
+    $('#reset').onclick = async () => { try { await loadAll(); toast('Latest data loaded.'); router(); } catch(e){ toast('Could not load data: ' + e.message); } };
+  }};
+}
+
+/* ---------- router ---------- */
+function adminRoute(sub, q){
+  if(!session()){ location.hash = '#/admin/login'; return {html:''}; }
+  document.title = 'Admin | ' + S().brand;
+  let m;
+  if(sub === '' || sub === '/') return adminDash();
+  if(sub === '/templates') return adminTemplates(q);
+  if(sub === '/templates/new') return adminTemplateForm(null, q);
+  if((m = sub.match(/^\/templates\/([\w-]+)\/edit$/))) return adminTemplateForm(m[1], q);
+  if(sub === '/orders') return adminOrders(q);
+  if(sub === '/blogs') return adminBlogs();
+  if(sub === '/blogs/new') return adminBlogForm(null);
+  if((m = sub.match(/^\/blogs\/([\w-]+)\/edit$/))) return adminBlogForm(m[1]);
+  if(sub === '/faqs') return adminFaqs();
+  if(sub === '/features') return adminFeatures();
+  if(sub === '/settings') return adminSettings();
+  return {html:adminLayout('', 'Page not found', `<div class="empty">This admin page does not exist. <a href="#/admin">Go to the dashboard</a></div>`), after:adminBind};
+}
+const ROUTES = [
+  [/^\/$/, (m, q) => pageHome(q)],
+  [/^\/templates\/?$/, () => pageListing('all')],
+  [/^\/templates\/(websites|videos|cards)$/, m => pageListing(m[1])],
+  [/^\/template\/([\w-]+)$/, m => pageDetail(m[1])],
+  [/^\/demo\/([\w-]+)$/, m => pageDemo(m[1])],
+  [/^\/blogs$/, () => pageBlogs()],
+  [/^\/blog\/([\w-]+)$/, m => pageBlog(m[1])],
+  [/^\/about$/, () => pageAbout()],
+  [/^\/privacy$/, () => pagePrivacy()],
+  [/^\/terms$/, () => pageTerms()],
+  [/^\/admin\/login$/, () => pageAdminLogin()],
+  [/^\/admin(\/.*)?$/, (m, q) => adminRoute(m[1] || '', q)]
+];
+let lastPath = null;
+function router(){
+  while(TIMERS.length) TIMERS.pop()();
+  $$('.modal-bg').forEach(x => x.remove());
+  const raw = decodeURIComponent(location.hash.replace(/^#/, '')) || '/';
+  const [path, qs] = raw.split('?'); const q = new URLSearchParams(qs || '');
+  let res = null;
+  for(const [re, fn] of ROUTES){ const m = path.match(re); if(m){ res = fn(m, q); break; } }
+  if(!res) res = pageNotFound();
+  if(!res.html && !res.after) return;
+  const app = $('#app'); app.innerHTML = res.html;
+  if(path !== lastPath || !q.get('to')) window.scrollTo(0, 0);
+  lastPath = path;
+  mountLive(app);
+  bindPublic();
+  if(res.after) res.after();
+}
+function bindPublic(){
+  const b = $('#burger'), mn = $('#mnav');
+  if(b && mn){ b.onclick = () => { const o = mn.classList.toggle('open'); b.setAttribute('aria-expanded', o); b.innerHTML = ico(o ? 'close' : 'menu'); document.body.style.overflow = o ? 'hidden' : ''; }; $$('a', mn).forEach(a => a.addEventListener('click', () => { mn.classList.remove('open'); document.body.style.overflow = ''; })); }
+  document.body.style.overflow = '';
+}
+document.addEventListener('click', e => {
+  const q = e.target.closest('[data-acc]'); if(!q) return;
+  const acc = q.closest('.acc'); const open = acc.classList.toggle('open'); q.setAttribute('aria-expanded', open);
+});
+window.addEventListener('scroll', () => { const h = $('#hdr'); if(h) h.classList.toggle('scrolled', window.scrollY > 10); }, {passive:true});
+let READY = false;
+window.addEventListener('hashchange', () => { if(READY) router(); });
+function fatal(msg){ $('#app').innerHTML = `<div style="min-height:100vh;display:grid;place-items:center;padding:30px;text-align:center"><div style="max-width:480px"><div style="width:80px;margin:0 auto 18px;color:var(--gold)">${orn('arch')}</div><h1 style="font-size:32px;font-weight:500">${esc(msg)}</h1><button class="btn btn-primary" style="margin-top:22px" onclick="location.reload()">Refresh</button></div></div>`; }
+async function boot(){
+  $('#app').innerHTML = `<div style="min-height:100vh;display:grid;place-items:center;color:var(--gold)" aria-label="Loading"><div style="width:90px;animation:pfloat 2s ease-in-out infinite">${orn('arch')}</div></div>`;
+  if(!sb){ fatal('The database library could not load. Check your internet connection and refresh.'); return; }
+  try { await refreshAuth(); await loadAll(); }
+  catch(e){ console.error(e); fatal(/schema cache|does not exist/i.test(e.message || '') ? 'The database is not set up yet. Run setup.sql in the Supabase SQL Editor, then refresh this page.' : 'Could not reach the database: ' + (e.message || 'network error') + '. Refresh to try again.'); return; }
+  READY = true; router();
+}
+boot();
+</script>
+</body>
+</html>
