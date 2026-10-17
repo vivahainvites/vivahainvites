@@ -104,20 +104,130 @@ p{margin:0}
 @media (max-width:900px){.hero-grid{grid-template-columns:1fr}.hero{padding-top:30px}.hero-stage{min-height:560px}}
 
 /* phone */
-.phone{position:relative;width:300px;aspect-ratio:9/19;min-height:0;border-radius:46px;background:#16100F;padding:11px;box-shadow:0 50px 80px -40px rgba(60,10,20,.6),0 0 0 1.5px #3a2a26 inset,0 0 0 4px #0c0807;flex:none}
-.phone::before{content:"";position:absolute;top:18px;left:50%;transform:translateX(-50%);width:92px;height:25px;background:#0a0707;border-radius:20px;z-index:3}
-.phone::after{content:"";position:absolute;right:-4px;top:120px;width:4px;height:60px;background:#2a1f1c;border-radius:0 3px 3px 0}
-.phone .scr{position:relative;width:100%;height:100%;border-radius:36px;overflow:hidden;background:#fff}
-.phone .scr .scroll{height:100%;overflow-y:auto;scrollbar-width:none}
-.phone .scr .scroll::-webkit-scrollbar{display:none}
-.phone.float{animation:pfloat 6s ease-in-out infinite}
-@keyframes pfloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
-.phone.auto .scroll{overflow:hidden}
-.phone.auto .scroll > .inv{animation:autoscroll 38s ease-in-out infinite alternate}
-@keyframes autoscroll{0%,8%{transform:translateY(0)}100%{transform:translateY(calc(-100% + var(--sh,600px)))}}
-.phone.lg{width:330px}
-.phone .scr iframe.live{display:block;width:100%;height:100%;border:0;background:#fff}
-@media (max-width:420px){.phone{width:270px}.phone.lg{width:290px}}
+
+/* Phone */
+.phone {
+  position: relative;
+  width: 300px;
+  aspect-ratio: 9 / 19;
+  min-height: 0;
+  border-radius: 46px;
+  background: #16100F;
+  padding: 11px;
+  box-shadow:
+    0 50px 80px -40px rgba(60, 10, 20, .6),
+    0 0 0 1.5px #3a2a26 inset,
+    0 0 0 4px #0c0807;
+  flex: none;
+  box-sizing: border-box;
+}
+
+.phone::before {
+  content: "";
+  position: absolute;
+  top: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 92px;
+  height: 25px;
+  background: #0a0707;
+  border-radius: 20px;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.phone::after {
+  content: "";
+  position: absolute;
+  right: -4px;
+  top: 120px;
+  width: 4px;
+  height: 60px;
+  background: #2a1f1c;
+  border-radius: 0 3px 3px 0;
+}
+
+/* Phone screen */
+.phone .scr {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 36px;
+  overflow: hidden;
+  background: #fff;
+}
+
+/* Scrollable previews */
+.phone .scr .scroll {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+.phone .scr .scroll::-webkit-scrollbar {
+  display: none;
+}
+
+/* Floating phone animation */
+.phone.float {
+  animation: pfloat 6s ease-in-out infinite;
+}
+
+@keyframes pfloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+/* Full invitation preview */
+.phone.auto .scr {
+  overflow: hidden;
+}
+
+.phone.auto .scroll {
+  overflow: hidden;
+}
+
+/* Scale the complete invitation */
+.phone.auto .scroll > .inv {
+  --preview-scale: 0.45;
+
+  width: calc(100% / var(--preview-scale));
+  transform: scale(var(--preview-scale));
+  transform-origin: top left;
+  animation: none;
+}
+
+/* Live website iframe */
+.phone .scr iframe.live {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: #fff;
+}
+
+/* Large phone */
+.phone.lg {
+  width: 330px;
+}
+
+/* Responsive phone */
+@media (max-width: 420px) {
+  .phone {
+    width: 270px;
+  }
+
+  .phone.lg {
+    width: 290px;
+  }
+}
+
 
 /* sections */
 .sec{padding:96px 0}
